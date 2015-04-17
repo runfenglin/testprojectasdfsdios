@@ -13,10 +13,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func showLoginScreen() {
+        let storyboard  = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UINavigationController
+        window!.rootViewController = vc
+        window!.makeKeyAndVisible()
+    }
+    
+    func showHomeScreen() {
+        let storyboard  = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UITabBarController
+        window!.rootViewController = vc
+        window!.makeKeyAndVisible()
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if let token = KeyChainUtil.get("token") {
+            self.showHomeScreen()
+        } else {
+            self.showLoginScreen()
+        }
+
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -41,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
 }
 

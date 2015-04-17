@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63C6CC14754FD88A4C0241E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0B8F4B6ED9958BD796D8C1 /* libPods.a */; };
+		B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA61ADD0D050035CBBF /* RegistrationService.swift */; };
+		B719DCAA1ADD14870035CBBF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA91ADD14870035CBBF /* Command.swift */; };
+		B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCAC1ADD234E0035CBBF /* Service.swift */; };
+		B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B719DCAE1ADD26AB0035CBBF /* Main.storyboard */; };
 		B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191571ADA6BAF0051E237 /* AppDelegate.swift */; };
-		B741915A1ADA6BAF0051E237 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191591ADA6BAF0051E237 /* ViewController.swift */; };
-		B741915D1ADA6BAF0051E237 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741915B1ADA6BAF0051E237 /* Main.storyboard */; };
 		B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B741915E1ADA6BAF0051E237 /* Images.xcassets */; };
 		B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74191601ADA6BAF0051E237 /* LaunchScreen.xib */; };
 		B741916E1ADA6BAF0051E237 /* TURidesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741916D1ADA6BAF0051E237 /* TURidesTests.swift */; };
+		B74191791ADA87480051E237 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74191781ADA87480051E237 /* Login.storyboard */; };
+		B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741917A1ADA8A1A0051E237 /* RegistrationViewController.swift */; };
+		B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191801ADA8EE20051E237 /* NavBarLogoView.swift */; };
+		B74191831ADA8EE20051E237 /* NavBarLogoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74191811ADA8EE20051E237 /* NavBarLogoView.xib */; };
+		B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191851ADA9E250051E237 /* LoginViewController.swift */; };
+		B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191891ADBB91A0051E237 /* BaseViewController.swift */; };
+		B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918B1ADBBD5F0051E237 /* SignupViewController.swift */; };
+		B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */; };
+		B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7571ADFB61A001677FC /* HomeViewController.swift */; };
+		B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7591ADFBD6F001677FC /* UIUtil.swift */; };
+		B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */; };
+		B778C75E1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B778C75C1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib */; };
+		B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */; };
+		B778C7621AE1100A001677FC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7611AE1100A001677FC /* LoginService.swift */; };
+		B778C7641AE110B1001677FC /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7631AE110B1001677FC /* LogoutService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +44,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D5111C67A8B503EDDD4C8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AC0B8F4B6ED9958BD796D8C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B719DCA61ADD0D050035CBBF /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Services/RegistrationService.swift; sourceTree = "<group>"; };
+		B719DCA91ADD14870035CBBF /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Core/Command.swift; sourceTree = "<group>"; };
+		B719DCAC1ADD234E0035CBBF /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Core/Service.swift; sourceTree = "<group>"; };
+		B719DCAE1ADD26AB0035CBBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Main.storyboard; sourceTree = "<group>"; };
 		B74191521ADA6BAF0051E237 /* TURides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TURides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74191561ADA6BAF0051E237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B74191571ADA6BAF0051E237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B74191591ADA6BAF0051E237 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B741915C1ADA6BAF0051E237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B741915E1ADA6BAF0051E237 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B74191611ADA6BAF0051E237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B74191671ADA6BAF0051E237 /* TURidesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TURidesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B741916C1ADA6BAF0051E237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B741916D1ADA6BAF0051E237 /* TURidesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURidesTests.swift; sourceTree = "<group>"; };
+		B74191771ADA73450051E237 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		B74191781ADA87480051E237 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B741917A1ADA8A1A0051E237 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = Views/RegistrationViewController.swift; sourceTree = "<group>"; };
+		B74191801ADA8EE20051E237 /* NavBarLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavBarLogoView.swift; path = Views/NavBarLogoView.swift; sourceTree = "<group>"; };
+		B74191811ADA8EE20051E237 /* NavBarLogoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NavBarLogoView.xib; path = Views/NavBarLogoView.xib; sourceTree = "<group>"; };
+		B74191851ADA9E250051E237 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Views/LoginViewController.swift; sourceTree = "<group>"; };
+		B74191891ADBB91A0051E237 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Views/BaseViewController.swift; sourceTree = "<group>"; };
+		B741918B1ADBBD5F0051E237 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Views/SignupViewController.swift; sourceTree = "<group>"; };
+		B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainUtil.swift; path = Utils/KeyChainUtil.swift; sourceTree = "<group>"; };
+		B778C7571ADFB61A001677FC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Views/HomeViewController.swift; sourceTree = "<group>"; };
+		B778C7591ADFBD6F001677FC /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIUtil.swift; path = Utils/UIUtil.swift; sourceTree = "<group>"; };
+		B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TUTableViewCellType1TableViewCell.swift; sourceTree = "<group>"; };
+		B778C75C1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TUTableViewCellType1TableViewCell.xib; sourceTree = "<group>"; };
+		B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginService.swift; path = Services/FacebookLoginService.swift; sourceTree = "<group>"; };
+		B778C7611AE1100A001677FC /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = Services/LoginService.swift; sourceTree = "<group>"; };
+		B778C7631AE110B1001677FC /* LogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoutService.swift; path = Services/LogoutService.swift; sourceTree = "<group>"; };
+		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C6CC14754FD88A4C0241E7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +96,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08365B2CBAD49660409B6E0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D5111C67A8B503EDDD4C8E4 /* Pods.debug.xcconfig */,
+				E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		36178354192DC889C3A17C65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC0B8F4B6ED9958BD796D8C1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B719DCA81ADD13960035CBBF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B719DCA61ADD0D050035CBBF /* RegistrationService.swift */,
+				B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */,
+				B778C7611AE1100A001677FC /* LoginService.swift */,
+				B778C7631AE110B1001677FC /* LogoutService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		B719DCAB1ADD14A30035CBBF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */,
+				B719DCA91ADD14870035CBBF /* Command.swift */,
+				B719DCAC1ADD234E0035CBBF /* Service.swift */,
+				B778C7591ADFBD6F001677FC /* UIUtil.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		B74191491ADA6BAF0051E237 = {
 			isa = PBXGroup;
 			children = (
 				B74191541ADA6BAF0051E237 /* TURides */,
 				B741916A1ADA6BAF0051E237 /* TURidesTests */,
 				B74191531ADA6BAF0051E237 /* Products */,
+				08365B2CBAD49660409B6E0F /* Pods */,
+				36178354192DC889C3A17C65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +158,10 @@
 		B74191541ADA6BAF0051E237 /* TURides */ = {
 			isa = PBXGroup;
 			children = (
-				B74191571ADA6BAF0051E237 /* AppDelegate.swift */,
-				B74191591ADA6BAF0051E237 /* ViewController.swift */,
-				B741915B1ADA6BAF0051E237 /* Main.storyboard */,
-				B741915E1ADA6BAF0051E237 /* Images.xcassets */,
-				B74191601ADA6BAF0051E237 /* LaunchScreen.xib */,
+				B74191841ADA9B820051E237 /* Views */,
 				B74191551ADA6BAF0051E237 /* Supporting Files */,
+				B719DCAB1ADD14A30035CBBF /* Core */,
+				B719DCA81ADD13960035CBBF /* Service */,
 			);
 			path = TURides;
 			sourceTree = "<group>";
@@ -90,6 +169,10 @@
 		B74191551ADA6BAF0051E237 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B741915E1ADA6BAF0051E237 /* Images.xcassets */,
+				B74191571ADA6BAF0051E237 /* AppDelegate.swift */,
+				B74191601ADA6BAF0051E237 /* LaunchScreen.xib */,
+				B74191771ADA73450051E237 /* Bridging-Header.h */,
 				B74191561ADA6BAF0051E237 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -112,6 +195,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B74191841ADA9B820051E237 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B741918E1ADBBEBB0051E237 /* SharedControls */,
+				B741918D1ADBBE720051E237 /* Login */,
+				B74191891ADBB91A0051E237 /* BaseViewController.swift */,
+				B719DCAE1ADD26AB0035CBBF /* Main.storyboard */,
+				B778C7571ADFB61A001677FC /* HomeViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B741918D1ADBBE720051E237 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B741918B1ADBBD5F0051E237 /* SignupViewController.swift */,
+				B741917A1ADA8A1A0051E237 /* RegistrationViewController.swift */,
+				B74191851ADA9E250051E237 /* LoginViewController.swift */,
+				B74191781ADA87480051E237 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		B741918E1ADBBEBB0051E237 /* SharedControls */ = {
+			isa = PBXGroup;
+			children = (
+				B74191801ADA8EE20051E237 /* NavBarLogoView.swift */,
+				B74191811ADA8EE20051E237 /* NavBarLogoView.xib */,
+				B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */,
+				B778C75C1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib */,
+			);
+			name = SharedControls;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B74191711ADA6BAF0051E237 /* Build configuration list for PBXNativeTarget "TURides" */;
 			buildPhases = (
+				FDA418B3FAC10F2A98AF5F76 /* Check Pods Manifest.lock */,
 				B741914E1ADA6BAF0051E237 /* Sources */,
 				B741914F1ADA6BAF0051E237 /* Frameworks */,
 				B74191501ADA6BAF0051E237 /* Resources */,
+				45F7963E670D5C028A0F5C7A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +279,7 @@
 				TargetAttributes = {
 					B74191511ADA6BAF0051E237 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 4DPCKKAS56;
 					};
 					B74191661ADA6BAF0051E237 = {
 						CreatedOnToolsVersion = 6.3;
@@ -191,8 +311,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B741915D1ADA6BAF0051E237 /* Main.storyboard in Resources */,
+				B74191791ADA87480051E237 /* Login.storyboard in Resources */,
+				B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */,
+				B74191831ADA8EE20051E237 /* NavBarLogoView.xib in Resources */,
 				B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */,
+				B778C75E1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib in Resources */,
 				B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,12 +329,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45F7963E670D5C028A0F5C7A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDA418B3FAC10F2A98AF5F76 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B741914E1ADA6BAF0051E237 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B741915A1ADA6BAF0051E237 /* ViewController.swift in Sources */,
+				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
+				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
+				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
+				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
+				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
+				B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */,
+				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,
+				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
+				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
+				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,
+				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
+				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
+				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
+				B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */,
+				B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */,
 				B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,14 +405,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B741915B1ADA6BAF0051E237 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B741915C1ADA6BAF0051E237 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B74191601ADA6BAF0051E237 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -337,21 +499,31 @@
 		};
 		B74191721ADA6BAF0051E237 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D5111C67A8B503EDDD4C8E4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TURides/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9fecf992-8ede-4cbb-a232-e355e8f4ba18";
+				SWIFT_OBJC_BRIDGING_HEADER = "TURides/Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		B74191731ADA6BAF0051E237 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TURides/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9fecf992-8ede-4cbb-a232-e355e8f4ba18";
+				SWIFT_OBJC_BRIDGING_HEADER = "TURides/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -408,6 +580,7 @@
 				B74191731ADA6BAF0051E237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B74191741ADA6BAF0051E237 /* Build configuration list for PBXNativeTarget "TURidesTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +589,7 @@
 				B74191761ADA6BAF0051E237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

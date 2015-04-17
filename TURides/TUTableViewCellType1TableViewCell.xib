@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="TUTableViewCellType1TableViewCell" customModule="TURides" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="james-bond-241847" translatesAutoresizingMaskIntoConstraints="NO" id="b7R-fH-w1u">
+                        <rect key="frame" x="8" y="8" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="98Q-kd-pbo"/>
+                            <constraint firstAttribute="width" constant="48" id="Umw-JM-tac"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James Bond" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upe-6I-3rg">
+                        <rect key="frame" x="66" y="13" width="305" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checked In at Holiday In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNa-lL-PH0">
+                        <rect key="frame" x="66" y="31" width="305" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf1-eU-LaV">
+                        <rect key="frame" x="8" y="59" width="114" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="z9X-DQ-i9P"/>
+                        </constraints>
+                        <state key="normal" title="Like"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-HY-MvN">
+                        <rect key="frame" x="132" y="59" width="115" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="7GD-AM-CMf"/>
+                        </constraints>
+                        <state key="normal" title="Comment"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iw-EK-2yZ">
+                        <rect key="frame" x="257" y="59" width="114" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="NEt-6W-N51"/>
+                        </constraints>
+                        <state key="normal" title="Share"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BGv-HY-MvN" firstAttribute="width" secondItem="8iw-EK-2yZ" secondAttribute="width" id="3er-Mk-tbA"/>
+                    <constraint firstItem="b7R-fH-w1u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="83U-YM-DZ8"/>
+                    <constraint firstItem="lNa-lL-PH0" firstAttribute="top" secondItem="upe-6I-3rg" secondAttribute="bottom" id="9o9-Am-5tB"/>
+                    <constraint firstItem="b7R-fH-w1u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="9zU-Qm-Fj8"/>
+                    <constraint firstItem="BGv-HY-MvN" firstAttribute="leading" secondItem="Yf1-eU-LaV" secondAttribute="trailing" constant="10" id="Bdr-E4-dsx"/>
+                    <constraint firstItem="upe-6I-3rg" firstAttribute="leading" secondItem="b7R-fH-w1u" secondAttribute="trailing" constant="10" id="Mho-Ft-Tu7"/>
+                    <constraint firstItem="Yf1-eU-LaV" firstAttribute="top" secondItem="lNa-lL-PH0" secondAttribute="bottom" constant="10" id="TYV-hC-qjb"/>
+                    <constraint firstItem="upe-6I-3rg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Tv4-s0-ap9"/>
+                    <constraint firstItem="Yf1-eU-LaV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VBx-v3-Qgl"/>
+                    <constraint firstItem="BGv-HY-MvN" firstAttribute="top" secondItem="lNa-lL-PH0" secondAttribute="bottom" constant="10" id="YlT-yT-lf2"/>
+                    <constraint firstItem="BGv-HY-MvN" firstAttribute="width" secondItem="Yf1-eU-LaV" secondAttribute="width" id="bBd-0G-vIL"/>
+                    <constraint firstItem="lNa-lL-PH0" firstAttribute="leading" secondItem="b7R-fH-w1u" secondAttribute="trailing" constant="10" id="cWO-Vu-cSp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="upe-6I-3rg" secondAttribute="trailing" id="gwW-xF-F8b"/>
+                    <constraint firstItem="8iw-EK-2yZ" firstAttribute="top" secondItem="lNa-lL-PH0" secondAttribute="bottom" constant="10" id="ky9-lg-z9t"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lNa-lL-PH0" secondAttribute="trailing" id="m1l-oj-oeq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8iw-EK-2yZ" secondAttribute="trailing" id="mNa-kr-r5a"/>
+                    <constraint firstItem="8iw-EK-2yZ" firstAttribute="leading" secondItem="BGv-HY-MvN" secondAttribute="trailing" constant="10" id="yXj-Q3-rqj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="236.5" y="144.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="james-bond-241847" width="48" height="48"/>
+    </resources>
+</document>
