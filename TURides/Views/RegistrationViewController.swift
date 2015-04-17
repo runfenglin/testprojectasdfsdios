@@ -92,6 +92,6 @@ class RegistrationViewController: BaseViewController, RegistrationServiceDelegat
     func handleFacebookLoginSuccess() {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         MBProgressHUD.hideHUDForView(self.view, animated: true)
-       // delegate.showHomeScreen()
+        delegate.showHomeScreen()
     }
 }
