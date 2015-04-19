@@ -39,10 +39,9 @@ class Command: NSObject {
     
     func post() {
         manager.POST(
-        "http://54.206.6.242/api/v1/login/facebook.json",
+        url as String,
         parameters: params,
         success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-            
             self.delegate.successCallback(responseObject)
         },
         failure: {(operation: AFHTTPRequestOperation!,error: NSError!) in

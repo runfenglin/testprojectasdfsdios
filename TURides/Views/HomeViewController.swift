@@ -8,19 +8,12 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate {
     @IBOutlet weak var mTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mTableView.registerNib(UINib(nibName: "TUTableViewCellType1TableViewCell", bundle: nil), forCellReuseIdentifier: "TUTableViewCellType1TableViewCell")
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -37,14 +30,18 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         return tableView.dequeueReusableCellWithIdentifier("TUTableViewCellType1TableViewCell") as! UITableViewCell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Temperary Logout
+    @IBAction func logoutButtonTouched(sender: AnyObject) {
+        var actionSheet = UIActionSheet(title: "Are you sure you want to logout?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Yes")
+        actionSheet.showInView(self.view)
     }
-    */
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 0 {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            appDelegate.logout()
+        }
+    }
 
 }

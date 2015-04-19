@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
 
     var window: UIWindow?
 
@@ -23,17 +23,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showHomeScreen() {
         let storyboard  = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UITabBarController
-        window!.rootViewController = vc
-        window!.makeKeyAndVisible()
+        self.window!.rootViewController = vc
+        self.window!.makeKeyAndVisible()
     }
     
+    //MARK: Logout
+    func logout() {
+        var params = NSMutableDictionary()
+        params.setValue(KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY), forKey: Constant.KEYCHAIN_KEY_APIKEY)
+        LogoutService(delegate: self).dispathWithParams(params)
+    }
+    
+    func handleLogoutFail() {
+        
+    }
+    
+    func handleLogoutSuccess() {
+        KeyChainUtil.delete(Constant.KEYCHAIN_KEY_APIKEY)
+        showLoginScreen()
+    }
+    
+    //MARK: Application Lifecycle
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        if let token = KeyChainUtil.get("token") {
-            self.showHomeScreen()
+        if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
+            showHomeScreen()
         } else {
-            self.showLoginScreen()
+            showLoginScreen()
         }
 
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

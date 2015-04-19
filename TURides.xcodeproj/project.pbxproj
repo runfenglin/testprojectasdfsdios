@@ -12,6 +12,7 @@
 		B719DCAA1ADD14870035CBBF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA91ADD14870035CBBF /* Command.swift */; };
 		B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCAC1ADD234E0035CBBF /* Service.swift */; };
 		B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B719DCAE1ADD26AB0035CBBF /* Main.storyboard */; };
+		B71A914F1AE252B3007277E9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A914E1AE252B3007277E9 /* Constant.swift */; };
 		B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191571ADA6BAF0051E237 /* AppDelegate.swift */; };
 		B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B741915E1ADA6BAF0051E237 /* Images.xcassets */; };
 		B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74191601ADA6BAF0051E237 /* LaunchScreen.xib */; };
@@ -31,6 +32,7 @@
 		B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */; };
 		B778C7621AE1100A001677FC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7611AE1100A001677FC /* LoginService.swift */; };
 		B778C7641AE110B1001677FC /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7631AE110B1001677FC /* LogoutService.swift */; };
+		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		B719DCA91ADD14870035CBBF /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Core/Command.swift; sourceTree = "<group>"; };
 		B719DCAC1ADD234E0035CBBF /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Core/Service.swift; sourceTree = "<group>"; };
 		B719DCAE1ADD26AB0035CBBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Main.storyboard; sourceTree = "<group>"; };
+		B71A914E1AE252B3007277E9 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B74191521ADA6BAF0051E237 /* TURides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TURides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74191561ADA6BAF0051E237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B74191571ADA6BAF0051E237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginService.swift; path = Services/FacebookLoginService.swift; sourceTree = "<group>"; };
 		B778C7611AE1100A001677FC /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = Services/LoginService.swift; sourceTree = "<group>"; };
 		B778C7631AE110B1001677FC /* LogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoutService.swift; path = Services/LogoutService.swift; sourceTree = "<group>"; };
+		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,8 @@
 				B719DCA91ADD14870035CBBF /* Command.swift */,
 				B719DCAC1ADD234E0035CBBF /* Service.swift */,
 				B778C7591ADFBD6F001677FC /* UIUtil.swift */,
+				B7DEEDC31AE23D740041A962 /* Session.swift */,
+				B71A914E1AE252B3007277E9 /* Constant.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
+				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
@@ -377,6 +384,7 @@
 				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
 				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
 				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,
+				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
 				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,

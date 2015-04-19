@@ -8,12 +8,18 @@
 
 import UIKit
 
-protocol FacebookLoginServiceDelegate {
-    func handleFacebookLoginSuccess()
-    func handleFacebookLoginFaile()
+@objc protocol FacebookLoginServiceDelegate {
+    func handleFacebookLoginSuccess(apikey: NSString)
+    optional func handleFacebookLoginFail()
 }
 
 class FacebookLoginService: Service {
+    
+    static let PARAMETER_KEY_USERNAME = "username"
+    static let PARAMETER_KEY_TOKEN = "token"
+    static let PARAMETER_KEY_EMAIL = "email"
+    
+    
     let url = "http://54.206.6.242/api/v1/login/facebook.json"
     var delegate: FacebookLoginServiceDelegate
     
@@ -26,7 +32,9 @@ class FacebookLoginService: Service {
     }
     
     override func successCallback(responseObject: AnyObject) {
-        self.delegate.handleFacebookLoginSuccess()
+        let response = responseObject as! NSDictionary
+        let apikey: String? = response.objectForKey(Constant.KEYCHAIN_KEY_APIKEY) as? String
+        self.delegate.handleFacebookLoginSuccess(apikey!)
     }
     
     override func failCallback(responseObject: AnyObject) {
