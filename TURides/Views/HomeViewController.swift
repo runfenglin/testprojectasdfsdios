@@ -14,7 +14,19 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         mTableView.registerNib(UINib(nibName: "TUTableViewCellType1TableViewCell", bundle: nil), forCellReuseIdentifier: "TUTableViewCellType1TableViewCell")
+        
+        
+
     }
+    
+    @IBAction func checkInButtonTouched(sender: AnyObject) {
+        let storyboard  = UIStoryboard(name: "CheckIn", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UINavigationController
+
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 90

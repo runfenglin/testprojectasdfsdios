@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,37 +17,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="d3a-dz-vsV">
-                                <rect key="frame" x="16" y="74" width="343" height="29"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="ZDR-f9-l9a"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Trip"/>
-                                    <segment title="Photo"/>
-                                    <segment title="Check In"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9c4-DC-GMX">
-                                <rect key="frame" x="16" y="102" width="343" height="516"/>
+                                <rect key="frame" x="16" y="113" width="343" height="505"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="miR-ru-aVK" id="Ets-Pc-Zyv"/>
                                     <outlet property="delegate" destination="miR-ru-aVK" id="6CH-Ec-H9u"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exb-wq-zNu" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="16" y="69" width="114" height="34"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Trip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0V-dP-rsD" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="131" y="69" width="113" height="34"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jE-nR-aMq" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="245" y="69" width="114" height="34"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkInButtonTouched:" destination="miR-ru-aVK" eventType="touchUpInside" id="IWo-Cr-VDg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d3a-dz-vsV" firstAttribute="top" secondItem="DcU-ya-l9F" secondAttribute="bottom" constant="10" id="Dyv-a6-Ri5"/>
+                            <constraint firstItem="9jE-nR-aMq" firstAttribute="width" secondItem="exb-wq-zNu" secondAttribute="width" id="0Jg-WG-lRG"/>
+                            <constraint firstItem="exb-wq-zNu" firstAttribute="top" secondItem="DcU-ya-l9F" secondAttribute="bottom" constant="5" id="E34-8h-Fgb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9c4-DC-GMX" secondAttribute="trailing" id="E3b-rp-bJm"/>
+                            <constraint firstItem="exb-wq-zNu" firstAttribute="leading" secondItem="4fs-R3-nfm" secondAttribute="leadingMargin" id="FNA-ZI-Chg"/>
+                            <constraint firstItem="9jE-nR-aMq" firstAttribute="width" secondItem="G0V-dP-rsD" secondAttribute="width" id="GlE-7a-38q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9jE-nR-aMq" secondAttribute="trailing" id="Ja8-gq-czc"/>
+                            <constraint firstItem="G0V-dP-rsD" firstAttribute="leading" secondItem="exb-wq-zNu" secondAttribute="trailing" constant="1" id="M3A-Mc-lYV"/>
+                            <constraint firstItem="G0V-dP-rsD" firstAttribute="top" secondItem="DcU-ya-l9F" secondAttribute="bottom" constant="5" id="QTd-De-63f"/>
+                            <constraint firstItem="9jE-nR-aMq" firstAttribute="top" secondItem="DcU-ya-l9F" secondAttribute="bottom" constant="5" id="RTA-dr-Uqc"/>
                             <constraint firstItem="9c4-DC-GMX" firstAttribute="leading" secondItem="4fs-R3-nfm" secondAttribute="leadingMargin" id="ZGh-pD-DvO"/>
-                            <constraint firstItem="9c4-DC-GMX" firstAttribute="top" secondItem="d3a-dz-vsV" secondAttribute="bottom" id="Zca-eL-Qg9"/>
+                            <constraint firstItem="9c4-DC-GMX" firstAttribute="top" secondItem="exb-wq-zNu" secondAttribute="bottom" constant="10" id="kFZ-2V-3Dg"/>
                             <constraint firstItem="guF-Zy-4ci" firstAttribute="top" secondItem="9c4-DC-GMX" secondAttribute="bottom" id="lmv-5n-1LC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="d3a-dz-vsV" secondAttribute="trailing" id="pgt-jk-Hs6"/>
-                            <constraint firstItem="d3a-dz-vsV" firstAttribute="leading" secondItem="4fs-R3-nfm" secondAttribute="leadingMargin" id="xyF-Rt-Dao"/>
+                            <constraint firstItem="9jE-nR-aMq" firstAttribute="leading" secondItem="G0V-dP-rsD" secondAttribute="trailing" constant="1" id="qSx-mZ-vsT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7NQ-el-2rP">

@@ -13,6 +13,7 @@
 		B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCAC1ADD234E0035CBBF /* Service.swift */; };
 		B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B719DCAE1ADD26AB0035CBBF /* Main.storyboard */; };
 		B71A914F1AE252B3007277E9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A914E1AE252B3007277E9 /* Constant.swift */; };
+		B71A91551AE50027007277E9 /* CheckIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71A91541AE50027007277E9 /* CheckIn.storyboard */; };
 		B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191571ADA6BAF0051E237 /* AppDelegate.swift */; };
 		B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B741915E1ADA6BAF0051E237 /* Images.xcassets */; };
 		B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74191601ADA6BAF0051E237 /* LaunchScreen.xib */; };
@@ -25,6 +26,10 @@
 		B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191891ADBB91A0051E237 /* BaseViewController.swift */; };
 		B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918B1ADBBD5F0051E237 /* SignupViewController.swift */; };
 		B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */; };
+		B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612B1AE663E9001354D6 /* CheckInViewController.swift */; };
+		B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */; };
+		B77561321AE7B35C001354D6 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77561311AE7B35C001354D6 /* TUButton.swift */; };
+		B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77561331AE7C290001354D6 /* UIColorExtention.swift */; };
 		B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7571ADFB61A001677FC /* HomeViewController.swift */; };
 		B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7591ADFBD6F001677FC /* UIUtil.swift */; };
 		B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */; };
@@ -33,6 +38,7 @@
 		B778C7621AE1100A001677FC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7611AE1100A001677FC /* LoginService.swift */; };
 		B778C7641AE110B1001677FC /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7631AE110B1001677FC /* LogoutService.swift */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
+		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,7 @@
 		B719DCAC1ADD234E0035CBBF /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Core/Service.swift; sourceTree = "<group>"; };
 		B719DCAE1ADD26AB0035CBBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Main.storyboard; sourceTree = "<group>"; };
 		B71A914E1AE252B3007277E9 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B71A91541AE50027007277E9 /* CheckIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CheckIn.storyboard; path = Views/CheckIn.storyboard; sourceTree = "<group>"; };
 		B74191521ADA6BAF0051E237 /* TURides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TURides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74191561ADA6BAF0051E237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B74191571ADA6BAF0051E237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +77,10 @@
 		B74191891ADBB91A0051E237 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Views/BaseViewController.swift; sourceTree = "<group>"; };
 		B741918B1ADBBD5F0051E237 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Views/SignupViewController.swift; sourceTree = "<group>"; };
 		B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainUtil.swift; path = Utils/KeyChainUtil.swift; sourceTree = "<group>"; };
+		B775612B1AE663E9001354D6 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = Views/CheckInViewController.swift; sourceTree = "<group>"; };
+		B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InviteFacebookFriendsViewController.swift; path = Views/InviteFacebookFriendsViewController.swift; sourceTree = "<group>"; };
+		B77561311AE7B35C001354D6 /* TUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUButton.swift; path = Views/TUButton.swift; sourceTree = "<group>"; };
+		B77561331AE7C290001354D6 /* UIColorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtention.swift; path = Core/UIColorExtention.swift; sourceTree = "<group>"; };
 		B778C7571ADFB61A001677FC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Views/HomeViewController.swift; sourceTree = "<group>"; };
 		B778C7591ADFBD6F001677FC /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIUtil.swift; path = Utils/UIUtil.swift; sourceTree = "<group>"; };
 		B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TUTableViewCellType1TableViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +89,7 @@
 		B778C7611AE1100A001677FC /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = Services/LoginService.swift; sourceTree = "<group>"; };
 		B778C7631AE110B1001677FC /* LogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoutService.swift; path = Services/LogoutService.swift; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
+		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
 		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,8 +149,19 @@
 				B778C7591ADFBD6F001677FC /* UIUtil.swift */,
 				B7DEEDC31AE23D740041A962 /* Session.swift */,
 				B71A914E1AE252B3007277E9 /* Constant.swift */,
+				B77561331AE7C290001354D6 /* UIColorExtention.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		B71A91561AE50031007277E9 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				B71A91541AE50027007277E9 /* CheckIn.storyboard */,
+				B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */,
+				B775612B1AE663E9001354D6 /* CheckInViewController.swift */,
+			);
+			name = CheckIn;
 			sourceTree = "<group>";
 		};
 		B74191491ADA6BAF0051E237 = {
@@ -206,6 +229,7 @@
 			children = (
 				B741918E1ADBBEBB0051E237 /* SharedControls */,
 				B741918D1ADBBE720051E237 /* Login */,
+				B71A91561AE50031007277E9 /* CheckIn */,
 				B74191891ADBB91A0051E237 /* BaseViewController.swift */,
 				B719DCAE1ADD26AB0035CBBF /* Main.storyboard */,
 				B778C7571ADFB61A001677FC /* HomeViewController.swift */,
@@ -220,6 +244,7 @@
 				B741917A1ADA8A1A0051E237 /* RegistrationViewController.swift */,
 				B74191851ADA9E250051E237 /* LoginViewController.swift */,
 				B74191781ADA87480051E237 /* Login.storyboard */,
+				B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -231,6 +256,7 @@
 				B74191811ADA8EE20051E237 /* NavBarLogoView.xib */,
 				B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */,
 				B778C75C1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib */,
+				B77561311AE7B35C001354D6 /* TUButton.swift */,
 			);
 			name = SharedControls;
 			sourceTree = "<group>";
@@ -322,6 +348,7 @@
 				B74191831ADA8EE20051E237 /* NavBarLogoView.xib in Resources */,
 				B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */,
 				B778C75E1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib in Resources */,
+				B71A91551AE50027007277E9 /* CheckIn.storyboard in Resources */,
 				B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,9 +400,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77561321AE7B35C001354D6 /* TUButton.swift in Sources */,
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
 				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
+				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
+				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
@@ -383,9 +413,11 @@
 				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,
 				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
 				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
+				B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */,
 				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
+				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,
 				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
 				B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */,

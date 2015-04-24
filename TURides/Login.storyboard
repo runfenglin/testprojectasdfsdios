@@ -82,8 +82,8 @@
                                     <constraint firstItem="rdz-RD-Wbg" firstAttribute="leading" secondItem="8gY-kT-Mwp" secondAttribute="trailing" constant="10" id="z7H-g6-8Gf"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-He-26A">
-                                <rect key="frame" x="26" y="223" width="323" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-He-26A" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="26" y="223" width="323" height="34"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Phone Number">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,8 +92,8 @@
                                     <action selector="loginButtonTouched:" destination="OY1-ej-Smv" eventType="touchUpInside" id="0cG-u4-8qO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDU-f9-dJU">
-                                <rect key="frame" x="26" y="263" width="323" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDU-f9-dJU" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="26" y="267" width="323" height="34"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,6 +122,7 @@
                     <connections>
                         <segue destination="r0a-zT-xgJ" kind="show" identifier="to-login" id="yg0-KZ-0pC"/>
                         <segue destination="hmq-Ig-JRN" kind="show" identifier="to-signup" id="n9R-SB-dW6"/>
+                        <segue destination="Yxg-lt-Q8h" kind="show" identifier="to-invite-friends" id="hqF-zd-rS1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2j-hU-OhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +132,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-281" y="397"/>
+            <point key="canvasLocation" x="-161.5" y="348.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Ytd-XM-dan">
@@ -202,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOS-V5-u8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="-5"/>
+            <point key="canvasLocation" x="550.5" y="-449.5"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="LlH-Eg-xC2">
@@ -295,7 +296,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LxY-8g-S36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="893"/>
+            <point key="canvasLocation" x="550.5" y="348.5"/>
+        </scene>
+        <!--Invite Facebook Friends View Controller-->
+        <scene sceneID="Gml-l5-RYL">
+            <objects>
+                <viewController id="Yxg-lt-Q8h" customClass="InviteFacebookFriendsViewController" customModule="TURides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZWg-l3-863"/>
+                        <viewControllerLayoutGuide type="bottom" id="UXK-9Y-RFr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GnW-VV-bXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csc-GN-6RA" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="26" y="74" width="157" height="29"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonTouched:" destination="Yxg-lt-Q8h" eventType="touchUpInside" id="MvX-Di-tf3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfB-wx-EM8" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="193" y="74" width="156" height="29"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Invite Facebook Friends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="inviteButtonTouched:" destination="Yxg-lt-Q8h" eventType="touchUpInside" id="mgb-vq-29h"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YeR-IN-I3q">
+                                <rect key="frame" x="16" y="113" width="343" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" id="xHd-w7-iJm">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xHd-w7-iJm" id="2WL-Cw-bXE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wf-wg-ECy">
+                                                    <rect key="frame" x="98" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yxg-lt-Q8h" id="OXR-jL-Sdz"/>
+                                    <outlet property="delegate" destination="Yxg-lt-Q8h" id="3YQ-2S-lI7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UXK-9Y-RFr" firstAttribute="top" secondItem="YeR-IN-I3q" secondAttribute="bottom" id="4Bz-6y-jSe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YeR-IN-I3q" secondAttribute="trailing" id="84r-F5-LDU"/>
+                            <constraint firstItem="csc-GN-6RA" firstAttribute="leading" secondItem="GnW-VV-bXZ" secondAttribute="leadingMargin" constant="10" id="8y0-zk-JaP"/>
+                            <constraint firstItem="csc-GN-6RA" firstAttribute="top" secondItem="ZWg-l3-863" secondAttribute="bottom" constant="10" id="FEQ-FT-R5u"/>
+                            <constraint firstItem="SfB-wx-EM8" firstAttribute="top" secondItem="ZWg-l3-863" secondAttribute="bottom" constant="10" id="IN4-lv-uDe"/>
+                            <constraint firstItem="YeR-IN-I3q" firstAttribute="leading" secondItem="GnW-VV-bXZ" secondAttribute="leadingMargin" id="V75-bA-t8M"/>
+                            <constraint firstItem="csc-GN-6RA" firstAttribute="width" secondItem="SfB-wx-EM8" secondAttribute="width" id="YVZ-gb-9lw"/>
+                            <constraint firstItem="YeR-IN-I3q" firstAttribute="top" secondItem="SfB-wx-EM8" secondAttribute="bottom" constant="10" id="t3j-sY-lbz"/>
+                            <constraint firstItem="SfB-wx-EM8" firstAttribute="leading" secondItem="csc-GN-6RA" secondAttribute="trailing" constant="10" id="tua-hU-Eat"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SfB-wx-EM8" secondAttribute="trailing" constant="10" id="xmV-hJ-B8C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mTableView" destination="YeR-IN-I3q" id="TZF-Tc-GC4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXH-A0-p7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.5" y="1265.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0wp-Je-Xxo">
@@ -320,7 +402,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqu-be-5PV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1093" y="397"/>
+            <point key="canvasLocation" x="-1393.5" y="364.5"/>
         </scene>
     </scenes>
     <resources>

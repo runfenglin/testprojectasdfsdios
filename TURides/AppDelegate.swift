@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
     func showHomeScreen() {
         let storyboard  = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UITabBarController
-        self.window!.rootViewController = vc
-        self.window!.makeKeyAndVisible()
+        window!.rootViewController = vc
+        window!.makeKeyAndVisible()
     }
     
     //MARK: Logout
@@ -47,12 +47,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
-            showHomeScreen()
-        } else {
-            showLoginScreen()
-        }
+//        if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
+//            showHomeScreen()
+//        } else {
+//            showLoginScreen()
+//        }
 
+        
+        showLoginScreen()
+        
+        
+        
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
