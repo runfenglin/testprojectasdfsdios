@@ -311,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csc-GN-6RA" customClass="TUButton" customModule="TURides" customModuleProvider="target">
-                                <rect key="frame" x="26" y="74" width="157" height="29"/>
+                                <rect key="frame" x="16" y="74" width="167" height="29"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Skip">
@@ -322,7 +322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfB-wx-EM8" customClass="TUButton" customModule="TURides" customModuleProvider="target">
-                                <rect key="frame" x="193" y="74" width="156" height="29"/>
+                                <rect key="frame" x="193" y="74" width="166" height="29"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Invite Facebook Friends">
@@ -336,18 +336,32 @@
                                 <rect key="frame" x="16" y="113" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" id="xHd-w7-iJm">
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friend-cell" rowHeight="54" id="xHd-w7-iJm">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xHd-w7-iJm" id="2WL-Cw-bXE">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="-1" contentMode="center" tableViewCell="xHd-w7-iJm" id="2WL-Cw-bXE">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wf-wg-ECy">
-                                                    <rect key="frame" x="98" y="11" width="42" height="21"/>
+                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9d-49-DC9">
+                                                    <rect key="frame" x="8" y="7" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="WPN-f2-EXz"/>
+                                                        <constraint firstAttribute="height" constant="40" id="lzq-kC-yEG"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnT-PF-lBF">
+                                                    <rect key="frame" x="58" y="16" width="233" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pnT-PF-lBF" secondAttribute="trailing" constant="5" id="CHz-vS-uBB"/>
+                                                <constraint firstItem="pnT-PF-lBF" firstAttribute="leading" secondItem="F9d-49-DC9" secondAttribute="trailing" constant="10" id="NRN-Zw-cXy"/>
+                                                <constraint firstAttribute="centerY" secondItem="pnT-PF-lBF" secondAttribute="centerY" id="T16-CD-0kj"/>
+                                                <constraint firstItem="F9d-49-DC9" firstAttribute="leading" secondItem="2WL-Cw-bXE" secondAttribute="leadingMargin" id="TDU-nx-B81"/>
+                                                <constraint firstAttribute="centerY" secondItem="F9d-49-DC9" secondAttribute="centerY" id="X02-UI-w91"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -361,14 +375,14 @@
                         <constraints>
                             <constraint firstItem="UXK-9Y-RFr" firstAttribute="top" secondItem="YeR-IN-I3q" secondAttribute="bottom" id="4Bz-6y-jSe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YeR-IN-I3q" secondAttribute="trailing" id="84r-F5-LDU"/>
-                            <constraint firstItem="csc-GN-6RA" firstAttribute="leading" secondItem="GnW-VV-bXZ" secondAttribute="leadingMargin" constant="10" id="8y0-zk-JaP"/>
+                            <constraint firstItem="csc-GN-6RA" firstAttribute="leading" secondItem="GnW-VV-bXZ" secondAttribute="leadingMargin" id="8y0-zk-JaP"/>
                             <constraint firstItem="csc-GN-6RA" firstAttribute="top" secondItem="ZWg-l3-863" secondAttribute="bottom" constant="10" id="FEQ-FT-R5u"/>
                             <constraint firstItem="SfB-wx-EM8" firstAttribute="top" secondItem="ZWg-l3-863" secondAttribute="bottom" constant="10" id="IN4-lv-uDe"/>
                             <constraint firstItem="YeR-IN-I3q" firstAttribute="leading" secondItem="GnW-VV-bXZ" secondAttribute="leadingMargin" id="V75-bA-t8M"/>
                             <constraint firstItem="csc-GN-6RA" firstAttribute="width" secondItem="SfB-wx-EM8" secondAttribute="width" id="YVZ-gb-9lw"/>
                             <constraint firstItem="YeR-IN-I3q" firstAttribute="top" secondItem="SfB-wx-EM8" secondAttribute="bottom" constant="10" id="t3j-sY-lbz"/>
                             <constraint firstItem="SfB-wx-EM8" firstAttribute="leading" secondItem="csc-GN-6RA" secondAttribute="trailing" constant="10" id="tua-hU-Eat"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SfB-wx-EM8" secondAttribute="trailing" constant="10" id="xmV-hJ-B8C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SfB-wx-EM8" secondAttribute="trailing" id="xmV-hJ-B8C"/>
                         </constraints>
                     </view>
                     <connections>

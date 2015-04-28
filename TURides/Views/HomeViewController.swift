@@ -51,7 +51,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 0 {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = LogoutService.mConstant.LOADING_MESSAGE
             appDelegate.logout()
         }
     }

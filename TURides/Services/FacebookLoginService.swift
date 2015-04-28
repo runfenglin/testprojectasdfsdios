@@ -17,8 +17,10 @@ class FacebookLoginService: Service {
     
     struct mConstant {
         static let url = "http://54.206.6.242/app_dev.php/api/v1/login/facebook.json"
+        static let LOADING_MESSAGE = "Logging in..."
         static let PARAMETER_KEY_FRIENDS_COUNT = "friend_count"
         static let PARAMETER_KEY_APIKEY = "apikey"
+        static let PAREMETER_KEY_TOKEN = "token"
     }
     
     var delegate: FacebookLoginServiceDelegate

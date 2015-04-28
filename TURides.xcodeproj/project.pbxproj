@@ -37,6 +37,10 @@
 		B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */; };
 		B778C7621AE1100A001677FC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7611AE1100A001677FC /* LoginService.swift */; };
 		B778C7641AE110B1001677FC /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7631AE110B1001677FC /* LogoutService.swift */; };
+		B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632561AEA3961007A2CE0 /* BaseActivity.swift */; };
+		B796325A1AEA39AA007A2CE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632591AEA39AA007A2CE0 /* User.swift */; };
+		B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */; };
+		B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325D1AECE1EA007A2CE0 /* FBFriend.swift */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +92,10 @@
 		B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginService.swift; path = Services/FacebookLoginService.swift; sourceTree = "<group>"; };
 		B778C7611AE1100A001677FC /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = Services/LoginService.swift; sourceTree = "<group>"; };
 		B778C7631AE110B1001677FC /* LogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoutService.swift; path = Services/LogoutService.swift; sourceTree = "<group>"; };
+		B79632561AEA3961007A2CE0 /* BaseActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseActivity.swift; path = Models/BaseActivity.swift; sourceTree = "<group>"; };
+		B79632591AEA39AA007A2CE0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInActivity.swift; sourceTree = "<group>"; };
+		B796325D1AECE1EA007A2CE0 /* FBFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBFriend.swift; path = Models/FBFriend.swift; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
 		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				B74191841ADA9B820051E237 /* Views */,
+				B79632581AEA3968007A2CE0 /* Models */,
 				B74191551ADA6BAF0051E237 /* Supporting Files */,
 				B719DCAB1ADD14A30035CBBF /* Core */,
 				B719DCA81ADD13960035CBBF /* Service */,
@@ -259,6 +268,17 @@
 				B77561311AE7B35C001354D6 /* TUButton.swift */,
 			);
 			name = SharedControls;
+			sourceTree = "<group>";
+		};
+		B79632581AEA3968007A2CE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B79632561AEA3961007A2CE0 /* BaseActivity.swift */,
+				B79632591AEA39AA007A2CE0 /* User.swift */,
+				B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */,
+				B796325D1AECE1EA007A2CE0 /* FBFriend.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,11 +423,15 @@
 				B77561321AE7B35C001354D6 /* TUButton.swift in Sources */,
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
 				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
+				B796325A1AEA39AA007A2CE0 /* User.swift in Sources */,
 				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
+				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
 				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
+				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
+				B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
 				B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */,
 				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,

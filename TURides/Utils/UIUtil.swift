@@ -18,4 +18,9 @@ class UIUtil: NSObject {
         //textField.layer.borderColor = UIColor.redColor().CGColor
         textField.layer.borderWidth = 0
     }
+    
+    static func showPopUpErrorDialog(message: String) {
+        let dialog = UIAlertView(title: "Error", message: message, delegate: nil, cancelButtonTitle: "")
+        dialog.show()
+    }
 }

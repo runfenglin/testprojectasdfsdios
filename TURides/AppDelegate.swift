@@ -47,17 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-//        if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
-//            showHomeScreen()
-//        } else {
-//            showLoginScreen()
-//        }
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showHomeScreen", name: Constant.NOTIFICATION_SHOW_HOME_SCREEN, object: nil)
         
-        showLoginScreen()
-        
-        
-        
+        if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
+            showLoginScreen()
+        } else {
+            showLoginScreen()
+        }
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

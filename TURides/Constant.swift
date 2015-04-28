@@ -10,4 +10,6 @@ import Foundation
 
 public struct Constant {
     static let KEYCHAIN_KEY_APIKEY = "apikey";
+    
+    static let NOTIFICATION_SHOW_HOME_SCREEN = "showHomeScreen"
 }

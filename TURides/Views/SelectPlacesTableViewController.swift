@@ -13,13 +13,15 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
     var locationManager: CLLocationManager = CLLocationManager();
     var results = NSMutableArray()
     var hasPlacesLoad = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.titleView = NavBarLogoView(title: "Select A Place")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = "Loading your nearby places..."
         
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
@@ -34,12 +36,12 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hasPlacesLoad ? results.count : 1
+        return hasPlacesLoad ? results.count : 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if hasPlacesLoad {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! UITableViewCell
         
         let a = cell.viewWithTag(1) as! UILabel
@@ -62,10 +64,7 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
         // Configure the cell...
 
         return cell
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
-            return cell
-        }
+        
     }
     
 
@@ -160,6 +159,7 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
                 self.results = a.mutableCopy() as! NSMutableArray;
                 self.hasPlacesLoad = true
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
 //                for item in results {
 //                    let item1 = item as! FTGooglePlacesAPISearchResultItem
 //                    

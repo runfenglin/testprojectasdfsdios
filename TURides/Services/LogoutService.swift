@@ -14,7 +14,11 @@ import UIKit
 }
 
 class LogoutService: Service {
-    let url = "http://54.206.6.242/api/v1/logout.json"
+    struct mConstant {
+        static let URL = "http://54.206.6.242/app_dev.php/api/v1/logout.json"
+        static let LOADING_MESSAGE = "Logging out..."
+    }
+    
     var delegate: LogoutServiceDelegate
     
     init(delegate: LogoutServiceDelegate) {
@@ -22,7 +26,7 @@ class LogoutService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {
