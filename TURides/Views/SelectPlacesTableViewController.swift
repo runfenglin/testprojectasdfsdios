@@ -21,13 +21,17 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = "Loading your nearby places..."
-        
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 500
         locationManager.startUpdatingLocation()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (results.count < 1) {
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = "Loading your nearby places..."
+        }
     }
 
     // MARK: - Table view data source

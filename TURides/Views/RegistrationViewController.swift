@@ -53,7 +53,7 @@ class RegistrationViewController: BaseViewController, FacebookLoginServiceDelega
     //MARK: FacebookLoginServiceDelegate
     func handleFacebookLoginSuccess(apikey: NSString, isNewUser: Bool) {
         KeyChainUtil.set(Constant.KEYCHAIN_KEY_APIKEY, value: apikey as String)
-        if isNewUser {
+        if isNewUser || true{
             FBSDKGraphRequest(graphPath: "me/friends", parameters: nil).startWithCompletionHandler({ (connection: FBSDKGraphRequestConnection!, responseObject: AnyObject!, error: NSError!) -> Void in
                     var friends = NSMutableArray()
                 

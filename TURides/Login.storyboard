@@ -82,7 +82,7 @@
                                     <constraint firstItem="rdz-RD-Wbg" firstAttribute="leading" secondItem="8gY-kT-Mwp" secondAttribute="trailing" constant="10" id="z7H-g6-8Gf"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-He-26A" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy3-He-26A" customClass="TUPrimaryButton" customModule="TURides" customModuleProvider="target">
                                 <rect key="frame" x="26" y="223" width="323" height="34"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Phone Number">
@@ -92,7 +92,7 @@
                                     <action selector="loginButtonTouched:" destination="OY1-ej-Smv" eventType="touchUpInside" id="0cG-u4-8qO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDU-f9-dJU" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDU-f9-dJU" customClass="TUPrimaryButton" customModule="TURides" customModuleProvider="target">
                                 <rect key="frame" x="26" y="267" width="323" height="34"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up">
@@ -310,7 +310,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csc-GN-6RA" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csc-GN-6RA" customClass="TUSecondaryButton" customModule="TURides" customModuleProvider="target">
                                 <rect key="frame" x="16" y="74" width="167" height="29"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -321,7 +321,7 @@
                                     <action selector="skipButtonTouched:" destination="Yxg-lt-Q8h" eventType="touchUpInside" id="MvX-Di-tf3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfB-wx-EM8" customClass="TUButton" customModule="TURides" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfB-wx-EM8" customClass="TUPrimaryButton" customModule="TURides" customModuleProvider="target">
                                 <rect key="frame" x="193" y="74" width="166" height="29"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

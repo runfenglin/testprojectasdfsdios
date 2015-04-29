@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -50,26 +49,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="54" id="pRI-by-8EE" userLabel="cell2">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pRI-by-8EE" id="6h4-MQ-N2T">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pAg-tx-LDB">
-                                            <rect key="frame" x="169" y="8" width="37" height="37"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="pAg-tx-LDB" secondAttribute="height" id="IOL-7q-87d"/>
-                                            </constraints>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="pAg-tx-LDB" secondAttribute="bottom" id="Yo0-8m-cCi"/>
-                                        <constraint firstAttribute="centerY" secondItem="pAg-tx-LDB" secondAttribute="centerY" id="acw-KH-vGe"/>
-                                        <constraint firstItem="pAg-tx-LDB" firstAttribute="top" secondItem="6h4-MQ-N2T" secondAttribute="topMargin" id="iO2-TD-DLU"/>
-                                        <constraint firstAttribute="centerX" secondItem="pAg-tx-LDB" secondAttribute="centerX" id="ySw-Wx-zvG"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="el4-ig-ocm" id="18z-i8-QAN"/>
@@ -106,18 +85,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What are you up to..." translatesAutoresizingMaskIntoConstraints="NO" id="J6E-OP-Cjt">
-                                <rect key="frame" x="26" y="64" width="333" height="593"/>
+                                <rect key="frame" x="26" y="84" width="333" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="fgv-ay-gJe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bE-xj-pgB" customClass="TUSecondaryButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="16" y="194" width="167" height="34"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PU4-3j-G2M" customClass="TUPrimaryButton" customModule="TURides" customModuleProvider="target">
+                                <rect key="frame" x="193" y="194" width="166" height="34"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="J6E-OP-Cjt" secondAttribute="bottom" constant="10" id="En8-DQ-1Gr"/>
+                            <constraint firstItem="4bE-xj-pgB" firstAttribute="leading" secondItem="bZ0-qb-cvQ" secondAttribute="leadingMargin" id="ENE-sh-y9x"/>
+                            <constraint firstItem="4bE-xj-pgB" firstAttribute="width" secondItem="PU4-3j-G2M" secondAttribute="width" id="SqN-sN-AgM"/>
+                            <constraint firstItem="4bE-xj-pgB" firstAttribute="top" secondItem="J6E-OP-Cjt" secondAttribute="bottom" constant="10" id="bgQ-2c-LZK"/>
+                            <constraint firstItem="PU4-3j-G2M" firstAttribute="top" secondItem="J6E-OP-Cjt" secondAttribute="bottom" constant="10" id="dfc-Yr-jRn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PU4-3j-G2M" secondAttribute="trailing" id="hyZ-Q5-8qE"/>
                             <constraint firstItem="J6E-OP-Cjt" firstAttribute="leading" secondItem="bZ0-qb-cvQ" secondAttribute="leadingMargin" constant="10" id="kOe-YT-fpN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J6E-OP-Cjt" secondAttribute="trailing" id="ob3-4t-fta"/>
-                            <constraint firstItem="J6E-OP-Cjt" firstAttribute="top" secondItem="JFh-eE-E2a" secondAttribute="bottom" id="wYd-5b-gRL"/>
+                            <constraint firstItem="PU4-3j-G2M" firstAttribute="leading" secondItem="4bE-xj-pgB" secondAttribute="trailing" constant="10" id="vhn-dv-ptT"/>
+                            <constraint firstItem="J6E-OP-Cjt" firstAttribute="top" secondItem="JFh-eE-E2a" secondAttribute="bottom" constant="20" id="wYd-5b-gRL"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

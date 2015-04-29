@@ -41,6 +41,8 @@
 		B796325A1AEA39AA007A2CE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632591AEA39AA007A2CE0 /* User.swift */; };
 		B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */; };
 		B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325D1AECE1EA007A2CE0 /* FBFriend.swift */; };
+		B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */; };
+		B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,8 @@
 		B79632591AEA39AA007A2CE0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInActivity.swift; sourceTree = "<group>"; };
 		B796325D1AECE1EA007A2CE0 /* FBFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBFriend.swift; path = Models/FBFriend.swift; sourceTree = "<group>"; };
+		B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUPrimaryButton.swift; path = Views/TUPrimaryButton.swift; sourceTree = "<group>"; };
+		B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSecondaryButton.swift; path = Views/TUSecondaryButton.swift; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
 		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				B778C75B1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift */,
 				B778C75C1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib */,
 				B77561311AE7B35C001354D6 /* TUButton.swift */,
+				B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */,
+				B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */,
 			);
 			name = SharedControls;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
 				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
+				B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */,
 				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
 				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
@@ -445,6 +452,7 @@
 				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
 				B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */,
+				B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */,
 				B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */,
 				B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */,
 			);

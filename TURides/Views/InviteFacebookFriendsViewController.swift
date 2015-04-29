@@ -14,7 +14,7 @@ class InviteFacebookFriendsViewController: BaseViewController, FBSDKAppInviteDia
         static let VIEW_TAG_FRIEND_IMAGE = 10
         static let VIEW_TAG_FRIEND_NAME = 11
         static let CELL_ID_FRIEND = "friend-cell"
-        static let APP_STORE_URL = ""
+        static let APP_STORE_URL = "http://www.google.co.nz"
     }
     
     @IBOutlet weak var mTableView: UITableView!
@@ -48,7 +48,7 @@ class InviteFacebookFriendsViewController: BaseViewController, FBSDKAppInviteDia
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(friends.count) Friends on TURide"
+        return "You have \(friends.count) Friends on TURide"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
