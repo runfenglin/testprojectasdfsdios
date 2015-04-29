@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SelectPlacesTableViewController: UITableViewController, CLLocationManagerDelegate {
+class SelectPlacesTableViewController: UITableViewController, CLLocationManagerDelegate, GooglePlaceSearchNearByServiceDelegate {
 
     var locationManager: CLLocationManager = CLLocationManager();
     var results = NSMutableArray()
@@ -54,16 +55,16 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
         let d = cell.viewWithTag(4) as! UIImageView
         
         
-        let item = results.objectAtIndex(indexPath.row) as! FTGooglePlacesAPISearchResultItem
+        let item = results.objectAtIndex(indexPath.row) as! GooglePlace
         
         a.text = item.name
-        b.text = item.addressString
-        let url = NSURL(string: item.iconImageUrl)
-        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        b.text = item.address
+//        let url = NSURL(string: item.iconImageUrl)
+//        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
         //d.setImageWithURL(NSURL(item.iconImageUrl))
-        if !item.iconImageUrl.isEmpty {
-        d.setImageWithURL(NSURL(string: item.iconImageUrl))
-        }
+//        if !item.iconImageUrl.isEmpty {
+//        d.setImageWithURL(NSURL(string: item.iconImageUrl))
+//        }
         //c.text = item.types[0] as! String
         // Configure the cell...
 
@@ -146,38 +147,50 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
         let locValue:CLLocationCoordinate2D = manager.location.coordinate
-        FTGooglePlacesAPIService.provideAPIKey("AIzaSyAd3AhgQ1Gv-MF6DSt0qfH8Zda2Reia5tk")
         
-        let request = FTGooglePlacesAPINearbySearchRequest(locationCoordinate: CLLocationCoordinate2DMake(-36.78, 174.71))
-       // request.locationCoordinate = CLLocationCoordinate2DMake(-36.78, 174.71)
-        request.rankBy = FTGooglePlacesAPIRequestParamRankBy.Distance
-        //request.radius = 10000
-        request.types = ["food","park","gym"]
+        GooglePlaceSearchNearByService(delegate: self).dispatch(NSString(format: "%d,%d", -36.78, 174.71))
         
         
-        FTGooglePlacesAPIService.executeSearchRequest(request, withCompletionHandler: { (response: FTGooglePlacesAPISearchResponse?, error: NSError?) -> Void in
-            
-            if let resultsa = response?.results {
-                let a  = resultsa as NSArray
-                
-                self.results = a.mutableCopy() as! NSMutableArray;
-                self.hasPlacesLoad = true
-                self.tableView.reloadData()
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-//                for item in results {
-//                    let item1 = item as! FTGooglePlacesAPISearchResultItem
-//                    
-//                    println ("\(item.name)")
-//                    
-//                    
-//                }
-                
-            }
-            
-            
-            
-            println("\(error)")
-        })
+        
+//        FTGooglePlacesAPIService.provideAPIKey("AIzaSyAd3AhgQ1Gv-MF6DSt0qfH8Zda2Reia5tk")
+//        
+//        let request = FTGooglePlacesAPINearbySearchRequest(locationCoordinate: CLLocationCoordinate2DMake(-36.78, 174.71))
+//       // request.locationCoordinate = CLLocationCoordinate2DMake(-36.78, 174.71)
+//        request.rankBy = FTGooglePlacesAPIRequestParamRankBy.Distance
+//        //request.radius = 10000
+//        request.types = ["food","park","gym"]
+//        
+//        
+//        FTGooglePlacesAPIService.executeSearchRequest(request, withCompletionHandler: { (response: FTGooglePlacesAPISearchResponse?, error: NSError?) -> Void in
+//            
+//            if let resultsa = response?.results {
+//                let a  = resultsa as NSArray
+//                
+//                self.results = a.mutableCopy() as! NSMutableArray;
+//                self.hasPlacesLoad = true
+//                self.tableView.reloadData()
+//                MBProgressHUD.hideHUDForView(self.view, animated: true)
+////                for item in results {
+////                    let item1 = item as! FTGooglePlacesAPISearchResultItem
+////                    
+////                    println ("\(item.name)")
+////                    
+////                    
+////                }
+//                
+//            }
+//            
+//            
+//            
+//            println("\(error)")
+//        })
     }
 
+    func handleGooglePlaceSearchSuccess(results: NSArray) {
+        self.results = results.mutableCopy() as! NSMutableArray
+        hasPlacesLoad = true
+        tableView.reloadData()
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+    }
+    
 }

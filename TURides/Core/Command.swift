@@ -12,9 +12,9 @@ class Command: NSObject {
     var params: NSDictionary
     var manager: AFHTTPRequestOperationManager
     var delegate: Service
-    var url: NSString
+    var url: String
     
-    init(params: NSDictionary, delegate: Service, url: NSString) {
+    init(params: NSDictionary, delegate: Service, url: String) {
         self.params = params;
         self.manager = AFHTTPRequestOperationManager()
         self.delegate = delegate
@@ -26,7 +26,7 @@ class Command: NSObject {
         
 
         manager.GET(
-            "http://54.206.6.242//api/v1/login/facebook.json",
+            url,
             parameters: params,
             success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 

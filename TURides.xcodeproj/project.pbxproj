@@ -14,6 +14,8 @@
 		B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B719DCAE1ADD26AB0035CBBF /* Main.storyboard */; };
 		B71A914F1AE252B3007277E9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A914E1AE252B3007277E9 /* Constant.swift */; };
 		B71A91551AE50027007277E9 /* CheckIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71A91541AE50027007277E9 /* CheckIn.storyboard */; };
+		B720C4181AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B720C4171AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift */; };
+		B720C41A1AF0E45700DD1603 /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B720C4191AF0E45700DD1603 /* GooglePlace.swift */; };
 		B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191571ADA6BAF0051E237 /* AppDelegate.swift */; };
 		B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B741915E1ADA6BAF0051E237 /* Images.xcassets */; };
 		B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74191601ADA6BAF0051E237 /* LaunchScreen.xib */; };
@@ -66,6 +68,8 @@
 		B719DCAE1ADD26AB0035CBBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Views/Main.storyboard; sourceTree = "<group>"; };
 		B71A914E1AE252B3007277E9 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B71A91541AE50027007277E9 /* CheckIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CheckIn.storyboard; path = Views/CheckIn.storyboard; sourceTree = "<group>"; };
+		B720C4171AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceSearchNearByService.swift; path = Services/GooglePlaceSearchNearByService.swift; sourceTree = "<group>"; };
+		B720C4191AF0E45700DD1603 /* GooglePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlace.swift; path = Models/GooglePlace.swift; sourceTree = "<group>"; };
 		B74191521ADA6BAF0051E237 /* TURides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TURides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74191561ADA6BAF0051E237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B74191571ADA6BAF0051E237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */,
 				B778C7611AE1100A001677FC /* LoginService.swift */,
 				B778C7631AE110B1001677FC /* LogoutService.swift */,
+				B720C4171AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				B79632591AEA39AA007A2CE0 /* User.swift */,
 				B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */,
 				B796325D1AECE1EA007A2CE0 /* FBFriend.swift */,
+				B720C4191AF0E45700DD1603 /* GooglePlace.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -453,8 +459,10 @@
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
 				B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */,
 				B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */,
+				B720C4181AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift in Sources */,
 				B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */,
 				B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */,
+				B720C41A1AF0E45700DD1603 /* GooglePlace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
