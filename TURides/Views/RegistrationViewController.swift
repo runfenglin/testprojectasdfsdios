@@ -27,10 +27,12 @@ class RegistrationViewController: BaseViewController, FacebookLoginServiceDelega
     
     //MARK: Facebook Login
     @IBAction func facebookImageViewTapped(sender: AnyObject) {
-        if FBSDKAccessToken.currentAccessToken() != nil && false {
+        if FBSDKAccessToken.currentAccessToken() != nil && false{
             //Handle already logged in
             doFacebookLogin()
         } else {
+            FBSDKLoginManager().logOut()
+            
             FBSDKLoginManager().logInWithReadPermissions(mConstant.FACEBOOK_PERMISSION, handler: { (result:FBSDKLoginManagerLoginResult!, error:NSError!) -> Void in
                 if error != nil {
                     UIUtil.showPopUpErrorDialog("Facebook login error: \(error)")
@@ -47,13 +49,14 @@ class RegistrationViewController: BaseViewController, FacebookLoginServiceDelega
         MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = FacebookLoginService.mConstant.LOADING_MESSAGE
         let params = NSMutableDictionary()
         params.setValue(FBSDKAccessToken.currentAccessToken().tokenString, forKey: FacebookLoginService.mConstant.PAREMETER_KEY_TOKEN)
+        params.setValue("json", forKey: "format")
         FacebookLoginService(delegate: self).dispathWithParams(params)
     }
     
     //MARK: FacebookLoginServiceDelegate
     func handleFacebookLoginSuccess(apikey: NSString, isNewUser: Bool) {
         KeyChainUtil.set(Constant.KEYCHAIN_KEY_APIKEY, value: apikey as String)
-        if isNewUser || true{
+        if isNewUser {
             FBSDKGraphRequest(graphPath: "me/friends", parameters: nil).startWithCompletionHandler({ (connection: FBSDKGraphRequestConnection!, responseObject: AnyObject!, error: NSError!) -> Void in
                     var friends = NSMutableArray()
                 
@@ -80,7 +83,9 @@ class RegistrationViewController: BaseViewController, FacebookLoginServiceDelega
     
     //MARK: Sign Up
     @IBAction func signupButtonTouched(sender: AnyObject) {
-        self.performSegueWithIdentifier(mConstant.SEGUE_TO_SIGN_UP, sender: sender)
+        //self.performSegueWithIdentifier(mConstant.SEGUE_TO_SIGN_UP, sender: sender)
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        delegate.logout()
     }
     
     //MARK: Phone Login

@@ -9,13 +9,15 @@
 import UIKit
 
 class CheckInActivity: BaseActivity {
-    var placeID: String
-    var placeDisplayName: String
+    var place: GooglePlace
+    var message: String?
+    var numberOfLikes: NSNumber
+    var comments: [Comment]
     
-    init(placeID: String, placeDisplayName: String, user: User) {
-        self.placeDisplayName = placeDisplayName
-        self.placeID = placeID
-        
-        super.init(user: user)
+    init(user: User, id: String, place: GooglePlace, numberOfLikes: NSNumber) {
+        self.place = place
+        self.comments = Array()
+        self.numberOfLikes = numberOfLikes
+        super.init(user: user, id: id)
     }
 }

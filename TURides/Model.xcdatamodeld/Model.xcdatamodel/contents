@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Comment" syncable="YES">
+        <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Share" inverseName="has" inverseEntity="Share" syncable="YES"/>
+        <relationship name="fromUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="commented" inverseEntity="User" syncable="YES"/>
+        <relationship name="toUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Share" syncable="YES">
+        <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="posted" inverseEntity="User" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="belongsTo" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="shouldNotifyUsers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" syncable="YES">
+        <attribute name="lastVisitedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="commented" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="fromUser" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="posted" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Share" inverseName="createdBy" inverseEntity="Share" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Share" positionX="-12645" positionY="-3438" width="126" height="118"/>
+        <element name="Comment" positionX="-12726" positionY="-3780" width="128" height="118"/>
+        <element name="User" positionX="-13086" positionY="-3429" width="128" height="103"/>
+    </elements>
+</model>

@@ -59,71 +59,27 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
         
         a.text = item.name
         b.text = item.address
-//        let url = NSURL(string: item.iconImageUrl)
-//        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-        //d.setImageWithURL(NSURL(item.iconImageUrl))
-//        if !item.iconImageUrl.isEmpty {
-//        d.setImageWithURL(NSURL(string: item.iconImageUrl))
-//        }
-        //c.text = item.types[0] as! String
-        // Configure the cell...
 
         return cell
-        
     }
     
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("to-post", sender: nil)
+        self.performSegueWithIdentifier("to-post", sender: results.objectAtIndex(indexPath.row))
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 54
     }
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        let place: GooglePlace = sender as! GooglePlace
+        let vc: CheckInViewController = segue.destinationViewController as! CheckInViewController
+        vc.place = place
     }
-    */
+
     
     //MARK:
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -144,46 +100,12 @@ class SelectPlacesTableViewController: UITableViewController, CLLocationManagerD
     @IBAction func cancelButtonTouched(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
         let locValue:CLLocationCoordinate2D = manager.location.coordinate
         
         GooglePlaceSearchNearByService(delegate: self).dispatch(NSString(format: "%d,%d", -36.78, 174.71))
-        
-        
-        
-//        FTGooglePlacesAPIService.provideAPIKey("AIzaSyAd3AhgQ1Gv-MF6DSt0qfH8Zda2Reia5tk")
-//        
-//        let request = FTGooglePlacesAPINearbySearchRequest(locationCoordinate: CLLocationCoordinate2DMake(-36.78, 174.71))
-//       // request.locationCoordinate = CLLocationCoordinate2DMake(-36.78, 174.71)
-//        request.rankBy = FTGooglePlacesAPIRequestParamRankBy.Distance
-//        //request.radius = 10000
-//        request.types = ["food","park","gym"]
-//        
-//        
-//        FTGooglePlacesAPIService.executeSearchRequest(request, withCompletionHandler: { (response: FTGooglePlacesAPISearchResponse?, error: NSError?) -> Void in
-//            
-//            if let resultsa = response?.results {
-//                let a  = resultsa as NSArray
-//                
-//                self.results = a.mutableCopy() as! NSMutableArray;
-//                self.hasPlacesLoad = true
-//                self.tableView.reloadData()
-//                MBProgressHUD.hideHUDForView(self.view, animated: true)
-////                for item in results {
-////                    let item1 = item as! FTGooglePlacesAPISearchResultItem
-////                    
-////                    println ("\(item.name)")
-////                    
-////                    
-////                }
-//                
-//            }
-//            
-//            
-//            
-//            println("\(error)")
-//        })
     }
 
     func handleGooglePlaceSearchSuccess(results: NSArray) {

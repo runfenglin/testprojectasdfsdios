@@ -44,8 +44,7 @@ class LoginViewController: BaseViewController, RegistrationServiceDelegate {
     }
     
     func handleRegistrationSuccess() {
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        delegate.showHomeScreen()
+
     }
     
     func handleRegistrationFail() {

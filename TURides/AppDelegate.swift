@@ -9,13 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, GetUserProfileServiceDelegate, REFrostedViewControllerDelegate {
 
     var window: UIWindow?
 
-    func showLoginScreen() {
+    private func showLoginScreen() {
         let storyboard  = UIStoryboard(name: "Login", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UINavigationController
+        
         window!.rootViewController = vc
         window!.makeKeyAndVisible()
     }
@@ -23,8 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
     func showHomeScreen() {
         let storyboard  = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UITabBarController
-        window!.rootViewController = vc
+        
+        let frostedViewController = REFrostedViewController(contentViewController: vc, menuViewController: MenuViewController(nibName: "MenuViewController", bundle: nil))
+        frostedViewController.direction = REFrostedViewControllerDirection.Left;
+        frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyle.Dark;
+        frostedViewController.liveBlur = false
+        frostedViewController.delegate = self
+        
+        window!.rootViewController = frostedViewController
         window!.makeKeyAndVisible()
+}
+    
+    func showMenu() {
+        let vc = window!.rootViewController as! REFrostedViewController
+        vc.presentMenuViewController()
     }
     
     //MARK: Logout
@@ -43,6 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
         showLoginScreen()
     }
     
+    //MARK: GetUserProfileServiceDelegate
+    
+    func handleGetUserProfileServiceFail() {
+        showHomeScreen()
+    }
+    
+    func handleGetUserProfileServiceSucess() {
+        showHomeScreen()
+    }
+    
     //MARK: Application Lifecycle
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -50,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showHomeScreen", name: Constant.NOTIFICATION_SHOW_HOME_SCREEN, object: nil)
         
         if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
-            showLoginScreen()
+            showHomeScreen()
         } else {
             showLoginScreen()
         }

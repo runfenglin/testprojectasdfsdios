@@ -104,6 +104,9 @@
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="postButtonTouched:" destination="jrg-io-65N" eventType="touchUpInside" id="ZrD-aM-S98"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,6 +124,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="checkInCommentTextView" destination="J6E-OP-Cjt" id="HZx-LR-QDH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhq-VT-N3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

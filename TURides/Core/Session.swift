@@ -9,14 +9,23 @@
 import UIKit
 
 class Session {
-    
-    class var sharedInstance :Session {
-        struct Singleton {
-            static let instance = Session()
 
-        }
+    static let sharedInstance = Session()
+    var me: User?
+    
+    init() {
         
-        return Singleton.instance
     }
+    
+//    class var sharedInstance :Session {
+//        struct Singleton {
+//            static let instance = Session()
+//            var me: User
+//
+//        }
+//        
+//        return Singleton.instance
+//    }
+    
     
 }

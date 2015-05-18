@@ -17,6 +17,9 @@ class Command: NSObject {
     init(params: NSDictionary, delegate: Service, url: String) {
         self.params = params;
         self.manager = AFHTTPRequestOperationManager()
+        if let apikey = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
+            self.manager.requestSerializer.setValue(KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY), forHTTPHeaderField: "apikey")
+        }
         self.delegate = delegate
         self.url = url
     }

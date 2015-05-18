@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		63C6CC14754FD88A4C0241E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0B8F4B6ED9958BD796D8C1 /* libPods.a */; };
+		B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702951D1B00A5EF0007F668 /* MenuViewController.swift */; };
+		B70295201B00A5EF0007F668 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B702951E1B00A5EF0007F668 /* MenuViewController.xib */; };
+		B70295221B00AD6F0007F668 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70295211B00AD6F0007F668 /* CircleImageView.swift */; };
 		B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA61ADD0D050035CBBF /* RegistrationService.swift */; };
 		B719DCAA1ADD14870035CBBF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA91ADD14870035CBBF /* Command.swift */; };
 		B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCAC1ADD234E0035CBBF /* Service.swift */; };
@@ -28,6 +31,7 @@
 		B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191891ADBB91A0051E237 /* BaseViewController.swift */; };
 		B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918B1ADBBD5F0051E237 /* SignupViewController.swift */; };
 		B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */; };
+		B749117B1B03467B0079275A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749117A1B03467B0079275A /* Comment.swift */; };
 		B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612B1AE663E9001354D6 /* CheckInViewController.swift */; };
 		B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */; };
 		B77561321AE7B35C001354D6 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77561311AE7B35C001354D6 /* TUButton.swift */; };
@@ -39,12 +43,18 @@
 		B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */; };
 		B778C7621AE1100A001677FC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7611AE1100A001677FC /* LoginService.swift */; };
 		B778C7641AE110B1001677FC /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B778C7631AE110B1001677FC /* LogoutService.swift */; };
+		B7817FE11AF22F01007FB7D8 /* CreateCheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7817FE01AF22F01007FB7D8 /* CreateCheckInService.swift */; };
+		B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7817FE21AF372D6007FB7D8 /* GetActivityService.swift */; };
 		B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632561AEA3961007A2CE0 /* BaseActivity.swift */; };
 		B796325A1AEA39AA007A2CE0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632591AEA39AA007A2CE0 /* User.swift */; };
 		B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */; };
 		B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325D1AECE1EA007A2CE0 /* FBFriend.swift */; };
 		B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */; };
 		B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */; };
+		B7B753211B01E4B800070919 /* GetUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753201B01E4B800070919 /* GetUserProfileService.swift */; };
+		B7B753231B01E79200070919 /* TUComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753221B01E79200070919 /* TUComment.swift */; };
+		B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753261B01EC8200070919 /* SwiftyJSON.swift */; };
+		B7B753291B01FBD900070919 /* ActivityList.json in Resources */ = {isa = PBXBuildFile; fileRef = B7B753281B01FBD900070919 /* ActivityList.json */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +72,9 @@
 /* Begin PBXFileReference section */
 		0D5111C67A8B503EDDD4C8E4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AC0B8F4B6ED9958BD796D8C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B702951D1B00A5EF0007F668 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Views/MenuViewController.swift; sourceTree = "<group>"; };
+		B702951E1B00A5EF0007F668 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Views/MenuViewController.xib; sourceTree = "<group>"; };
+		B70295211B00AD6F0007F668 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleImageView.swift; path = Views/CircleImageView.swift; sourceTree = "<group>"; };
 		B719DCA61ADD0D050035CBBF /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Services/RegistrationService.swift; sourceTree = "<group>"; };
 		B719DCA91ADD14870035CBBF /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Core/Command.swift; sourceTree = "<group>"; };
 		B719DCAC1ADD234E0035CBBF /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Core/Service.swift; sourceTree = "<group>"; };
@@ -87,6 +100,7 @@
 		B74191891ADBB91A0051E237 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Views/BaseViewController.swift; sourceTree = "<group>"; };
 		B741918B1ADBBD5F0051E237 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Views/SignupViewController.swift; sourceTree = "<group>"; };
 		B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainUtil.swift; path = Utils/KeyChainUtil.swift; sourceTree = "<group>"; };
+		B749117A1B03467B0079275A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Models/Comment.swift; sourceTree = "<group>"; };
 		B775612B1AE663E9001354D6 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = Views/CheckInViewController.swift; sourceTree = "<group>"; };
 		B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InviteFacebookFriendsViewController.swift; path = Views/InviteFacebookFriendsViewController.swift; sourceTree = "<group>"; };
 		B77561311AE7B35C001354D6 /* TUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUButton.swift; path = Views/TUButton.swift; sourceTree = "<group>"; };
@@ -98,12 +112,18 @@
 		B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginService.swift; path = Services/FacebookLoginService.swift; sourceTree = "<group>"; };
 		B778C7611AE1100A001677FC /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = Services/LoginService.swift; sourceTree = "<group>"; };
 		B778C7631AE110B1001677FC /* LogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoutService.swift; path = Services/LogoutService.swift; sourceTree = "<group>"; };
+		B7817FE01AF22F01007FB7D8 /* CreateCheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateCheckInService.swift; path = Services/CreateCheckInService.swift; sourceTree = "<group>"; };
+		B7817FE21AF372D6007FB7D8 /* GetActivityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetActivityService.swift; path = Services/GetActivityService.swift; sourceTree = "<group>"; };
 		B79632561AEA3961007A2CE0 /* BaseActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseActivity.swift; path = Models/BaseActivity.swift; sourceTree = "<group>"; };
 		B79632591AEA39AA007A2CE0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInActivity.swift; sourceTree = "<group>"; };
 		B796325D1AECE1EA007A2CE0 /* FBFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBFriend.swift; path = Models/FBFriend.swift; sourceTree = "<group>"; };
 		B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUPrimaryButton.swift; path = Views/TUPrimaryButton.swift; sourceTree = "<group>"; };
 		B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSecondaryButton.swift; path = Views/TUSecondaryButton.swift; sourceTree = "<group>"; };
+		B7B753201B01E4B800070919 /* GetUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetUserProfileService.swift; path = Services/GetUserProfileService.swift; sourceTree = "<group>"; };
+		B7B753221B01E79200070919 /* TUComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUComment.swift; path = Models/TUComment.swift; sourceTree = "<group>"; };
+		B7B753261B01EC8200070919 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B7B753281B01FBD900070919 /* ActivityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivityList.json; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
 		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +173,9 @@
 				B778C7611AE1100A001677FC /* LoginService.swift */,
 				B778C7631AE110B1001677FC /* LogoutService.swift */,
 				B720C4171AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift */,
+				B7817FE01AF22F01007FB7D8 /* CreateCheckInService.swift */,
+				B7817FE21AF372D6007FB7D8 /* GetActivityService.swift */,
+				B7B753201B01E4B800070919 /* GetUserProfileService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -163,6 +186,7 @@
 				B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */,
 				B719DCA91ADD14870035CBBF /* Command.swift */,
 				B719DCAC1ADD234E0035CBBF /* Service.swift */,
+				B7B753261B01EC8200070919 /* SwiftyJSON.swift */,
 				B778C7591ADFBD6F001677FC /* UIUtil.swift */,
 				B7DEEDC31AE23D740041A962 /* Session.swift */,
 				B71A914E1AE252B3007277E9 /* Constant.swift */,
@@ -221,6 +245,7 @@
 				B74191601ADA6BAF0051E237 /* LaunchScreen.xib */,
 				B74191771ADA73450051E237 /* Bridging-Header.h */,
 				B74191561ADA6BAF0051E237 /* Info.plist */,
+				B7B753281B01FBD900070919 /* ActivityList.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -277,6 +302,9 @@
 				B77561311AE7B35C001354D6 /* TUButton.swift */,
 				B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */,
 				B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */,
+				B702951D1B00A5EF0007F668 /* MenuViewController.swift */,
+				B702951E1B00A5EF0007F668 /* MenuViewController.xib */,
+				B70295211B00AD6F0007F668 /* CircleImageView.swift */,
 			);
 			name = SharedControls;
 			sourceTree = "<group>";
@@ -289,6 +317,8 @@
 				B796325B1AEA45C8007A2CE0 /* CheckInActivity.swift */,
 				B796325D1AECE1EA007A2CE0 /* FBFriend.swift */,
 				B720C4191AF0E45700DD1603 /* GooglePlace.swift */,
+				B7B753221B01E79200070919 /* TUComment.swift */,
+				B749117A1B03467B0079275A /* Comment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -378,8 +408,10 @@
 				B74191791ADA87480051E237 /* Login.storyboard in Resources */,
 				B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */,
 				B74191831ADA8EE20051E237 /* NavBarLogoView.xib in Resources */,
+				B70295201B00A5EF0007F668 /* MenuViewController.xib in Resources */,
 				B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */,
 				B778C75E1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib in Resources */,
+				B7B753291B01FBD900070919 /* ActivityList.json in Resources */,
 				B71A91551AE50027007277E9 /* CheckIn.storyboard in Resources */,
 				B741915F1ADA6BAF0051E237 /* Images.xcassets in Resources */,
 			);
@@ -439,19 +471,24 @@
 				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
 				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
+				B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */,
 				B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */,
 				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
 				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
+				B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */,
+				B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
 				B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
 				B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */,
+				B7817FE11AF22F01007FB7D8 /* CreateCheckInService.swift in Sources */,
 				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,
 				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
 				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
 				B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */,
 				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,
+				B70295221B00AD6F0007F668 /* CircleImageView.swift in Sources */,
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
 				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,
@@ -459,6 +496,9 @@
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
 				B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */,
 				B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */,
+				B7B753231B01E79200070919 /* TUComment.swift in Sources */,
+				B7B753211B01E4B800070919 /* GetUserProfileService.swift in Sources */,
+				B749117B1B03467B0079275A /* Comment.swift in Sources */,
 				B720C4181AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift in Sources */,
 				B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */,
 				B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */,
