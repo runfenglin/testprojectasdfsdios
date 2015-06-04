@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, GetUserProfileServiceDelegate, REFrostedViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, REFrostedViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, Ge
     }
     
     func showHomeScreen() {
+        var type = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound;
+        var setting = UIUserNotificationSettings(forTypes: type, categories: nil);
+        UIApplication.sharedApplication().registerUserNotificationSettings(setting);
+        UIApplication.sharedApplication().registerForRemoteNotifications();
+       
         let storyboard  = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UITabBarController
         
@@ -40,7 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, Ge
         vc.presentMenuViewController()
     }
     
-    //MARK: Logout
+    func hideMenu() {
+        let vc = window!.rootViewController as! REFrostedViewController
+        vc.hideMenuViewController()
+    }
+    
+    //MARK: -
+    //MARK: ==========Logout==========
+    //MARK: -
     func logout() {
         var params = NSMutableDictionary()
         params.setValue(KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY), forKey: Constant.KEYCHAIN_KEY_APIKEY)
@@ -53,27 +65,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, Ge
     
     func handleLogoutSuccess() {
         KeyChainUtil.delete(Constant.KEYCHAIN_KEY_APIKEY)
+        FBSDKLoginManager().logOut()
         showLoginScreen()
     }
     
-    //MARK: GetUserProfileServiceDelegate
-    
-    func handleGetUserProfileServiceFail() {
-        showHomeScreen()
+    //MARK: -
+    //MARK: ==========Push Notification==========
+    //MARK: -
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println(deviceToken)
     }
     
-    func handleGetUserProfileServiceSucess() {
-        showHomeScreen()
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error)
+        
     }
     
-    //MARK: Application Lifecycle
+    //MARK: -
+    //MARK: ==========Application Lifecycle==========
+    //MARK: -
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showHomeScreen", name: Constant.NOTIFICATION_SHOW_HOME_SCREEN, object: nil)
-        
+        FBSDKLoginManager().logOut()
+
         if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
+            //KeyChainUtil.delete(Constant.KEYCHAIN_KEY_APIKEY)
+            //FBSDKLoginManager().logOut()
             showHomeScreen()
+            //GetUserProfileService(delegate: self).dispatchWithParams(NSDictionary())
         } else {
             showLoginScreen()
         }

@@ -11,6 +11,9 @@
 		B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702951D1B00A5EF0007F668 /* MenuViewController.swift */; };
 		B70295201B00A5EF0007F668 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B702951E1B00A5EF0007F668 /* MenuViewController.xib */; };
 		B70295221B00AD6F0007F668 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70295211B00AD6F0007F668 /* CircleImageView.swift */; };
+		B70775231B0C82430089673C /* CreateTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70775221B0C82430089673C /* CreateTripTableViewController.swift */; };
+		B70775251B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70775241B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift */; };
+		B707752A1B0DCD4F0089673C /* ChooseLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70775291B0DCD4F0089673C /* ChooseLocationTableViewController.swift */; };
 		B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA61ADD0D050035CBBF /* RegistrationService.swift */; };
 		B719DCAA1ADD14870035CBBF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCA91ADD14870035CBBF /* Command.swift */; };
 		B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B719DCAC1ADD234E0035CBBF /* Service.swift */; };
@@ -32,6 +35,8 @@
 		B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918B1ADBBD5F0051E237 /* SignupViewController.swift */; };
 		B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */; };
 		B749117B1B03467B0079275A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749117A1B03467B0079275A /* Comment.swift */; };
+		B75DC8CB1B17132D008AB5DE /* CreateTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */; };
+		B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */; };
 		B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612B1AE663E9001354D6 /* CheckInViewController.swift */; };
 		B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */; };
 		B77561321AE7B35C001354D6 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77561311AE7B35C001354D6 /* TUButton.swift */; };
@@ -56,6 +61,8 @@
 		B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753261B01EC8200070919 /* SwiftyJSON.swift */; };
 		B7B753291B01FBD900070919 /* ActivityList.json in Resources */ = {isa = PBXBuildFile; fileRef = B7B753281B01FBD900070919 /* ActivityList.json */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
+		B7F040361B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */; };
+		B7F040381B0B385A00D9EEFF /* TUSearchDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */; };
 		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +82,9 @@
 		B702951D1B00A5EF0007F668 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Views/MenuViewController.swift; sourceTree = "<group>"; };
 		B702951E1B00A5EF0007F668 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Views/MenuViewController.xib; sourceTree = "<group>"; };
 		B70295211B00AD6F0007F668 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleImageView.swift; path = Views/CircleImageView.swift; sourceTree = "<group>"; };
+		B70775221B0C82430089673C /* CreateTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTripTableViewController.swift; path = Views/CreateTripTableViewController.swift; sourceTree = "<group>"; };
+		B70775241B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceAutoCompleteDataSource.swift; path = Models/GooglePlaceAutoCompleteDataSource.swift; sourceTree = "<group>"; };
+		B70775291B0DCD4F0089673C /* ChooseLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseLocationTableViewController.swift; path = Views/ChooseLocationTableViewController.swift; sourceTree = "<group>"; };
 		B719DCA61ADD0D050035CBBF /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Services/RegistrationService.swift; sourceTree = "<group>"; };
 		B719DCA91ADD14870035CBBF /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Core/Command.swift; sourceTree = "<group>"; };
 		B719DCAC1ADD234E0035CBBF /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Core/Service.swift; sourceTree = "<group>"; };
@@ -101,6 +111,8 @@
 		B741918B1ADBBD5F0051E237 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Views/SignupViewController.swift; sourceTree = "<group>"; };
 		B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainUtil.swift; path = Utils/KeyChainUtil.swift; sourceTree = "<group>"; };
 		B749117A1B03467B0079275A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Models/Comment.swift; sourceTree = "<group>"; };
+		B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTripService.swift; path = Services/CreateTripService.swift; sourceTree = "<group>"; };
+		B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMenuViewController.swift; path = Views/AddMenuViewController.swift; sourceTree = "<group>"; };
 		B775612B1AE663E9001354D6 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = Views/CheckInViewController.swift; sourceTree = "<group>"; };
 		B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InviteFacebookFriendsViewController.swift; path = Views/InviteFacebookFriendsViewController.swift; sourceTree = "<group>"; };
 		B77561311AE7B35C001354D6 /* TUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUButton.swift; path = Views/TUButton.swift; sourceTree = "<group>"; };
@@ -125,6 +137,8 @@
 		B7B753261B01EC8200070919 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B7B753281B01FBD900070919 /* ActivityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivityList.json; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
+		B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceAutocompleteService.swift; path = Services/GooglePlaceAutocompleteService.swift; sourceTree = "<group>"; };
+		B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSearchDisplayController.swift; path = Views/TUSearchDisplayController.swift; sourceTree = "<group>"; };
 		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
 		E85E1ED06C8611C074F2CEA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +179,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B70775261B0DCCF80089673C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				B70775221B0C82430089673C /* CreateTripTableViewController.swift */,
+				B70775291B0DCD4F0089673C /* ChooseLocationTableViewController.swift */,
+			);
+			name = Trip;
+			sourceTree = "<group>";
+		};
 		B719DCA81ADD13960035CBBF /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +199,8 @@
 				B7817FE01AF22F01007FB7D8 /* CreateCheckInService.swift */,
 				B7817FE21AF372D6007FB7D8 /* GetActivityService.swift */,
 				B7B753201B01E4B800070919 /* GetUserProfileService.swift */,
+				B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */,
+				B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -276,6 +301,8 @@
 				B74191891ADBB91A0051E237 /* BaseViewController.swift */,
 				B719DCAE1ADD26AB0035CBBF /* Main.storyboard */,
 				B778C7571ADFB61A001677FC /* HomeViewController.swift */,
+				B70775261B0DCCF80089673C /* Trip */,
+				B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -305,6 +332,7 @@
 				B702951D1B00A5EF0007F668 /* MenuViewController.swift */,
 				B702951E1B00A5EF0007F668 /* MenuViewController.xib */,
 				B70295211B00AD6F0007F668 /* CircleImageView.swift */,
+				B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */,
 			);
 			name = SharedControls;
 			sourceTree = "<group>";
@@ -319,6 +347,7 @@
 				B720C4191AF0E45700DD1603 /* GooglePlace.swift */,
 				B7B753221B01E79200070919 /* TUComment.swift */,
 				B749117A1B03467B0079275A /* Comment.swift */,
+				B70775241B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -469,7 +498,9 @@
 				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
 				B796325A1AEA39AA007A2CE0 /* User.swift in Sources */,
 				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
+				B75DC8CB1B17132D008AB5DE /* CreateTripService.swift in Sources */,
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
+				B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */,
 				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
 				B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */,
 				B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */,
@@ -482,7 +513,9 @@
 				B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
 				B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */,
+				B70775251B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift in Sources */,
 				B7817FE11AF22F01007FB7D8 /* CreateCheckInService.swift in Sources */,
+				B7F040361B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift in Sources */,
 				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,
 				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
 				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
@@ -491,6 +524,7 @@
 				B70295221B00AD6F0007F668 /* CircleImageView.swift in Sources */,
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
+				B70775231B0C82430089673C /* CreateTripTableViewController.swift in Sources */,
 				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,
 				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
@@ -503,6 +537,8 @@
 				B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */,
 				B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */,
 				B720C41A1AF0E45700DD1603 /* GooglePlace.swift in Sources */,
+				B7F040381B0B385A00D9EEFF /* TUSearchDisplayController.swift in Sources */,
+				B707752A1B0DCD4F0089673C /* ChooseLocationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,12 +658,12 @@
 			baseConfigurationReference = 0D5111C67A8B503EDDD4C8E4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lunan Hui (53L7M4P59D)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TURides/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9fecf992-8ede-4cbb-a232-e355e8f4ba18";
+				PROVISIONING_PROFILE = "3d100c2b-2409-499a-b5c2-8b657bf1e850";
 				SWIFT_OBJC_BRIDGING_HEADER = "TURides/Bridging-Header.h";
 			};
 			name = Debug;

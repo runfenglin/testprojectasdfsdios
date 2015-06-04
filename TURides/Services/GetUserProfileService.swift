@@ -31,9 +31,9 @@ class GetUserProfileService: Service {
     override func successCallback(responseObject: AnyObject) {
         let json = JSON(responseObject)
         
-        let name = json["result"]["name"].string!
-        let email = json["result"]["name"].string!
-        let profileIconString = json["result"]["avatar"].string!
+        let name = json["name"].string!
+        let email = json["email"].string!
+        let profileIconString = json["avatar"].string!
         let decodedData = NSData(base64EncodedString: profileIconString, options: NSDataBase64DecodingOptions(rawValue: 0))
         var decodedimage = UIImage(data: decodedData!)
         

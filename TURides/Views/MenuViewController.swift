@@ -17,7 +17,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var userNameLabel: UILabel!
     
-    let menuArray = ["Home", "Event", "Chat", "Friends", "Invite Friends"]
+    let menuArray = ["Home", "Event", "Chat", "Friends", "Invite Friends", "Sign Out"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,4 +45,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell!.contentView.backgroundColor = UIColor.clearColor()
         return cell!
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if (indexPath.row == 5) {
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            appDelegate.logout()
+        } else {
+            appDelegate.hideMenu()
+        }
+    }
+    
 }

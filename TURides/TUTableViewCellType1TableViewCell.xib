@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -15,32 +15,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="james-bond-241847" translatesAutoresizingMaskIntoConstraints="NO" id="b7R-fH-w1u" userLabel="Profile Image">
-                        <rect key="frame" x="0.0" y="8" width="48" height="48"/>
+                        <rect key="frame" x="10" y="8" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="98Q-kd-pbo"/>
                             <constraint firstAttribute="width" constant="48" id="Umw-JM-tac"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James Bond" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upe-6I-3rg">
-                        <rect key="frame" x="58" y="8" width="313" height="15"/>
+                        <rect key="frame" x="68" y="8" width="303" height="14.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James Bond" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-ZE-Znb">
-                        <rect key="frame" x="58" y="45" width="66" height="15"/>
+                        <rect key="frame" x="68" y="43" width="66" height="14.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checked In at Holiday In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNa-lL-PH0">
-                        <rect key="frame" x="58" y="23" width="313" height="22"/>
+                        <rect key="frame" x="68" y="22" width="303" height="21.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" red="0.5568627451" green="0.69803921570000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="jPK-LG-STJ" userLabel="Like Image">
-                        <rect key="frame" x="134" y="45" width="15" height="15"/>
+                        <rect key="frame" x="144" y="43.5" width="15" height="15"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="Vy2-dM-die"/>
@@ -48,13 +48,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO9-yB-5BM">
-                        <rect key="frame" x="154" y="45" width="7" height="15"/>
+                        <rect key="frame" x="164" y="44" width="7" height="14.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGc-MN-mwx" userLabel="Comment Wrapper">
-                        <rect key="frame" x="58" y="65" width="313" height="0.0"/>
+                        <rect key="frame" x="68" y="63" width="303" height="0.0"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstAttribute="height" id="opd-5m-U05"/>
@@ -65,7 +65,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="gGc-MN-mwx" secondAttribute="trailing" id="42d-k3-34x"/>
                     <constraint firstItem="b7R-fH-w1u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="83U-YM-DZ8"/>
                     <constraint firstItem="lNa-lL-PH0" firstAttribute="top" secondItem="upe-6I-3rg" secondAttribute="bottom" id="9o9-Am-5tB"/>
-                    <constraint firstItem="b7R-fH-w1u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JAA-4D-cdx"/>
+                    <constraint firstItem="b7R-fH-w1u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="JAA-4D-cdx"/>
                     <constraint firstItem="upe-6I-3rg" firstAttribute="leading" secondItem="b7R-fH-w1u" secondAttribute="trailing" constant="10" id="Mho-Ft-Tu7"/>
                     <constraint firstItem="MO9-yB-5BM" firstAttribute="top" secondItem="lNa-lL-PH0" secondAttribute="bottom" id="SJF-F4-Xms"/>
                     <constraint firstItem="upe-6I-3rg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Tv4-s0-ap9"/>

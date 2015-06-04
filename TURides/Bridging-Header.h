@@ -13,6 +13,7 @@
 #import "MBProgressHUD/MBProgressHUD.h"
 #import "AFNetworking/UIImageView+AFNetworking.h"
 #import "REFrostedViewController/REFrostedViewController.h"
+#import "MLPAutoCompleteTextField/MLPAutoCompleteTextField.h"
 
 #ifndef TURides_Bridging_Header_h
 #define TURides_Bridging_Header_h

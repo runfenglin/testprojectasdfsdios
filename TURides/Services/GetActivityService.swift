@@ -19,7 +19,7 @@ class GetActivityService: Service {
     var acitvitiesArray: [CheckInActivity]
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/checkin.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/activity.json"
     }
     
     init(delegate: GetActivityServiceDelegate) {

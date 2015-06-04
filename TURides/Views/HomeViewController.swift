@@ -8,35 +8,26 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, GetActivityServiceDelegate, GetUserProfileServiceDelegate {
+class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, GetActivityServiceDelegate, GetUserProfileServiceDelegate, UIPopoverPresentationControllerDelegate, AddMenuViewControllerDelegate {
     @IBOutlet weak var mTableView: UITableView!
     
     var data: [CheckInActivity] = []
+    var popOver: AddMenuViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        GetActivityService(delegate: self).dispathWithParams(NSDictionary())
-        //GetUserProfileService(delegate: self).dispatchWithParams(NSDictionary())
+       // GetActivityService(delegate: self).dispathWithParams(NSDictionary())
+        GetUserProfileService(delegate: self).dispatchWithParams(NSDictionary())
         
         mTableView.registerNib(UINib(nibName: "TUTableViewCellType1TableViewCell", bundle: nil), forCellReuseIdentifier: "TUTableViewCellType1TableViewCell")
     }
     
+    
     @IBAction func menuBarItemTouched(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.showMenu();
-    }
-
-    @IBAction func checkInButtonTouched(sender: AnyObject) {
-        let storyboard  = UIStoryboard(name: "CheckIn", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UINavigationController
-
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
-    @IBAction func photoButtonTouched(sender: AnyObject) {
-        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -99,16 +90,16 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     //MARK:
     func handleGetUserProfileServiceSucess() {
-        GetActivityService(delegate: self).dispathWithParams(NSDictionary())
+        let params = NSMutableDictionary()
+        GetActivityService(delegate: self).dispathWithParams(params)
+        //MBProgressHUD.hideHUDForView(self.view, animated: true)
     }
     
     func handleGetUserProfileServiceFail() {
         //TODO
     }
     
-    
-    //MARK: Temperary Logout
-    @IBAction func logoutButtonTouched(sender: AnyObject) {
+    func promptToLogout() {
         var actionSheet = UIActionSheet(title: "Are you sure you want to logout?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Yes")
         actionSheet.showInView(self.view)
     }
@@ -120,4 +111,31 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             appDelegate.logout()
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "to-add-menu") {
+            popOver = segue.destinationViewController as? AddMenuViewController
+            popOver!.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popOver!.popoverPresentationController!.delegate = self
+            popOver!.popoverPresentationController?.backgroundColor = UIColor(netHex: 0x8EB2BE)
+            popOver!.delegate = self
+        }
+    }
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    func handleAddNewCheckin() {
+        
+    }
+    
+    func handleAddNewPhoto() {
+        
+    }
+    
+    func handleAddNewTrip() {
+        self.dismissViewControllerAnimated(false, completion: nil)
+        self.performSegueWithIdentifier("to-create-trip", sender: nil)
+    }
+
 }
