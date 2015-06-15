@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ChooseLocationTableViewControllerDelegate {
-    func didSelectLocation(addressLine1: NSString, addressLine2: NSString)
+    func didSelectLocation(place: GooglePlace)
 }
 
 class ChooseLocationTableViewController: UITableViewController, UISearchBarDelegate, GooglePlaceAutocompleteServiceDelegate {
@@ -57,19 +57,19 @@ class ChooseLocationTableViewController: UITableViewController, UISearchBarDeleg
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "reuseIdentifier")
         }
         // Configure the cell...
-        let address = locations!.objectAtIndex(indexPath.row) as! NSString
-        cell!.textLabel!.text = address as String
+        let place = locations!.objectAtIndex(indexPath.row) as! GooglePlace
+        cell!.textLabel!.text = place.name as String
 
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var address = locations!.objectAtIndex(indexPath.row) as! NSString
+        var address = locations!.objectAtIndex(indexPath.row) as! GooglePlace
         
-        let addressLine1 = address.substringToIndex(address.rangeOfString(",").location)
-        let addressLine2 = address.substringFromIndex(address.rangeOfString(",").location + 2)
+//        let addressLine1 = address.substringToIndex(address.rangeOfString(",").location)
+//        let addressLine2 = address.substringFromIndex(address.rangeOfString(",").location + 2)
         
-        delegate!.didSelectLocation(addressLine1, addressLine2: addressLine2)
+        delegate!.didSelectLocation(address)
         self.navigationController?.popViewControllerAnimated(true)
     }
 

@@ -17,6 +17,7 @@ class TUTableViewCellType1TableViewCell: UITableViewCell {
     @IBOutlet weak var likeImageView: UIImageView!
     @IBOutlet weak var commentWrapperView: UIView!
     @IBOutlet weak var numberOfLikesLabel: UILabel!
+    @IBOutlet weak var userProfileImageView: UIImageView!
     
     func imageTapped() {
         likeImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);

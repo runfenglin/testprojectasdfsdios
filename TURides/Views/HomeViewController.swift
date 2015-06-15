@@ -61,6 +61,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         cell.nameLabel.text = checkin.user.name
         cell.placeLabel.text = checkin.place.name
         cell.numberOfLikesLabel.text = checkin.numberOfLikes.stringValue
+        cell.userProfileImageView.image = checkin.user.profileIcon
         
         if let comment = checkin.message {
             let lable = UILabel(frame: CGRectMake(0, 0, cell.commentWrapperView.frame.width-20, 20))

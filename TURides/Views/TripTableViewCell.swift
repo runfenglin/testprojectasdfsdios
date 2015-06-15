@@ -1,0 +1,34 @@
+//
+//  TripTableViewCell.swift
+//  TURides
+//
+//  Created by Dennis Hui on 8/06/15.
+//
+//
+
+import UIKit
+
+class TripTableViewCell: UITableViewCell {
+    @IBOutlet weak var tripRouteLabel: UILabel!
+    @IBOutlet weak var tripOrgnizerImageView: UIImageView!
+    @IBOutlet weak var tripTimeLabel: UILabel!
+
+    @IBOutlet weak var numberOfParticipantsLabel: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        numberOfParticipantsLabel.layer.cornerRadius = numberOfParticipantsLabel.frame.size.height/2
+        numberOfParticipantsLabel.clipsToBounds = true
+    }
+
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    func configureCellWithTrip(trip: Trip) {
+        tripOrgnizerImageView.image = trip.orgnizer.profileIcon
+    }
+
+}

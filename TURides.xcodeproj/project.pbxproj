@@ -37,6 +37,13 @@
 		B749117B1B03467B0079275A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749117A1B03467B0079275A /* Comment.swift */; };
 		B75DC8CB1B17132D008AB5DE /* CreateTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */; };
 		B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */; };
+		B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CE1B23A66B008AB5DE /* GetTripService.swift */; };
+		B75DC8D31B25829B008AB5DE /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8D21B25829B008AB5DE /* TripTableViewCell.swift */; };
+		B75DC8D51B258363008AB5DE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8D41B258363008AB5DE /* Trip.swift */; };
+		B75DC8D91B2585D6008AB5DE /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8D81B2585D6008AB5DE /* ActivityTableViewController.swift */; };
+		B75DC8DB1B2AD8B7008AB5DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B75DC8DA1B2AD8B7008AB5DE /* MapKit.framework */; };
+		B75DC8DD1B2C1ED0008AB5DE /* AcceptTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8DC1B2C1ED0008AB5DE /* AcceptTripService.swift */; };
+		B75DC8DF1B2C22FF008AB5DE /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8DE1B2C22FF008AB5DE /* TripDetailsViewController.swift */; };
 		B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612B1AE663E9001354D6 /* CheckInViewController.swift */; };
 		B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */; };
 		B77561321AE7B35C001354D6 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77561311AE7B35C001354D6 /* TUButton.swift */; };
@@ -113,6 +120,13 @@
 		B749117A1B03467B0079275A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Models/Comment.swift; sourceTree = "<group>"; };
 		B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTripService.swift; path = Services/CreateTripService.swift; sourceTree = "<group>"; };
 		B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMenuViewController.swift; path = Views/AddMenuViewController.swift; sourceTree = "<group>"; };
+		B75DC8CE1B23A66B008AB5DE /* GetTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripService.swift; path = Services/GetTripService.swift; sourceTree = "<group>"; };
+		B75DC8D21B25829B008AB5DE /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripTableViewCell.swift; path = Views/TripTableViewCell.swift; sourceTree = "<group>"; };
+		B75DC8D41B258363008AB5DE /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = Models/Trip.swift; sourceTree = "<group>"; };
+		B75DC8D81B2585D6008AB5DE /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityTableViewController.swift; path = Views/ActivityTableViewController.swift; sourceTree = "<group>"; };
+		B75DC8DA1B2AD8B7008AB5DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B75DC8DC1B2C1ED0008AB5DE /* AcceptTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcceptTripService.swift; path = Services/AcceptTripService.swift; sourceTree = "<group>"; };
+		B75DC8DE1B2C22FF008AB5DE /* TripDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripDetailsViewController.swift; path = Views/TripDetailsViewController.swift; sourceTree = "<group>"; };
 		B775612B1AE663E9001354D6 /* CheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = Views/CheckInViewController.swift; sourceTree = "<group>"; };
 		B775612F1AE7B009001354D6 /* InviteFacebookFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InviteFacebookFriendsViewController.swift; path = Views/InviteFacebookFriendsViewController.swift; sourceTree = "<group>"; };
 		B77561311AE7B35C001354D6 /* TUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUButton.swift; path = Views/TUButton.swift; sourceTree = "<group>"; };
@@ -148,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75DC8DB1B2AD8B7008AB5DE /* MapKit.framework in Frameworks */,
 				63C6CC14754FD88A4C0241E7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +189,7 @@
 		36178354192DC889C3A17C65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B75DC8DA1B2AD8B7008AB5DE /* MapKit.framework */,
 				AC0B8F4B6ED9958BD796D8C1 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -184,6 +200,9 @@
 			children = (
 				B70775221B0C82430089673C /* CreateTripTableViewController.swift */,
 				B70775291B0DCD4F0089673C /* ChooseLocationTableViewController.swift */,
+				B75DC8D21B25829B008AB5DE /* TripTableViewCell.swift */,
+				B75DC8D81B2585D6008AB5DE /* ActivityTableViewController.swift */,
+				B75DC8DE1B2C22FF008AB5DE /* TripDetailsViewController.swift */,
 			);
 			name = Trip;
 			sourceTree = "<group>";
@@ -201,6 +220,8 @@
 				B7B753201B01E4B800070919 /* GetUserProfileService.swift */,
 				B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */,
 				B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */,
+				B75DC8CE1B23A66B008AB5DE /* GetTripService.swift */,
+				B75DC8DC1B2C1ED0008AB5DE /* AcceptTripService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -348,6 +369,7 @@
 				B7B753221B01E79200070919 /* TUComment.swift */,
 				B749117A1B03467B0079275A /* Comment.swift */,
 				B70775241B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift */,
+				B75DC8D41B258363008AB5DE /* Trip.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -503,12 +525,14 @@
 				B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */,
 				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
 				B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */,
+				B75DC8DF1B2C22FF008AB5DE /* TripDetailsViewController.swift in Sources */,
 				B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */,
 				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
 				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
 				B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */,
 				B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
+				B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
 				B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
@@ -525,9 +549,12 @@
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
 				B70775231B0C82430089673C /* CreateTripTableViewController.swift in Sources */,
+				B75DC8D51B258363008AB5DE /* Trip.swift in Sources */,
 				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,
 				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
+				B75DC8D91B2585D6008AB5DE /* ActivityTableViewController.swift in Sources */,
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
+				B75DC8D31B25829B008AB5DE /* TripTableViewCell.swift in Sources */,
 				B719DCAD1ADD234E0035CBBF /* Service.swift in Sources */,
 				B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */,
 				B7B753231B01E79200070919 /* TUComment.swift in Sources */,
@@ -536,6 +563,7 @@
 				B720C4181AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift in Sources */,
 				B741917B1ADA8A1A0051E237 /* RegistrationViewController.swift in Sources */,
 				B74191581ADA6BAF0051E237 /* AppDelegate.swift in Sources */,
+				B75DC8DD1B2C1ED0008AB5DE /* AcceptTripService.swift in Sources */,
 				B720C41A1AF0E45700DD1603 /* GooglePlace.swift in Sources */,
 				B7F040381B0B385A00D9EEFF /* TUSearchDisplayController.swift in Sources */,
 				B707752A1B0DCD4F0089673C /* ChooseLocationTableViewController.swift in Sources */,
@@ -663,7 +691,7 @@
 				INFOPLIST_FILE = TURides/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3d100c2b-2409-499a-b5c2-8b657bf1e850";
+				PROVISIONING_PROFILE = "78e31b60-d1b5-401e-8844-6514f71e71db";
 				SWIFT_OBJC_BRIDGING_HEADER = "TURides/Bridging-Header.h";
 			};
 			name = Debug;

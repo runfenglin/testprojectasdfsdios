@@ -88,6 +88,7 @@
                 <outlet property="numberOfLikesLabel" destination="MO9-yB-5BM" id="EZe-Vt-Qha"/>
                 <outlet property="placeLabel" destination="lNa-lL-PH0" id="Oiv-4H-2aa"/>
                 <outlet property="placeLabel1" destination="XNX-ZE-Znb" id="Zu1-Ck-ah6"/>
+                <outlet property="userProfileImageView" destination="b7R-fH-w1u" id="S4Q-1x-Bac"/>
             </connections>
             <point key="canvasLocation" x="-246.5" y="151.5"/>
         </tableViewCell>

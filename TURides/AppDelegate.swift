@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showHomeScreen", name: Constant.NOTIFICATION_SHOW_HOME_SCREEN, object: nil)
-        FBSDKLoginManager().logOut()
+        //FBSDKLoginManager().logOut()
 
         if let token = KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY) {
             //KeyChainUtil.delete(Constant.KEYCHAIN_KEY_APIKEY)

@@ -38,7 +38,7 @@ class GooglePlaceAutocompleteService: Service {
         var params = NSMutableDictionary()
         
         params.setValue(mConstant.VALUE_KEY, forKey: mConstant.KEY_KEY)
-        params.setValue("67 Tamahere", forKey: mConstant.KEY_INPUT)
+        params.setValue(queryString, forKey: mConstant.KEY_INPUT)
         params.setValue("country:nz", forKey: "components")
         
         Command(params: params, delegate: self, url: mConstant.url).get()
@@ -50,7 +50,13 @@ class GooglePlaceAutocompleteService: Service {
         var results = NSMutableArray()
         if let locationsArray = json.array {
             for locationDic in locationsArray {
-                results.addObject(locationDic["description"].string!)
+                let id = locationDic["place_id"].string!
+                let reference = locationDic["reference"].string!
+                let description = locationDic["description"].string!
+                
+                let place = GooglePlace(id: reference, name: description, address: description)
+                
+                results.addObject(place)
             }
         }
         

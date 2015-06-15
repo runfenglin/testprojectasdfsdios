@@ -36,13 +36,18 @@ class GetActivityService: Service {
             for activityDict in activityArray {
                 var id: NSNumber! = activityDict["id"].number
                 
-                var userID: NSNumber! = (activityDict["user"]["id"]).number
-                var userName: String! = (activityDict["user"]["name"]).string
-                var user = User(id: userID.stringValue, name: userName, email: userName, profileIcon: UIImage())
+                let userID: NSNumber! = (activityDict["user"]["id"]).number
+                let userName: String! = (activityDict["user"]["name"]).string
+                let user = User(id: userID.stringValue, name: userName, email: userName, profileIcon: UIImage())
                 
-                var googlePlaceID: String! = activityDict["checkin_reference"].string
-                var googlePlaceName: String! = activityDict["checkin_name"].string
-                var googlePlaceAddress: String! = activityDict["checkin_name"].string
+                if let userAvatar = (activityDict["user"]["avatar"]).string {
+                    let decodedData = NSData(base64EncodedString: userAvatar, options: NSDataBase64DecodingOptions(rawValue: 0))
+                    user.profileIcon =  UIImage(data: decodedData!)!
+                }
+                
+                let googlePlaceID: String! = activityDict["checkin_reference"].string
+                let googlePlaceName: String! = activityDict["checkin_name"].string
+                let googlePlaceAddress: String! = activityDict["checkin_name"].string
                     
                 var googlePlace = GooglePlace(id: googlePlaceID, name: googlePlaceName, address: googlePlaceAddress)
                 
@@ -74,14 +79,11 @@ class GetActivityService: Service {
         }
     }
     
-    
-    
     override func successCallback(responseObject: AnyObject) {
         println(responseObject)
         
         let json = JSON(responseObject)
         extractResult(json)
-        
         
         delegate.handleGetActivityServiceSuccess(acitvitiesArray)
         

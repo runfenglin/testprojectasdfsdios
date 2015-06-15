@@ -23,6 +23,9 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     var isChoosingFromAddress: Bool = false
     var isChoosingTime: Bool = false
     var mDateFormatter: NSDateFormatter = NSDateFormatter()
+    var departure: GooglePlace?
+    var destination: GooglePlace?
+    
     let shareOptionArray = ["Public", "Friends", "Friends' Friends"]
     
     override func viewDidLoad() {
@@ -55,9 +58,11 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     @IBAction func postButtonTouched(sender: AnyObject) {
         let params = NSMutableDictionary()
         params.setValue(0, forKey: CreateTripService.mConstant.PARAMETER_KEY_GROUP)
-        params.setValue("67 Tamahere Drive Glenfield", forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
-        params.setValue("8 Tangihua Street CBD", forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
-        params.setValue("2015-05-30 19:20:30", forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
+        params.setValue(departure?.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
+        params.setValue(departure?.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
+        params.setValue(destination?.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
+        params.setValue(destination?.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
+        params.setValue("2015-06-30 19:20:30", forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
         params.setValue("Mock message", forKey: CreateTripService.mConstant.PAREMETER_KEY_COMMENT)
         params.setValue(1, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
         CreateTripService(delegate: self).dispathWithParams(params)
@@ -161,11 +166,18 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         }
     }
     
-    func didSelectLocation(addressLine1: NSString, addressLine2: NSString) {
+    func didSelectLocation(place: GooglePlace) {
+        let address = place.address as NSString
+        
+        let addressLine1 = address.substringToIndex(address.rangeOfString(",").location)
+        let addressLine2 = address.substringFromIndex(address.rangeOfString(",").location + 2)
+        
         if isChoosingFromAddress {
+            departure = place
             fromAddressLine1.text = addressLine1 as String
             fromAddressLine2.text = addressLine2 as String
         } else {
+            destination = place
             toAddressLine1.text = addressLine1 as String
             toAddressLine2.text = addressLine2 as String
         }
