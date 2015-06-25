@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TripDetailsViewController: BaseViewController {
+class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate {
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -20,19 +20,24 @@ class TripDetailsViewController: BaseViewController {
         super.viewDidLoad()
         self.edgesForExtendedLayout = UIRectEdge.None
         
-//        userNameLabel.text = trip?.orgnizer.name
-//        userImageView.image = trip?.orgnizer.profileIcon
-//        var label = "From: \(trip?.departure.name)\nTo: \(trip?.destination.name)\nPick up time: \(trip)"
+        userNameLabel.text = trip?.orgnizer.name
+        userImageView.image = trip?.orgnizer.profileIcon
+        var label = "From: \(trip!.departure.name)\nTo: \(trip!.destination.name)\nPick up time: \(trip!.departureTime)"
+        tripDetailsLabel.text = label
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func acceptButtonTouched(sender: AnyObject) {
+        let params = NSMutableDictionary()
+        params.setValue(trip?.tripID, forKey: "trip")
+        let service = AcceptTripService(delegate: self)
+        service.dispathWithParams(params)
     }
-    */
+    
+    func handleAcceptTripSuccess() {
+        
+    }
+    
+    func handleAcceptTripFail() {
+        
+    }
 
 }

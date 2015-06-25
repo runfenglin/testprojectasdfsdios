@@ -68,6 +68,8 @@
 		B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753261B01EC8200070919 /* SwiftyJSON.swift */; };
 		B7B753291B01FBD900070919 /* ActivityList.json in Resources */ = {isa = PBXBuildFile; fileRef = B7B753281B01FBD900070919 /* ActivityList.json */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
+		B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */; };
+		B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */; };
 		B7F040361B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */; };
 		B7F040381B0B385A00D9EEFF /* TUSearchDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */; };
 		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
@@ -151,6 +153,8 @@
 		B7B753261B01EC8200070919 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B7B753281B01FBD900070919 /* ActivityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivityList.json; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
+		B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripOffersService.swift; path = Services/GetTripOffersService.swift; sourceTree = "<group>"; };
+		B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateDeviceTokenService.swift; path = Services/UpdateDeviceTokenService.swift; sourceTree = "<group>"; };
 		B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceAutocompleteService.swift; path = Services/GooglePlaceAutocompleteService.swift; sourceTree = "<group>"; };
 		B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSearchDisplayController.swift; path = Views/TUSearchDisplayController.swift; sourceTree = "<group>"; };
 		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */,
 				B75DC8CE1B23A66B008AB5DE /* GetTripService.swift */,
 				B75DC8DC1B2C1ED0008AB5DE /* AcceptTripService.swift */,
+				B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */,
+				B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				B77561321AE7B35C001354D6 /* TUButton.swift in Sources */,
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
 				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
+				B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */,
 				B796325A1AEA39AA007A2CE0 /* User.swift in Sources */,
 				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
 				B75DC8CB1B17132D008AB5DE /* CreateTripService.swift in Sources */,
@@ -530,6 +537,7 @@
 				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
 				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
 				B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */,
+				B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */,
 				B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */,

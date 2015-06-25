@@ -9,19 +9,21 @@
 import UIKit
 
 class Trip: NSObject {
+    var tripID: NSNumber
     var departure: GooglePlace
     var destination: GooglePlace
-    var numberOfParticipants: Int
+    var numberOfOffers: Int
     var isGroupTrip: Bool
     var orgnizer: User
     var departureTime: NSDate
     
-    init(orgnizer: User, departure: GooglePlace, destination: GooglePlace, numberOfParticipants: Int, isGroupTrip: Bool, departureTime: NSDate) {
+    init(tripID: NSNumber, orgnizer: User, departure: GooglePlace, destination: GooglePlace, numberOfOffers: Int, isGroupTrip: Bool, departureTime: NSDate) {
         self.departure = departure
         self.destination = destination
-        self.numberOfParticipants = numberOfParticipants
+        self.numberOfOffers = numberOfOffers
         self.isGroupTrip = isGroupTrip
         self.orgnizer = orgnizer
         self.departureTime = departureTime
+        self.tripID = tripID
     }
 }

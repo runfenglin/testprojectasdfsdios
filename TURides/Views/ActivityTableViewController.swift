@@ -10,7 +10,8 @@ import UIKit
 
 class ActivityTableViewController: UITableViewController, GetTripServiceDelegate {
 
-    var data: [Trip] = []
+    var allTrip: [Trip] = []
+    var myTrip: [Trip] = []
     var selectedTrip: Trip?
     
     override func viewDidLoad() {
@@ -19,37 +20,52 @@ class ActivityTableViewController: UITableViewController, GetTripServiceDelegate
         self.navigationItem.titleView = NavBarLogoView(title: "ThumbsUp")
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = GetTripService.mConstant.LOADING_MESSAGE
         GetTripService(delegate: self).dispathWithParams(NSDictionary())
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector("getTrips"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
     }
 
+    func getTrips() {
+        GetTripService(delegate: self).dispathWithParams(NSDictionary())
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if allTrip.count == 0 && myTrip.count == 0 {
+            return 0
+        } else {
+            return 2
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if (section == 0) {
+            return allTrip.count
+        } else {
+            return myTrip.count
+        }
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+        return section == 0 ? "All Trips" : "My Trips"
+    }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: TripTableViewCell = tableView.dequeueReusableCellWithIdentifier("tripTableViewCell", forIndexPath: indexPath) as! TripTableViewCell
-        let trip: Trip = data[indexPath.row] as Trip
+        
+        let trip: Trip = indexPath.section == 0 ? allTrip[indexPath.row] as Trip : myTrip[indexPath.row] as Trip
+        
+        cell.configureCellWithTrip(trip)
         
         cell.tripOrgnizerImageView.image = trip.orgnizer.profileIcon
-        
-        
-        
-        
-        
         
         var mDateFormatter: NSDateFormatter = NSDateFormatter()
         mDateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -66,10 +82,12 @@ class ActivityTableViewController: UITableViewController, GetTripServiceDelegate
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedTrip = data[indexPath.row]
+        //selectedTrip = data[indexPath.row]
         self.performSegueWithIdentifier("to-trip-details", sender: nil)
     }
-    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -125,7 +143,16 @@ class ActivityTableViewController: UITableViewController, GetTripServiceDelegate
     }
     
     func handleGetTripSuccess(trips: [Trip]) {
-        data = trips
+        for trip in trips {
+            if trip.orgnizer.name == Session.sharedInstance.me?.name {
+                myTrip.append(trip)
+            } else {
+                allTrip.append(trip)
+            }
+        }
+        //data = trips
         self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
     }
 }

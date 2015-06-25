@@ -29,6 +29,11 @@ class TripTableViewCell: UITableViewCell {
     
     func configureCellWithTrip(trip: Trip) {
         tripOrgnizerImageView.image = trip.orgnizer.profileIcon
+        if (trip.numberOfOffers > 0) {
+            numberOfParticipantsLabel.text = String(trip.numberOfOffers)
+        } else {
+            numberOfParticipantsLabel.hidden = true
+        }
     }
 
 }

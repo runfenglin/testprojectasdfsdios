@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, REFrostedViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, REFrostedViewControllerDelegate, UpdateDeviceTokenServiceDelegate {
 
     var window: UIWindow?
 
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
         
         window!.rootViewController = frostedViewController
         window!.makeKeyAndVisible()
-}
+    }
     
     func showMenu() {
         let vc = window!.rootViewController as! REFrostedViewController
@@ -74,10 +74,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
     //MARK: -
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         println(deviceToken)
+        let service = UpdateDeviceTokenService(delegate: self)
+        let params = NSMutableDictionary();
+        
+        var str: String = String()
+        let p = UnsafePointer<UInt8>(deviceToken.bytes)
+        let len = deviceToken.length
+        
+        for var i=0; i<len; ++i {
+            str += String(format: "%02.2X", p[i])
+        }
+        
+        //let a = NSString(data: deviceToken, encoding:NSUTF8StringEncoding)
+        params.setValue(str, forKey: "device_token")
+        service.dispathWithParams(params)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         println(error)
+        
+    }
+    
+    func updateDeviceTokenSuccess() {
+        println("updateDeviceTokenSuccess");
+    }
+    
+    func updateDeviceTokenFail() {
         
     }
     
@@ -98,6 +120,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
         } else {
             showLoginScreen()
         }
+        
+        UITabBar.appearance().tintColor = UIColor(netHex: 0x3F5C73)
+        UINavigationBar.appearance().barTintColor = UIColor(netHex: 0x3F5C73)
+        UINavigationBar.appearance().translucent = false
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

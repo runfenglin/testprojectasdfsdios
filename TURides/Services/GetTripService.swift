@@ -59,7 +59,11 @@ class GetTripService: Service {
                 let timeInterval: NSNumber! = tripDict["time"].number
                 let date = NSDate(timeIntervalSince1970: timeInterval.doubleValue)
                 
-                let trip: Trip = Trip(orgnizer: user, departure: departure, destination: destination, numberOfParticipants: 2, isGroupTrip: false, departureTime: date)
+                let numberOfOffers: NSNumber! = tripDict["offer_count"].number
+                
+                let tripID: NSNumber! = tripDict["id"].number
+                
+                let trip: Trip = Trip(tripID: tripID, orgnizer: user, departure: departure, destination: destination, numberOfOffers: numberOfOffers.integerValue, isGroupTrip: false, departureTime: date)
                 self.tripsArray.append(trip)
             }
         }

@@ -57,14 +57,14 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     
     @IBAction func postButtonTouched(sender: AnyObject) {
         let params = NSMutableDictionary()
-        params.setValue(0, forKey: CreateTripService.mConstant.PARAMETER_KEY_GROUP)
+       // params.setValue(0, forKey: CreateTripService.mConstant.PARAMETER_KEY_GROUP)
         params.setValue(departure?.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
         params.setValue(departure?.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
         params.setValue(destination?.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
         params.setValue(destination?.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
         params.setValue("2015-06-30 19:20:30", forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
         params.setValue("Mock message", forKey: CreateTripService.mConstant.PAREMETER_KEY_COMMENT)
-        params.setValue(1, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
+        params.setValue(2, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
         CreateTripService(delegate: self).dispathWithParams(params)
     }
 
