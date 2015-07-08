@@ -12,6 +12,7 @@ class Session {
 
     static let sharedInstance = Session()
     var me: User?
+    var friends: [User]?
     
     init() {
         

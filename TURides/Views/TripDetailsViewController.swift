@@ -29,11 +29,12 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate {
         let params = NSMutableDictionary()
         params.setValue(trip?.tripID, forKey: "trip")
         let service = AcceptTripService(delegate: self)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         service.dispathWithParams(params)
     }
     
     func handleAcceptTripSuccess() {
-        
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
     }
     
     func handleAcceptTripFail() {

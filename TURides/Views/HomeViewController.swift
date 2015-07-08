@@ -30,6 +30,12 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         appDelegate.showMenu();
     }
     
+    
+    @IBAction func addButtonTouched(sender: AnyObject) {
+        
+    }
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let checkin = data[indexPath.row] as CheckInActivity
         if let message = checkin.message {

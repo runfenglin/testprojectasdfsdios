@@ -7,26 +7,28 @@
 //
 import UIKit
 
-class CreateTripTableViewController: UITableViewController, ChooseLocationTableViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, CreateTripServiceDelegate {
+class CreateTripTableViewController: UITableViewController, ChooseLocationTableViewControllerDelegate, SelectFriendsTableViewControllerDelegate, CreateTripServiceDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
-    static let INDEXPATH_ADDTOCALENDAR: NSIndexPath = NSIndexPath(forRow: 2, inSection: 1)
+    static let INDEXPATH_FROM: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+    static let INDEXPATH_TO: NSIndexPath = NSIndexPath(forRow: 1, inSection: 0)
     
     @IBOutlet weak var fromAddressLine1: UILabel!
     @IBOutlet weak var fromAddressLine2: UILabel!
     @IBOutlet weak var toAddressLine1: UILabel!
     @IBOutlet weak var toAddressLine2: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
-    @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var shareWithTextField: UITextField!
     @IBOutlet weak var datePickerView: UIDatePicker!
-   
+    @IBOutlet var groupTripSwitch: UISwitch!
+    @IBOutlet var noteUITextView: UITextView!
+    
     var isChoosingFromAddress: Bool = false
     var isChoosingTime: Bool = false
     var mDateFormatter: NSDateFormatter = NSDateFormatter()
     var departure: GooglePlace?
     var destination: GooglePlace?
     
-    let shareOptionArray = ["Public", "Friends", "Friends' Friends"]
+    let shareOptionArray = ["Friends", "Friends' Friends"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +44,12 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     
         shareWithTextField.inputView = pickerView
         shareWithTextField.delegate = self
+        shareWithTextField.text = "Friends"
         
         fromAddressLine1.text = ""
         fromAddressLine2.text = ""
         toAddressLine1.text = ""
         toAddressLine2.text = ""
-        alertLabel.text = ""
         
         mDateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         mDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
@@ -55,17 +57,25 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         datePickerView.minimumDate = now
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "to-choose-location" {
+            let destinationVC = segue.destinationViewController as! ChooseLocationTableViewController
+            destinationVC.delegate = self
+        }
+        
+        if segue.identifier == "to-select-friends" {
+            let destinationVC = segue.destinationViewController as! SelectFriendsTableViewController
+            destinationVC.delegate = self
+        }
+    }
+    
     @IBAction func postButtonTouched(sender: AnyObject) {
-        let params = NSMutableDictionary()
-       // params.setValue(0, forKey: CreateTripService.mConstant.PARAMETER_KEY_GROUP)
-        params.setValue(departure?.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
-        params.setValue(departure?.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
-        params.setValue(destination?.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
-        params.setValue(destination?.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
-        params.setValue("2015-06-30 19:20:30", forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
-        params.setValue("Mock message", forKey: CreateTripService.mConstant.PAREMETER_KEY_COMMENT)
-        params.setValue(2, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
-        CreateTripService(delegate: self).dispathWithParams(params)
+        
+        if departure == nil || destination == nil {
+            UIUtil.showPopUpErrorDialog("You must select a from address and a to address.")
+        } else {
+            self.performSegueWithIdentifier("to-select-friends", sender: nil)
+        }
     }
 
     @IBAction func cancelButtonTouched(sender: AnyObject) {
@@ -85,7 +95,7 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return 2
     }
     
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
@@ -105,12 +115,16 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         shareWithTextField.resignFirstResponder()
     }
     
+    //MARK:
     //MARK: ========== UITextField Delegate ==========
+    //MARK:
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         return false
     }
     
+    //MARK:
     //MARK: ========== UITableView DataSource/Delegate ==========
+    //MARK:
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
@@ -118,9 +132,9 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 3
+            return 2
         case 1:
-            return 5
+            return 3
             
         case 2:
             return 1
@@ -147,14 +161,11 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath == CreateTripTableViewController.INDEXPATH_ADDTOCALENDAR {
-            NSLog("")
-        }
         
-        if (indexPath.section == 0 && indexPath.row == 1) {
+        if (indexPath == CreateTripTableViewController.INDEXPATH_FROM) {
             isChoosingFromAddress = true
             self.performSegueWithIdentifier("to-choose-location", sender: nil)
-        } else if (indexPath.section == 0 && indexPath.row == 2) {
+        } else if (indexPath == CreateTripTableViewController.INDEXPATH_TO) {
             isChoosingFromAddress = false
             self.performSegueWithIdentifier("to-choose-location", sender: nil)
         } else if (indexPath.section == 1 && indexPath.row == 1) {
@@ -166,6 +177,9 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         }
     }
     
+    //MARK:
+    //MARK: ========== ChooseLocationTableViewControllerDelegate ==========
+    //MARK:
     func didSelectLocation(place: GooglePlace) {
         let address = place.address as NSString
         
@@ -183,16 +197,57 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationVC = segue.destinationViewController as! ChooseLocationTableViewController
-        destinationVC.delegate = self
+    //MARK:
+    //MARK: ========== SelectFriendsTableViewControllerDelegate ==========
+    //MARK:
+    func didSelectFriends(friends: [String]) {
+        
+        let params = NSMutableDictionary()
+        if groupTripSwitch.on {
+            params.setValue(1, forKey: CreateTripService.mConstant.PARAMETER_KEY_GROUP)
+        }
+        
+        params.setValue(departure?.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
+        params.setValue(departure?.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
+        params.setValue(destination?.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
+        params.setValue(destination?.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let dateTime = dateFormatter.stringFromDate(datePickerView.date)
+        params.setValue(dateTime, forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
+        
+        if noteUITextView.text != "Note" {
+            params.setValue(noteUITextView.text, forKey: CreateTripService.mConstant.PAREMETER_KEY_COMMENT)
+        } else {
+            params.setValue("", forKey: CreateTripService.mConstant.PAREMETER_KEY_COMMENT)
+        }
+        
+        if shareWithTextField.text == "Friends" {
+            params.setValue(1, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
+        } else {
+            params.setValue(2, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
+        }
+        
+        if friends.count == Session.sharedInstance.friends!.count {
+            
+        } else {
+            
+        }
+
+        
+        CreateTripService(delegate: self).dispathWithParams(params)
     }
     
+    //MARK:
+    //MARK: ========== CreateTripServiceDelegate ==========
+    //MARK:
     func handleCreateTripSuccess() {
-        
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func handleCreateTripFail() {
-        
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
     }
 }

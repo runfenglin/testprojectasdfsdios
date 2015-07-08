@@ -35,6 +35,7 @@
 		B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918B1ADBBD5F0051E237 /* SignupViewController.swift */; };
 		B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */; };
 		B749117B1B03467B0079275A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749117A1B03467B0079275A /* Comment.swift */; };
+		B74F4B3C1B47D2DD00F760BA /* TripOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F4B3B1B47D2DD00F760BA /* TripOffer.swift */; };
 		B75DC8CB1B17132D008AB5DE /* CreateTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */; };
 		B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */; };
 		B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC8CE1B23A66B008AB5DE /* GetTripService.swift */; };
@@ -63,6 +64,11 @@
 		B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325D1AECE1EA007A2CE0 /* FBFriend.swift */; };
 		B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */; };
 		B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */; };
+		B7AB4CE61B48E9BA00245ECF /* PickDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */; };
+		B7AB4CE81B49316900245ECF /* PickDriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */; };
+		B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */; };
+		B7AB4CEC1B4BCA4400245ECF /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CEB1B4BCA4400245ECF /* FriendTableViewCell.swift */; };
+		B7AB4CEE1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */; };
 		B7B753211B01E4B800070919 /* GetUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753201B01E4B800070919 /* GetUserProfileService.swift */; };
 		B7B753231B01E79200070919 /* TUComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753221B01E79200070919 /* TUComment.swift */; };
 		B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753261B01EC8200070919 /* SwiftyJSON.swift */; };
@@ -70,6 +76,7 @@
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */; };
 		B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */; };
+		B7ED26841B3E912B001F1656 /* GetPairedTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED26831B3E912B001F1656 /* GetPairedTripService.swift */; };
 		B7F040361B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */; };
 		B7F040381B0B385A00D9EEFF /* TUSearchDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */; };
 		B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */; };
@@ -120,6 +127,7 @@
 		B741918B1ADBBD5F0051E237 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Views/SignupViewController.swift; sourceTree = "<group>"; };
 		B741918F1ADBC3FE0051E237 /* KeyChainUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChainUtil.swift; path = Utils/KeyChainUtil.swift; sourceTree = "<group>"; };
 		B749117A1B03467B0079275A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Models/Comment.swift; sourceTree = "<group>"; };
+		B74F4B3B1B47D2DD00F760BA /* TripOffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripOffer.swift; path = Models/TripOffer.swift; sourceTree = "<group>"; };
 		B75DC8CA1B17132D008AB5DE /* CreateTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTripService.swift; path = Services/CreateTripService.swift; sourceTree = "<group>"; };
 		B75DC8CC1B20570F008AB5DE /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMenuViewController.swift; path = Views/AddMenuViewController.swift; sourceTree = "<group>"; };
 		B75DC8CE1B23A66B008AB5DE /* GetTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripService.swift; path = Services/GetTripService.swift; sourceTree = "<group>"; };
@@ -148,6 +156,11 @@
 		B796325D1AECE1EA007A2CE0 /* FBFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBFriend.swift; path = Models/FBFriend.swift; sourceTree = "<group>"; };
 		B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUPrimaryButton.swift; path = Views/TUPrimaryButton.swift; sourceTree = "<group>"; };
 		B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSecondaryButton.swift; path = Views/TUSecondaryButton.swift; sourceTree = "<group>"; };
+		B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverViewController.swift; path = Views/PickDriverViewController.swift; sourceTree = "<group>"; };
+		B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverTableViewCell.swift; path = Views/PickDriverTableViewCell.swift; sourceTree = "<group>"; };
+		B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverService.swift; path = Services/PickDriverService.swift; sourceTree = "<group>"; };
+		B7AB4CEB1B4BCA4400245ECF /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = Views/FriendTableViewCell.swift; sourceTree = "<group>"; };
+		B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectFriendsTableViewController.swift; path = Views/SelectFriendsTableViewController.swift; sourceTree = "<group>"; };
 		B7B753201B01E4B800070919 /* GetUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetUserProfileService.swift; path = Services/GetUserProfileService.swift; sourceTree = "<group>"; };
 		B7B753221B01E79200070919 /* TUComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUComment.swift; path = Models/TUComment.swift; sourceTree = "<group>"; };
 		B7B753261B01EC8200070919 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -155,6 +168,7 @@
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripOffersService.swift; path = Services/GetTripOffersService.swift; sourceTree = "<group>"; };
 		B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateDeviceTokenService.swift; path = Services/UpdateDeviceTokenService.swift; sourceTree = "<group>"; };
+		B7ED26831B3E912B001F1656 /* GetPairedTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPairedTripService.swift; path = Services/GetPairedTripService.swift; sourceTree = "<group>"; };
 		B7F040351B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceAutocompleteService.swift; path = Services/GooglePlaceAutocompleteService.swift; sourceTree = "<group>"; };
 		B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSearchDisplayController.swift; path = Views/TUSearchDisplayController.swift; sourceTree = "<group>"; };
 		B7FB294A1AE63E4500917B14 /* SelectPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlacesTableViewController.swift; path = Views/SelectPlacesTableViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +221,9 @@
 				B75DC8D21B25829B008AB5DE /* TripTableViewCell.swift */,
 				B75DC8D81B2585D6008AB5DE /* ActivityTableViewController.swift */,
 				B75DC8DE1B2C22FF008AB5DE /* TripDetailsViewController.swift */,
+				B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */,
+				B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */,
+				B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */,
 			);
 			name = Trip;
 			sourceTree = "<group>";
@@ -228,6 +245,8 @@
 				B75DC8DC1B2C1ED0008AB5DE /* AcceptTripService.swift */,
 				B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */,
 				B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */,
+				B7ED26831B3E912B001F1656 /* GetPairedTripService.swift */,
+				B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -360,6 +379,7 @@
 				B702951E1B00A5EF0007F668 /* MenuViewController.xib */,
 				B70295211B00AD6F0007F668 /* CircleImageView.swift */,
 				B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */,
+				B7AB4CEB1B4BCA4400245ECF /* FriendTableViewCell.swift */,
 			);
 			name = SharedControls;
 			sourceTree = "<group>";
@@ -376,6 +396,7 @@
 				B749117A1B03467B0079275A /* Comment.swift */,
 				B70775241B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift */,
 				B75DC8D41B258363008AB5DE /* Trip.swift */,
+				B74F4B3B1B47D2DD00F760BA /* TripOffer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -523,6 +544,7 @@
 			files = (
 				B77561321AE7B35C001354D6 /* TUButton.swift in Sources */,
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
+				B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */,
 				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
 				B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */,
 				B796325A1AEA39AA007A2CE0 /* User.swift in Sources */,
@@ -532,9 +554,11 @@
 				B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */,
 				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
 				B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */,
+				B74F4B3C1B47D2DD00F760BA /* TripOffer.swift in Sources */,
 				B75DC8DF1B2C22FF008AB5DE /* TripDetailsViewController.swift in Sources */,
 				B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */,
 				B77561301AE7B009001354D6 /* InviteFacebookFriendsViewController.swift in Sources */,
+				B7ED26841B3E912B001F1656 /* GetPairedTripService.swift in Sources */,
 				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
 				B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */,
 				B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */,
@@ -545,17 +569,21 @@
 				B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
 				B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */,
+				B7AB4CEC1B4BCA4400245ECF /* FriendTableViewCell.swift in Sources */,
+				B7AB4CE61B48E9BA00245ECF /* PickDriverViewController.swift in Sources */,
 				B70775251B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift in Sources */,
 				B7817FE11AF22F01007FB7D8 /* CreateCheckInService.swift in Sources */,
 				B7F040361B0B2A1800D9EEFF /* GooglePlaceAutocompleteService.swift in Sources */,
 				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,
 				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
+				B7AB4CEE1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift in Sources */,
 				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
 				B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */,
 				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,
 				B70295221B00AD6F0007F668 /* CircleImageView.swift in Sources */,
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
+				B7AB4CE81B49316900245ECF /* PickDriverTableViewCell.swift in Sources */,
 				B70775231B0C82430089673C /* CreateTripTableViewController.swift in Sources */,
 				B75DC8D51B258363008AB5DE /* Trip.swift in Sources */,
 				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,

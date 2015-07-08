@@ -39,10 +39,6 @@ class CreateTripService: Service {
     }
     
     override func successCallback(responseObject: AnyObject) {
-        
-    }
-    
-    override func failCallback(responseObject: AnyObject) {
-        
+        delegate.handleCreateTripSuccess()
     }
 }

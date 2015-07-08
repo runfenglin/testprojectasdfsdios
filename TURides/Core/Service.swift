@@ -19,6 +19,6 @@ class Service: NSObject, ServiceDelegate {
     }
     
     func failCallback(responseObject: AnyObject) {
-        assertionFailure("Must be overiden in subclass")
+        UIUtil.showPopUpErrorDialog(responseObject.description)
     }
 }

@@ -20,7 +20,7 @@ class UIUtil: NSObject {
     }
     
     static func showPopUpErrorDialog(message: String) {
-        let dialog = UIAlertView(title: "Error", message: message, delegate: nil, cancelButtonTitle: "")
+        let dialog = UIAlertView(title: "Error", message: message, delegate: nil, cancelButtonTitle: "OK")
         dialog.show()
     }
 }
