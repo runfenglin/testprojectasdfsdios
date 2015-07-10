@@ -31,7 +31,7 @@ class TUPrimaryButton: TUButton {
                 backgroundColor = UIColor.whiteColor()
             }
             else {
-                backgroundColor = UIColor(netHex: 0x8EB2BE)
+                backgroundColor = UIColor(netHex: 0x4EAD1D)
             }
             super.highlighted = newValue
         }
@@ -39,10 +39,10 @@ class TUPrimaryButton: TUButton {
     
     private func setUpButtonStyle() {
         self.layer.cornerRadius = 6.0
-        self.layer.borderColor = UIColor(netHex: 0x8EB2BE).CGColor
+        self.layer.borderColor = UIColor(netHex: 0x4EAD1D).CGColor
         self.layer.borderWidth = 1.0
-        self.backgroundColor = UIColor(netHex: 0x8EB2BE)
-        setTitleColor(UIColor(netHex: 0x8EB2BE), forState: UIControlState.Highlighted)
+        self.backgroundColor = UIColor(netHex: 0x4EAD1D)
+        setTitleColor(UIColor(netHex: 0x4EAD1D), forState: UIControlState.Highlighted)
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         
     }

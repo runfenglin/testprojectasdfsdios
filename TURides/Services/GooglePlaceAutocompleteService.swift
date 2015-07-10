@@ -54,7 +54,7 @@ class GooglePlaceAutocompleteService: Service {
                 let reference = locationDic["reference"].string!
                 let description = locationDic["description"].string!
                 
-                let place = GooglePlace(id: reference, name: description, address: description)
+                let place = GooglePlace(id: id, name: description, address: description)
                 
                 results.addObject(place)
             }

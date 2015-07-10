@@ -121,8 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
             showLoginScreen()
         }
         
-        UITabBar.appearance().tintColor = UIColor(netHex: 0x3F5C73)
-        UINavigationBar.appearance().barTintColor = UIColor(netHex: 0x3F5C73)
+        UITabBar.appearance().tintColor = UIColor(netHex: 0x4EAD1D)
+        UINavigationBar.appearance().barTintColor = UIColor(netHex: 0x4EAD1D)
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         

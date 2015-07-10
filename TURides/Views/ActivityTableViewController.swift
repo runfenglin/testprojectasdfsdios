@@ -145,9 +145,12 @@ class ActivityTableViewController: UITableViewController, GetTripServiceDelegate
             println("DELETE•ACTION");
         });
         
-        return [deleteRowAction, moreRowAction];
+        if indexPath.section == 0 || indexPath.section == 1 {
+            return [deleteRowAction]
+        } else {
+            return [deleteRowAction, moreRowAction];
+        }
     }
-
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

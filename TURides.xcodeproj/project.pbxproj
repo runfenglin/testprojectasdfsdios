@@ -69,6 +69,8 @@
 		B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */; };
 		B7AB4CEC1B4BCA4400245ECF /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CEB1B4BCA4400245ECF /* FriendTableViewCell.swift */; };
 		B7AB4CEE1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */; };
+		B7AB4CF01B4E5FAE00245ECF /* GooglePlaceDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CEF1B4E5FAE00245ECF /* GooglePlaceDetailsService.swift */; };
+		B7AB4CF21B4E6CD200245ECF /* EntranceToGoliathRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4CF11B4E6CD200245ECF /* EntranceToGoliathRoute.plist */; };
 		B7B753211B01E4B800070919 /* GetUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753201B01E4B800070919 /* GetUserProfileService.swift */; };
 		B7B753231B01E79200070919 /* TUComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753221B01E79200070919 /* TUComment.swift */; };
 		B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753261B01EC8200070919 /* SwiftyJSON.swift */; };
@@ -161,6 +163,8 @@
 		B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverService.swift; path = Services/PickDriverService.swift; sourceTree = "<group>"; };
 		B7AB4CEB1B4BCA4400245ECF /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = Views/FriendTableViewCell.swift; sourceTree = "<group>"; };
 		B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectFriendsTableViewController.swift; path = Views/SelectFriendsTableViewController.swift; sourceTree = "<group>"; };
+		B7AB4CEF1B4E5FAE00245ECF /* GooglePlaceDetailsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceDetailsService.swift; path = Services/GooglePlaceDetailsService.swift; sourceTree = "<group>"; };
+		B7AB4CF11B4E6CD200245ECF /* EntranceToGoliathRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntranceToGoliathRoute.plist; sourceTree = "<group>"; };
 		B7B753201B01E4B800070919 /* GetUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetUserProfileService.swift; path = Services/GetUserProfileService.swift; sourceTree = "<group>"; };
 		B7B753221B01E79200070919 /* TUComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUComment.swift; path = Models/TUComment.swift; sourceTree = "<group>"; };
 		B7B753261B01EC8200070919 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */,
 				B7ED26831B3E912B001F1656 /* GetPairedTripService.swift */,
 				B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */,
+				B7AB4CEF1B4E5FAE00245ECF /* GooglePlaceDetailsService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 		B74191541ADA6BAF0051E237 /* TURides */ = {
 			isa = PBXGroup;
 			children = (
+				B7AB4CF11B4E6CD200245ECF /* EntranceToGoliathRoute.plist */,
 				B74191841ADA9B820051E237 /* Views */,
 				B79632581AEA3968007A2CE0 /* Models */,
 				B74191551ADA6BAF0051E237 /* Supporting Files */,
@@ -487,6 +493,7 @@
 				B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */,
 				B74191831ADA8EE20051E237 /* NavBarLogoView.xib in Resources */,
 				B70295201B00A5EF0007F668 /* MenuViewController.xib in Resources */,
+				B7AB4CF21B4E6CD200245ECF /* EntranceToGoliathRoute.plist in Resources */,
 				B74191621ADA6BAF0051E237 /* LaunchScreen.xib in Resources */,
 				B778C75E1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.xib in Resources */,
 				B7B753291B01FBD900070919 /* ActivityList.json in Resources */,
@@ -577,6 +584,7 @@
 				B74191861ADA9E250051E237 /* LoginViewController.swift in Sources */,
 				B778C7621AE1100A001677FC /* LoginService.swift in Sources */,
 				B7AB4CEE1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift in Sources */,
+				B7AB4CF01B4E5FAE00245ECF /* GooglePlaceDetailsService.swift in Sources */,
 				B719DCAA1ADD14870035CBBF /* Command.swift in Sources */,
 				B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */,
 				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,

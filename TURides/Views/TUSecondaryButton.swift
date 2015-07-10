@@ -27,7 +27,7 @@ class TUSecondaryButton: TUButton {
         
         set {
             if newValue {
-                backgroundColor = UIColor(netHex: 0x8EB2BE)
+                backgroundColor = UIColor(netHex: 0x4EAD1D)
             }
             else {
                 backgroundColor = UIColor.whiteColor()
@@ -38,12 +38,12 @@ class TUSecondaryButton: TUButton {
     
     private func setUpButtonStyle() {
         self.layer.cornerRadius = 6.0
-        self.layer.borderColor = UIColor(netHex: 0x8EB2BE).CGColor
+        self.layer.borderColor = UIColor(netHex: 0x4EAD1D).CGColor
         self.layer.borderWidth = 1.0
         self.backgroundColor = UIColor.whiteColor()
         
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
-        setTitleColor(UIColor(netHex: 0x8EB2BE), forState: UIControlState.Normal)
+        setTitleColor(UIColor(netHex: 0x4EAD1D), forState: UIControlState.Normal)
     }
 
 }
