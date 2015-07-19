@@ -29,10 +29,22 @@ class TripTableViewCell: UITableViewCell {
     
     func configureCellWithTrip(trip: Trip) {
         tripOrgnizerImageView.image = trip.orgnizer.profileIcon
-        if (trip.numberOfOffers > 0) {
-            numberOfParticipantsLabel.text = String(trip.numberOfOffers)
+        
+        
+        
+        if trip.isKindOfClass(GroupTrip) {
+            let groupTrip = trip as! GroupTrip
+            if groupTrip.numberOfParticipants != nil && groupTrip.numberOfParticipants > 0 {
+                numberOfParticipantsLabel.text = String(groupTrip.numberOfParticipants!)
+            } else {
+                numberOfParticipantsLabel.hidden = true
+            }
         } else {
-            numberOfParticipantsLabel.hidden = true
+            if trip.numberOfOffers > 0 {
+                numberOfParticipantsLabel.text = String(trip.numberOfOffers!)
+            } else {
+                numberOfParticipantsLabel.hidden = true
+            }
         }
     }
 

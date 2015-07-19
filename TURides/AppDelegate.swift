@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
        
         let storyboard  = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("root") as! UITabBarController
+        //vc.selectedIndex = 1
         
         let frostedViewController = REFrostedViewController(contentViewController: vc, menuViewController: MenuViewController(nibName: "MenuViewController", bundle: nil))
         frostedViewController.direction = REFrostedViewControllerDirection.Left;
@@ -125,6 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
         UINavigationBar.appearance().barTintColor = UIColor(netHex: 0x4EAD1D)
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().translucent = false
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

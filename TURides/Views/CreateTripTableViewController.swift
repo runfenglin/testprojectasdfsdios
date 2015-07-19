@@ -7,6 +7,10 @@
 //
 import UIKit
 
+protocol CreateTripTableViewControllerDelegate {
+    func handleCreateTripSuccess()
+}
+
 class CreateTripTableViewController: UITableViewController, ChooseLocationTableViewControllerDelegate, SelectFriendsTableViewControllerDelegate, CreateTripServiceDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     static let INDEXPATH_FROM: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
@@ -22,6 +26,7 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
     @IBOutlet var groupTripSwitch: UISwitch!
     @IBOutlet var noteUITextView: UITextView!
     
+    var delegate: CreateTripTableViewControllerDelegate?
     var isChoosingFromAddress: Bool = false
     var isChoosingTime: Bool = false
     var mDateFormatter: NSDateFormatter = NSDateFormatter()
@@ -134,7 +139,7 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         case 0:
             return 2
         case 1:
-            return 3
+            return 4
             
         case 2:
             return 1
@@ -232,10 +237,9 @@ class CreateTripTableViewController: UITableViewController, ChooseLocationTableV
         if friends.count == Session.sharedInstance.friends!.count {
             
         } else {
-            
+            params.setValue(",".join(friends), forKey: "target")
         }
 
-        
         CreateTripService(delegate: self).dispathWithParams(params)
     }
     

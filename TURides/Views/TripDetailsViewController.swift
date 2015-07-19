@@ -82,7 +82,7 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
                         for var i=0;i < response!.routes.count; i++ {
                             let route: MKRoute = response!.routes[i] as! MKRoute
                             self.mapView.addOverlay(route.polyline)
-                            self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0), animated: true)
+                            self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsetsMake(50.0, 50.0, 50.0, 50.0), animated: true)
                         }
                         
                     } else {
@@ -128,21 +128,13 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
             GooglePlaceDetailsService(delegate: self).dispatch(trip!.destination.id)
         } else {
             to = location
-            let dropPin = MKPointAnnotation()
-            dropPin.coordinate = from!.coordinate
-            mapView.addAnnotation(dropPin)
-            
-            let dropPin1 = MKPointAnnotation()
-        
-            dropPin.coordinate = to!.coordinate
-            mapView.addAnnotation(dropPin1)
-            
-            //let a  = AddressAnnotation()
-            
+            let fromPin = MKPointAnnotation()
+            let toPin = MKPointAnnotation()
+            fromPin.coordinate = from!.coordinate
+            toPin.coordinate = to!.coordinate
+            mapView.addAnnotation(toPin)
+            mapView.addAnnotation(toPin)
             drawDirection()
-       
-           
-
         }
     }
 

@@ -71,10 +71,17 @@
 		B7AB4CEE1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */; };
 		B7AB4CF01B4E5FAE00245ECF /* GooglePlaceDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CEF1B4E5FAE00245ECF /* GooglePlaceDetailsService.swift */; };
 		B7AB4CF21B4E6CD200245ECF /* EntranceToGoliathRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4CF11B4E6CD200245ECF /* EntranceToGoliathRoute.plist */; };
+		B7AB4CF41B53AFF300245ECF /* GetGroupTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CF31B53AFF300245ECF /* GetGroupTripService.swift */; };
+		B7AB4CF61B54EE6300245ECF /* GroupTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CF51B54EE6300245ECF /* GroupTrip.swift */; };
+		B7AB4CF91B54F66900245ECF /* GroupTripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CF71B54F66900245ECF /* GroupTripDetailsViewController.swift */; };
+		B7AB4CFA1B54F66900245ECF /* GroupTripDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4CF81B54F66900245ECF /* GroupTripDetailsViewController.xib */; };
 		B7B753211B01E4B800070919 /* GetUserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753201B01E4B800070919 /* GetUserProfileService.swift */; };
 		B7B753231B01E79200070919 /* TUComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753221B01E79200070919 /* TUComment.swift */; };
 		B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B753261B01EC8200070919 /* SwiftyJSON.swift */; };
 		B7B753291B01FBD900070919 /* ActivityList.json in Resources */ = {isa = PBXBuildFile; fileRef = B7B753281B01FBD900070919 /* ActivityList.json */; };
+		B7CB4C1A1B5A2AFE00C86038 /* GetMyTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C191B5A2AFE00C86038 /* GetMyTripService.swift */; };
+		B7CB4C1C1B5A3DE700C86038 /* JoinAsPassenger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7CB4C1B1B5A3DE700C86038 /* JoinAsPassenger.storyboard */; };
+		B7CB4C1E1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C1D1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */; };
 		B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */; };
@@ -165,10 +172,17 @@
 		B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectFriendsTableViewController.swift; path = Views/SelectFriendsTableViewController.swift; sourceTree = "<group>"; };
 		B7AB4CEF1B4E5FAE00245ECF /* GooglePlaceDetailsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GooglePlaceDetailsService.swift; path = Services/GooglePlaceDetailsService.swift; sourceTree = "<group>"; };
 		B7AB4CF11B4E6CD200245ECF /* EntranceToGoliathRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntranceToGoliathRoute.plist; sourceTree = "<group>"; };
+		B7AB4CF31B53AFF300245ECF /* GetGroupTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetGroupTripService.swift; path = Services/GetGroupTripService.swift; sourceTree = "<group>"; };
+		B7AB4CF51B54EE6300245ECF /* GroupTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTrip.swift; path = Models/GroupTrip.swift; sourceTree = "<group>"; };
+		B7AB4CF71B54F66900245ECF /* GroupTripDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTripDetailsViewController.swift; path = Views/GroupTripDetailsViewController.swift; sourceTree = "<group>"; };
+		B7AB4CF81B54F66900245ECF /* GroupTripDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GroupTripDetailsViewController.xib; path = Views/GroupTripDetailsViewController.xib; sourceTree = "<group>"; };
 		B7B753201B01E4B800070919 /* GetUserProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetUserProfileService.swift; path = Services/GetUserProfileService.swift; sourceTree = "<group>"; };
 		B7B753221B01E79200070919 /* TUComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUComment.swift; path = Models/TUComment.swift; sourceTree = "<group>"; };
 		B7B753261B01EC8200070919 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B7B753281B01FBD900070919 /* ActivityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivityList.json; sourceTree = "<group>"; };
+		B7CB4C191B5A2AFE00C86038 /* GetMyTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetMyTripService.swift; path = Services/GetMyTripService.swift; sourceTree = "<group>"; };
+		B7CB4C1B1B5A3DE700C86038 /* JoinAsPassenger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = JoinAsPassenger.storyboard; path = Views/JoinAsPassenger.storyboard; sourceTree = "<group>"; };
+		B7CB4C1D1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinAsPassengerTableViewController.swift; path = Views/JoinAsPassengerTableViewController.swift; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripOffersService.swift; path = Services/GetTripOffersService.swift; sourceTree = "<group>"; };
 		B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateDeviceTokenService.swift; path = Services/UpdateDeviceTokenService.swift; sourceTree = "<group>"; };
@@ -228,6 +242,10 @@
 				B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */,
 				B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */,
 				B7AB4CED1B4BCCBD00245ECF /* SelectFriendsTableViewController.swift */,
+				B7AB4CF71B54F66900245ECF /* GroupTripDetailsViewController.swift */,
+				B7AB4CF81B54F66900245ECF /* GroupTripDetailsViewController.xib */,
+				B7CB4C1B1B5A3DE700C86038 /* JoinAsPassenger.storyboard */,
+				B7CB4C1D1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift */,
 			);
 			name = Trip;
 			sourceTree = "<group>";
@@ -252,6 +270,8 @@
 				B7ED26831B3E912B001F1656 /* GetPairedTripService.swift */,
 				B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */,
 				B7AB4CEF1B4E5FAE00245ECF /* GooglePlaceDetailsService.swift */,
+				B7AB4CF31B53AFF300245ECF /* GetGroupTripService.swift */,
+				B7CB4C191B5A2AFE00C86038 /* GetMyTripService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -403,6 +423,7 @@
 				B70775241B0C84CF0089673C /* GooglePlaceAutoCompleteDataSource.swift */,
 				B75DC8D41B258363008AB5DE /* Trip.swift */,
 				B74F4B3B1B47D2DD00F760BA /* TripOffer.swift */,
+				B7AB4CF51B54EE6300245ECF /* GroupTrip.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -490,7 +511,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74191791ADA87480051E237 /* Login.storyboard in Resources */,
+				B7CB4C1C1B5A3DE700C86038 /* JoinAsPassenger.storyboard in Resources */,
 				B719DCAF1ADD26AB0035CBBF /* Main.storyboard in Resources */,
+				B7AB4CFA1B54F66900245ECF /* GroupTripDetailsViewController.xib in Resources */,
 				B74191831ADA8EE20051E237 /* NavBarLogoView.xib in Resources */,
 				B70295201B00A5EF0007F668 /* MenuViewController.xib in Resources */,
 				B7AB4CF21B4E6CD200245ECF /* EntranceToGoliathRoute.plist in Resources */,
@@ -549,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7CB4C1A1B5A2AFE00C86038 /* GetMyTripService.swift in Sources */,
 				B77561321AE7B35C001354D6 /* TUButton.swift in Sources */,
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
 				B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */,
@@ -560,6 +584,7 @@
 				B741918C1ADBBD5F0051E237 /* SignupViewController.swift in Sources */,
 				B75DC8CD1B20570F008AB5DE /* AddMenuViewController.swift in Sources */,
 				B79632571AEA3961007A2CE0 /* BaseActivity.swift in Sources */,
+				B7AB4CF91B54F66900245ECF /* GroupTripDetailsViewController.swift in Sources */,
 				B7B753271B01EC8200070919 /* SwiftyJSON.swift in Sources */,
 				B74F4B3C1B47D2DD00F760BA /* TripOffer.swift in Sources */,
 				B75DC8DF1B2C22FF008AB5DE /* TripDetailsViewController.swift in Sources */,
@@ -571,8 +596,10 @@
 				B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */,
 				B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
+				B7AB4CF61B54EE6300245ECF /* GroupTrip.swift in Sources */,
 				B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
+				B7AB4CF41B53AFF300245ECF /* GetGroupTripService.swift in Sources */,
 				B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */,
 				B741918A1ADBB91A0051E237 /* BaseViewController.swift in Sources */,
 				B778C75D1ADFC34F001677FC /* TUTableViewCellType1TableViewCell.swift in Sources */,
@@ -592,6 +619,7 @@
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
 				B7AB4CE81B49316900245ECF /* PickDriverTableViewCell.swift in Sources */,
+				B7CB4C1E1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift in Sources */,
 				B70775231B0C82430089673C /* CreateTripTableViewController.swift in Sources */,
 				B75DC8D51B258363008AB5DE /* Trip.swift in Sources */,
 				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,

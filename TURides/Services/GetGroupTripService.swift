@@ -1,30 +1,30 @@
 //
-//  GetPairedTripService.swift
+//  GetGroupTripService.swift
 //  TURides
 //
-//  Created by Dennis Hui on 27/06/15.
+//  Created by Dennis Hui on 13/07/15.
 //
 //
 
 import UIKit
 
-protocol GetPairedTripServiceDelegate {
-    func handleGetPairedTripSuccess(trips: [Trip])
-    func handleGetPairedTripFail()
+protocol GetGroupTripServiceDelegate {
+    func handleGetGroupTripSuccess(trips: [Trip])
+    func handleGetGroupTripFail()
 }
 
-class GetPairedTripService: Service {
+class GetGroupTripService: Service {
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/trip.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/trip/group.json"
         static let LOADING_MESSAGE = "Loading..."
         
     }
     
-    var delegate: GetPairedTripServiceDelegate
+    var delegate: GetGroupTripServiceDelegate
     var tripsArray: [Trip]
     
-    init(delegate: GetPairedTripServiceDelegate) {
+    init(delegate: GetGroupTripServiceDelegate) {
         self.delegate = delegate
         self.tripsArray = Array()
     }
@@ -34,6 +34,7 @@ class GetPairedTripService: Service {
     }
     
     override func successCallback(responseObject: AnyObject) {
+        
         let json = JSON(responseObject)
         if let tripsArray = json.array {
             for tripDict in tripsArray {
@@ -60,21 +61,47 @@ class GetPairedTripService: Service {
                 let timeInterval: NSNumber! = tripDict["time"].number
                 let date = NSDate(timeIntervalSince1970: timeInterval.doubleValue)
                 
-                var numberOfOffers: NSNumber? = tripDict["offer_count"].number
+                let numberOfParticipants: NSNumber! = tripDict["offer_count"].number
                 
-                if numberOfOffers == nil {
-                    numberOfOffers = 0
+                var drivers: [User]! = []
+                var passengers: [User]! = []
+                
+                if let participants = tripDict["group_users"].array {
+                    for participantDict in participants {
+                        let id = participantDict["id"].number
+                        let userName: String! = (participantDict["name"]).string
+                        let user = User(id: userID.stringValue, name: userName, email: "", profileIcon: UIImage())
+                        if let userAvatar = (participantDict["avatar"]).string {
+                            let decodedData = NSData(base64EncodedString: userAvatar, options: NSDataBase64DecodingOptions(rawValue: 0))
+                            user.profileIcon =  UIImage(data: decodedData!)!
+                        }
+                        if participantDict["role"].number == 2 {
+                            drivers.append(user)
+                        } else if participantDict["role"].number == 4{
+                            passengers.append(user)
+                        }
+                    }
                 }
                 
                 let tripID: NSNumber! = tripDict["id"].number
                 
-                let trip: Trip = Trip(tripID: tripID, orgnizer: user, departure: departure, destination: destination, departureTime: date)
-                trip.numberOfOffers = numberOfOffers!.integerValue
+                let trip: GroupTrip = GroupTrip(tripID: tripID, orgnizer: user, departure: departure, destination: destination,departureTime: date, numberOfParticipants: 3)
+                if drivers.count > 0 {
+                    trip.drivers = drivers
+                }
+                if passengers.count > 0 {
+                    trip.passengers = passengers
+                }
+                
+                trip.numberOfParticipants = drivers.count + passengers.count + 1
                 self.tripsArray.append(trip)
             }
         }
         
-        delegate.handleGetPairedTripSuccess(self.tripsArray)
-
+        delegate.handleGetGroupTripSuccess(self.tripsArray)
+    }
+    
+    override func failCallback(responseObject: AnyObject) {
+        delegate.handleGetGroupTripFail()
     }
 }

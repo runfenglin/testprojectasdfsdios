@@ -1,30 +1,28 @@
 //
-//  GetPairedTripService.swift
+//  GetMyTripService.swift
 //  TURides
 //
-//  Created by Dennis Hui on 27/06/15.
+//  Created by Dennis Hui on 18/07/15.
 //
 //
 
 import UIKit
 
-protocol GetPairedTripServiceDelegate {
-    func handleGetPairedTripSuccess(trips: [Trip])
-    func handleGetPairedTripFail()
+protocol GetMyTripServiceDelegate {
+    func handleGetMyTripSuccess(trips: [Trip])
+    func handleGetMyTripFail()
 }
 
-class GetPairedTripService: Service {
-    
+class GetMyTripService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/trip.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/request.json"
         static let LOADING_MESSAGE = "Loading..."
         
     }
-    
-    var delegate: GetPairedTripServiceDelegate
+    var delegate: GetMyTripServiceDelegate
     var tripsArray: [Trip]
     
-    init(delegate: GetPairedTripServiceDelegate) {
+    init(delegate: GetMyTripServiceDelegate) {
         self.delegate = delegate
         self.tripsArray = Array()
     }
@@ -34,6 +32,7 @@ class GetPairedTripService: Service {
     }
     
     override func successCallback(responseObject: AnyObject) {
+        
         let json = JSON(responseObject)
         if let tripsArray = json.array {
             for tripDict in tripsArray {
@@ -60,21 +59,15 @@ class GetPairedTripService: Service {
                 let timeInterval: NSNumber! = tripDict["time"].number
                 let date = NSDate(timeIntervalSince1970: timeInterval.doubleValue)
                 
-                var numberOfOffers: NSNumber? = tripDict["offer_count"].number
-                
-                if numberOfOffers == nil {
-                    numberOfOffers = 0
-                }
+                let numberOfOffers: NSNumber! = tripDict["offer_count"].number
                 
                 let tripID: NSNumber! = tripDict["id"].number
                 
                 let trip: Trip = Trip(tripID: tripID, orgnizer: user, departure: departure, destination: destination, departureTime: date)
-                trip.numberOfOffers = numberOfOffers!.integerValue
                 self.tripsArray.append(trip)
             }
         }
         
-        delegate.handleGetPairedTripSuccess(self.tripsArray)
-
+        delegate.handleGetMyTripSuccess(self.tripsArray)
     }
 }

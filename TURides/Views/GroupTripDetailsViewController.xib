@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupTripDetailsViewController" customModule="TURides" customModuleProvider="target">
+            <connections>
+                <outlet property="tripLabel" destination="62i-m5-0Iy" id="oXa-vU-ksI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTP-BW-De4" customClass="TUSecondaryButton" customModule="TURides" customModuleProvider="target">
+                    <rect key="frame" x="8" y="511" width="142" height="34"/>
+                    <state key="normal" title="Decline">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="joinAsDriverButtonTouched:" destination="-1" eventType="touchUpInside" id="bdy-kL-qJs"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62i-m5-0Iy">
+                    <rect key="frame" x="8" y="18" width="304" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="B8S-9s-ZtY">
+                    <rect key="frame" x="0.0" y="48.5" width="320" height="462.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ToD-ar-uTP"/>
+                        <outlet property="delegate" destination="-1" id="Vr4-jV-kEc"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7X9-Rq-Gft" customClass="TUPrimaryButton" customModule="TURides" customModuleProvider="target">
+                    <rect key="frame" x="170" y="511" width="142" height="34"/>
+                    <state key="normal" title="Join">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="joinAsPassengerButtonTouched:" destination="-1" eventType="touchUpInside" id="te3-xe-RPV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailingMargin" secondItem="7X9-Rq-Gft" secondAttribute="trailing" id="1yF-pL-iy0"/>
+                <constraint firstItem="7X9-Rq-Gft" firstAttribute="leading" secondItem="lTP-BW-De4" secondAttribute="trailing" constant="20" id="5e8-Si-ct8"/>
+                <constraint firstItem="B8S-9s-ZtY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6bQ-Ma-gsb"/>
+                <constraint firstItem="lTP-BW-De4" firstAttribute="centerY" secondItem="7X9-Rq-Gft" secondAttribute="centerY" id="FU2-mB-QMs"/>
+                <constraint firstItem="B8S-9s-ZtY" firstAttribute="top" secondItem="62i-m5-0Iy" secondAttribute="bottom" constant="10" id="M2X-MI-8YT"/>
+                <constraint firstItem="lTP-BW-De4" firstAttribute="height" secondItem="7X9-Rq-Gft" secondAttribute="height" id="Nr8-IM-FJ7"/>
+                <constraint firstItem="62i-m5-0Iy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="10" id="PV0-GI-UXT"/>
+                <constraint firstItem="lTP-BW-De4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="RQy-eu-mRU"/>
+                <constraint firstItem="62i-m5-0Iy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="Yke-Xf-BhW"/>
+                <constraint firstItem="lTP-BW-De4" firstAttribute="width" secondItem="7X9-Rq-Gft" secondAttribute="width" id="hYk-ch-k9b"/>
+                <constraint firstAttribute="trailingMargin" secondItem="62i-m5-0Iy" secondAttribute="trailing" id="qeE-5p-QgG"/>
+                <constraint firstItem="lTP-BW-De4" firstAttribute="top" secondItem="B8S-9s-ZtY" secondAttribute="bottom" id="tb9-l2-cAF"/>
+                <constraint firstAttribute="bottomMargin" secondItem="lTP-BW-De4" secondAttribute="bottom" constant="15" id="uq4-9h-628"/>
+                <constraint firstAttribute="trailing" secondItem="B8S-9s-ZtY" secondAttribute="trailing" id="zny-yA-LtI"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="31" y="156"/>
+        </view>
+    </objects>
+</document>

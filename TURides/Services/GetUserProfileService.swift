@@ -45,13 +45,13 @@ class GetUserProfileService: Service {
         if let friendsArray = json["friends"]["data"].array {
             var friends: [User] = []
             for userDict in friendsArray {
-                //let id = userDict["id"].number!
+                let id = userDict["id"].number!
                 let name = userDict["name"].string!
                 //let email = userDict["email"].string!
                 let profileIconString = userDict["avatar"].string!
                 let decodedData = NSData(base64EncodedString: profileIconString, options: NSDataBase64DecodingOptions(rawValue: 0))
                 var decodedimage = UIImage(data: decodedData!)
-                let user = User(id: "df", name: name, email: "", profileIcon: decodedimage!)
+                let user = User(id: id.stringValue, name: name, email: "", profileIcon: decodedimage!)
                 friends.append(user)
             }
             
