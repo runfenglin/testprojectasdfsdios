@@ -84,6 +84,7 @@
 		B7CB4C1E1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C1D1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift */; };
 		B7CB4C201B5BB09300C86038 /* HideFriendsTripRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C1F1B5BB09300C86038 /* HideFriendsTripRequestService.swift */; };
 		B7CB4C221B5CE29700C86038 /* DeleteTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C211B5CE29700C86038 /* DeleteTripService.swift */; };
+		B7CB4C251B5CF19300C86038 /* JoinGroupTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C241B5CF19300C86038 /* JoinGroupTripService.swift */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */; };
 		B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */; };
@@ -187,6 +188,7 @@
 		B7CB4C1D1B5A3E3F00C86038 /* JoinAsPassengerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinAsPassengerTableViewController.swift; path = Views/JoinAsPassengerTableViewController.swift; sourceTree = "<group>"; };
 		B7CB4C1F1B5BB09300C86038 /* HideFriendsTripRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HideFriendsTripRequestService.swift; path = Services/HideFriendsTripRequestService.swift; sourceTree = "<group>"; };
 		B7CB4C211B5CE29700C86038 /* DeleteTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteTripService.swift; path = Services/DeleteTripService.swift; sourceTree = "<group>"; };
+		B7CB4C241B5CF19300C86038 /* JoinGroupTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinGroupTripService.swift; path = Services/JoinGroupTripService.swift; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripOffersService.swift; path = Services/GetTripOffersService.swift; sourceTree = "<group>"; };
 		B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateDeviceTokenService.swift; path = Services/UpdateDeviceTokenService.swift; sourceTree = "<group>"; };
@@ -258,9 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				B719DCA61ADD0D050035CBBF /* RegistrationService.swift */,
-				B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */,
-				B778C7611AE1100A001677FC /* LoginService.swift */,
-				B778C7631AE110B1001677FC /* LogoutService.swift */,
+				B7CB4C231B5CF15500C86038 /* Login */,
 				B720C4171AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift */,
 				B7817FE01AF22F01007FB7D8 /* CreateCheckInService.swift */,
 				B7817FE21AF372D6007FB7D8 /* GetActivityService.swift */,
@@ -278,6 +278,7 @@
 				B7CB4C191B5A2AFE00C86038 /* GetMyTripService.swift */,
 				B7CB4C1F1B5BB09300C86038 /* HideFriendsTripRequestService.swift */,
 				B7CB4C211B5CE29700C86038 /* DeleteTripService.swift */,
+				B7CB4C241B5CF19300C86038 /* JoinGroupTripService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -432,6 +433,16 @@
 				B7AB4CF51B54EE6300245ECF /* GroupTrip.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		B7CB4C231B5CF15500C86038 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B778C75F1AE0EF21001677FC /* FacebookLoginService.swift */,
+				B778C7611AE1100A001677FC /* LoginService.swift */,
+				B778C7631AE110B1001677FC /* LogoutService.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -624,6 +635,7 @@
 				B7FB294B1AE63E4500917B14 /* SelectPlacesTableViewController.swift in Sources */,
 				B778C7641AE110B1001677FC /* LogoutService.swift in Sources */,
 				B70295221B00AD6F0007F668 /* CircleImageView.swift in Sources */,
+				B7CB4C251B5CF19300C86038 /* JoinGroupTripService.swift in Sources */,
 				B71A914F1AE252B3007277E9 /* Constant.swift in Sources */,
 				B74191821ADA8EE20051E237 /* NavBarLogoView.swift in Sources */,
 				B7AB4CE81B49316900245ECF /* PickDriverTableViewCell.swift in Sources */,

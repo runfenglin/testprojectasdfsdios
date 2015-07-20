@@ -70,15 +70,15 @@ class GetGroupTripService: Service {
                     for participantDict in participants {
                         let id = participantDict["id"].number
                         let userName: String! = (participantDict["name"]).string
-                        let user = User(id: userID.stringValue, name: userName, email: "", profileIcon: UIImage())
+                        let user1 = User(id: userID.stringValue, name: userName, email: "", profileIcon: UIImage())
                         if let userAvatar = (participantDict["avatar"]).string {
                             let decodedData = NSData(base64EncodedString: userAvatar, options: NSDataBase64DecodingOptions(rawValue: 0))
-                            user.profileIcon =  UIImage(data: decodedData!)!
+                            user1.profileIcon =  UIImage(data: decodedData!)!
                         }
-                        if participantDict["role"].number == 2 {
-                            drivers.append(user)
-                        } else if participantDict["role"].number == 4{
-                            passengers.append(user)
+                        if participantDict["role"].string == "Driver" {
+                            drivers.append(user1)
+                        } else if participantDict["role"].string == "Passenger"{
+                            passengers.append(user1)
                         }
                     }
                 }

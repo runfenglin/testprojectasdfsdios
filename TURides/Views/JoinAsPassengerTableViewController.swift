@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationTableViewControllerDelegate, CreateTripServiceDelegate {
+class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationTableViewControllerDelegate, CreateTripServiceDelegate, JoinGroupTripServiceDelegate {
     
     static let INDEXPATH_FROM: NSIndexPath = NSIndexPath(forRow: 1, inSection: 0)
     static let INDEXPATH_TIME: NSIndexPath = NSIndexPath(forRow: 3, inSection: 0)
@@ -61,31 +61,40 @@ class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationT
     
     @IBAction func doneButtonTouched(sender: AnyObject) {
         let params = NSMutableDictionary()
+        params.setValue(tripToJoin!.tripID, forKey: "id")
+        JoinGroupTripService(delegate: self).dispathWithParams(params)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        params.setValue(tripToJoin?.tripID, forKey: "parent")
-        if let departure = modifiedDepature {
-            params.setValue(departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
-            params.setValue(departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
-        } else {
-            params.setValue(tripToJoin!.departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
-            params.setValue(tripToJoin!.departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
-            params.setValue(tripToJoin!.destination.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
-            params.setValue(tripToJoin!.destination.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
-        }
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         
-        var dateTime: String
-        
-        if let depatureTime = modifiedDate {
-            dateTime = dateFormatter.stringFromDate(depatureTime)
-        } else {
-            dateTime = dateFormatter.stringFromDate(tripToJoin!.departureTime)
-        }
-        params.setValue(dateTime, forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
-
-        CreateTripService(delegate: self).dispathWithParams(NSDictionary())
+//        let params = NSMutableDictionary()
+//        
+//        
+//        
+//        params.setValue(tripToJoin?.tripID, forKey: "parent")
+//        if let departure = modifiedDepature {
+//            params.setValue(departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
+//            params.setValue(departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
+//        } else {
+//            params.setValue(tripToJoin!.departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
+//            params.setValue(tripToJoin!.departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
+//            params.setValue(tripToJoin!.destination.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
+//            params.setValue(tripToJoin!.destination.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
+//        }
+//        
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+//        
+//        var dateTime: String
+//        
+//        if let depatureTime = modifiedDate {
+//            dateTime = dateFormatter.stringFromDate(depatureTime)
+//        } else {
+//            dateTime = dateFormatter.stringFromDate(tripToJoin!.departureTime)
+//        }
+//        params.setValue(dateTime, forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
+//
+//        CreateTripService(delegate: self).dispathWithParams(NSDictionary())
     }
     
     
@@ -128,6 +137,15 @@ class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationT
     }
     
     func handleCreateTripFail() {
+        
+    }
+    
+    func handleJoinGroupTripSuccess() {
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func handleJoinGroupTripFail() {
         
     }
 }

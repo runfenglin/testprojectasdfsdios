@@ -94,8 +94,15 @@ class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, U
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "userCell")
         }
-        cell!.imageView!.image = trip?.orgnizer.profileIcon
-        cell?.textLabel?.text = trip?.orgnizer.name
+        if indexPath.section == 0 {
+            cell!.imageView!.image = trip?.orgnizer.profileIcon
+            cell?.textLabel?.text = trip?.orgnizer.name
+            return cell!
+        } else if indexPath.section == 1 {
+            let driver = trip!.drivers![indexPath.row]
+            cell!.imageView!.image = driver.profileIcon
+            cell!.textLabel?.text = driver.name
+        }
         return cell!
     }
 }
