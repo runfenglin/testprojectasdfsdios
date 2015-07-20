@@ -53,4 +53,17 @@ class Command: NSObject {
 
     }
     
+    func delete() {
+        manager.DELETE(
+            url as String,
+            parameters: params,
+            success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                self.delegate.successCallback(responseObject)
+            },
+            failure: {(operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("\(error)")
+        })
+    
+    }
+    
 }

@@ -17,7 +17,7 @@ class PickDriverService: Service {
     var delegate: PickDriverServiceDelegate
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/pick/driver/{id}.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/pick/driver.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     
@@ -26,10 +26,7 @@ class PickDriverService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        let id = params.objectForKey("id") as! String
-        let url = mConstant.url.stringByReplacingOccurrencesOfString("{id}", withString: id, options: NSStringCompareOptions.LiteralSearch, range: nil)
-        
-        Command(params: NSDictionary(), delegate: self, url: url).get()
+        Command(params: params, delegate: self, url: mConstant.url).post()
     }
     
     override func successCallback(responseObject: AnyObject) {

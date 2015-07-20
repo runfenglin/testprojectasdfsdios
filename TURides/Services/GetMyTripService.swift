@@ -64,6 +64,7 @@ class GetMyTripService: Service {
                 let tripID: NSNumber! = tripDict["id"].number
                 
                 let trip: Trip = Trip(tripID: tripID, orgnizer: user, departure: departure, destination: destination, departureTime: date)
+                trip.numberOfOffers = numberOfOffers.integerValue
                 self.tripsArray.append(trip)
             }
         }

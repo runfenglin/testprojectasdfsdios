@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityTableViewController: UITableViewController, GetMyTripServiceDelegate, GetTripServiceDelegate, GetPairedTripServiceDelegate, GetTripOffersServiceDelegate, AcceptTripServiceDelegate, GetGroupTripServiceDelegate, CreateTripTableViewControllerDelegate {
+class ActivityTableViewController: UITableViewController, GetMyTripServiceDelegate, GetTripServiceDelegate, GetPairedTripServiceDelegate, GetTripOffersServiceDelegate, AcceptTripServiceDelegate, GetGroupTripServiceDelegate, CreateTripTableViewControllerDelegate, HideFriendsTripRequestServiceDelegate, DeleteTripServiceServiceDelegate {
 
     var friendsTripRequests: [Trip] = []
     var myTripRequests: [Trip] = []
@@ -28,8 +28,8 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = GetTripService.mConstant.LOADING_MESSAGE
-        //GetMyTripService(delegate: self).dispathWithParams(NSDictionary())
-        GetGroupTripService(delegate: self).dispathWithParams(NSDictionary())
+        GetMyTripService(delegate: self).dispathWithParams(NSDictionary())
+        //GetGroupTripService(delegate: self).dispathWithParams(NSDictionary())
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("getTrips"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
@@ -135,6 +135,14 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
         if tripSegmentedControl.selectedSegmentIndex == 0 {
             if selectedSection == 0 {
                 selectedTrip = myTripRequests[selectedRow]
+                if selectedTrip?.numberOfOffers > 0 {
+                    let params = NSMutableDictionary()
+                    params.setValue(selectedTrip!.tripID, forKey: "id")
+                    MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = "Loading..."
+                    GetTripOffersService(delegate: self).dispathWithParams(params)
+                } else {
+                    self.performSegueWithIdentifier("to-trip-details", sender: nil)
+                }
             } else if selectedSection == 1 {
                 selectedTrip = myGroupTrip[selectedRow]
                 let vc = GroupTripDetailsViewController(nibName: "GroupTripDetailsViewController", bundle: nil)
@@ -200,14 +208,29 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
         });
         acceptAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
         
-        var deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{action, indexpath in
-            UIUtil.showPopUpErrorDialog("Decline Trip API not ready")
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{action, indexpath in
+            let params = NSMutableDictionary()
+            params.setValue(self.myTripRequests[indexPath.row].tripID, forKey: "id")
+            DeleteTripService(delegate: self).dispathWithParams(params)
         });
+
+        
+        
         
         if indexPath.section == 0 || indexPath.section == 1 {
-            return [deleteRowAction]
+            return [deleteAction]
         } else {
-            return [acceptAction, deleteRowAction];
+            
+            var hideAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Hide", handler:{action, indexpath in
+                
+                let params = NSMutableDictionary()
+                params.setValue(self.friendsTripRequests[indexPath.row].tripID, forKey: "id")
+                HideFriendsTripRequestService(delegate: self).dispathWithParams(params)
+                self.friendsTripRequests.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
+            });
+            return [acceptAction, hideAction];
         }
     }
     
@@ -245,15 +268,16 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
     //MARK: ----- GetPairedTripServiceDelegate -----
     //MARK: -
     func handleGetPairedTripFail() {
-         MBProgressHUD.hideHUDForView(self.view, animated: true)
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
     func handleGetPairedTripSuccess(trips: [Trip]) {
         pairedTrip = trips
-        GetGroupTripService(delegate: self).dispathWithParams(NSDictionary())
-        //self.tableView.reloadData()
-        //MBProgressHUD.hideHUDForView(self.view, animated: true)
-        
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
     //MARK: -
@@ -315,15 +339,11 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
     //MARK: -
     func handleGetGroupTripSuccess(trips: [Trip]) {
         myGroupTrip = trips
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        GetPairedTripService(delegate: self).dispathWithParams(NSDictionary())
     }
     
     func handleGetGroupTripFail() {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        self.tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        GetPairedTripService(delegate: self).dispathWithParams(NSDictionary())
         println("handleGetGroupTripFail")
     }
     
@@ -332,5 +352,27 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
     //MARK: -
     func handleCreateTripSuccess() {
         self.getTrips()
+    }
+    
+    //MARK: -
+    //MARK: ----- HideFriendsTripRequestDelegate -----
+    //MARK: -
+    func handleHideFriendsTripRequestSuccess() {
+        println("handleHideFriendsTripRequestSuccess")
+    }
+    
+    func handleHideFriendsTripRequestFail() {
+        println("handleHideFriendsTripRequestFail")
+    }
+    
+    //MARK: -
+    //MARK: ----- DeleteTripServiceDelegate -----
+    //MARK: -
+    func handleDeleteTripSuccess() {
+        
+    }
+    
+    func handleDeleteTripFail() {
+        
     }
 }
