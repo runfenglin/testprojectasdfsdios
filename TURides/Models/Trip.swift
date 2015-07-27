@@ -15,6 +15,7 @@ class Trip: NSObject {
     var numberOfOffers: Int?
     var orgnizer: User
     var departureTime: NSDate
+    var driver: User?
     
     init(tripID: NSNumber, orgnizer: User, departure: GooglePlace, destination: GooglePlace, departureTime: NSDate) {
         self.tripID = tripID

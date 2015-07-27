@@ -14,6 +14,8 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tripDetailsLabel: UILabel!
+    @IBOutlet var acceptButton: TUPrimaryButton!
+    @IBOutlet var changeButton: TUSecondaryButton!
     
     @IBOutlet var mapView: MKMapView!
     var geocoder:CLGeocoder = CLGeocoder()
@@ -28,12 +30,6 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
     var directions:MKDirections = MKDirections()
     var directionsResponse:MKDirectionsResponse = MKDirectionsResponse()
     var route:MKRoute = MKRoute()
-
-    
-    
-    
-    
-    
     var trip: Trip?
     
     override func viewDidLoad() {
@@ -46,6 +42,11 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
         tripDetailsLabel.text = label
         
         GooglePlaceDetailsService(delegate: self).dispatch(trip!.departure.id)
+        
+        if trip?.orgnizer.id == Session.sharedInstance.me?.id || trip?.driver?.id == Session.sharedInstance.me?.id {
+            acceptButton.hidden = true
+            changeButton.hidden = true
+        }
     }
     
     

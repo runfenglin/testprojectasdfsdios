@@ -15,7 +15,7 @@ protocol DeleteTripServiceServiceDelegate {
 
 class DeleteTripService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/delete/{id}.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/delete/trip/{id}.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     

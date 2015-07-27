@@ -15,7 +15,7 @@ protocol HideFriendsTripRequestServiceDelegate {
 
 class HideFriendsTripRequestService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/trip/hide.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/trip/hide/{id}.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     
@@ -26,7 +26,9 @@ class HideFriendsTripRequestService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).delete()
+        let id = params.objectForKey("id") as! NSNumber
+        let url = mConstant.url.stringByReplacingOccurrencesOfString("{id}", withString: id.stringValue, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        Command(params: NSDictionary(), delegate: self, url: url).delete()
     }
     
     override func successCallback(responseObject: AnyObject) {

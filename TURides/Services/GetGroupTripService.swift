@@ -30,6 +30,7 @@ class GetGroupTripService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
+        TULog.Log("Getting Group Trips")
         Command(params: params, delegate: self, url: mConstant.url).get()
     }
     
@@ -37,6 +38,9 @@ class GetGroupTripService: Service {
         
         let json = JSON(responseObject)
         if let tripsArray = json.array {
+            
+            TULog.Log("NUMBER OF GROUP TRIPS FOUND: \(tripsArray.count)")
+            
             for tripDict in tripsArray {
                 let userID: NSNumber! = (tripDict["user"]["id"]).number
                 let userName: String! = (tripDict["user"]["name"]).string
@@ -95,6 +99,8 @@ class GetGroupTripService: Service {
                 
                 trip.numberOfParticipants = drivers.count + passengers.count + 1
                 self.tripsArray.append(trip)
+                
+                TULog.Log(trip.description)
             }
         }
         

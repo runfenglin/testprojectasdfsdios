@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupTripDetailsViewController" customModule="TURides" customModuleProvider="target">
             <connections>
+                <outlet property="declineButton" destination="lTP-BW-De4" id="caB-G0-dtC"/>
+                <outlet property="joinButton" destination="7X9-Rq-Gft" id="Y9X-ao-lqt"/>
                 <outlet property="tripLabel" destination="62i-m5-0Iy" id="oXa-vU-ksI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

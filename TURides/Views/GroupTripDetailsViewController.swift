@@ -8,9 +8,11 @@
 
 import UIKit
 
-class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
+class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, HideFriendsTripRequestServiceDelegate {
 
     @IBOutlet var tripLabel: UILabel!
+    @IBOutlet var joinButton: TUPrimaryButton!
+    @IBOutlet var declineButton: TUSecondaryButton!
     
     var trip: GroupTrip?
     
@@ -19,7 +21,6 @@ class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, U
 
         var label = "From: \(trip!.departure.name)\nTo: \(trip!.destination.name)\nDate: \(trip!.departureTime)"
         tripLabel.text = label
-
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -44,7 +45,10 @@ class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, U
     }
     
     @IBAction func joinAsDriverButtonTouched(sender: AnyObject) {
-        UIUtil.showPopUpErrorDialog("Join as driver API not ready")
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let params = NSMutableDictionary()
+        params.setValue(trip!.tripID, forKey: "id")
+        HideFriendsTripRequestService(delegate: self).dispathWithParams(params)
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -104,5 +108,15 @@ class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, U
             cell!.textLabel?.text = driver.name
         }
         return cell!
+    }
+    
+    func handleHideFriendsTripRequestSuccess() {
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        self.navigationController?.popViewControllerAnimated(true)
+        NSNotificationCenter.defaultCenter().postNotificationName("SHOULERELOADTRIPS", object: nil)
+    }
+    
+    func handleHideFriendsTripRequestFail() {
+        
     }
 }

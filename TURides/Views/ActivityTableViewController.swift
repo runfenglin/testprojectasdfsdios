@@ -27,6 +27,11 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "reloadTrips",
+            name: "SHOULERELOADTRIPS",
+            object: nil)
         MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = GetTripService.mConstant.LOADING_MESSAGE
         GetMyTripService(delegate: self).dispathWithParams(NSDictionary())
         //GetGroupTripService(delegate: self).dispathWithParams(NSDictionary())
@@ -42,6 +47,11 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
     
     @IBAction func segmentedControlValueChanged(sender: AnyObject) {
         self.tableView.reloadData()
+    }
+    
+    func reloadTrips() {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = GetTripService.mConstant.LOADING_MESSAGE
+        GetMyTripService(delegate: self).dispathWithParams(NSDictionary())
     }
     
     func getTrips() {
@@ -154,6 +164,7 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
             }
         } else {
             selectedTrip = pairedTrip[selectedRow]
+            self.performSegueWithIdentifier("to-trip-details", sender: nil)
         }
         
         
@@ -208,14 +219,26 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
         });
         acceptAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
         
-        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{action, indexpath in
+        var aTitle = myGroupTrip[indexPath.row].orgnizer.id == Session.sharedInstance.me!.id ? "Delete" : "Hide"
+        
+        
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: aTitle, handler:{action, indexpath in
             let params = NSMutableDictionary()
-            params.setValue(self.myTripRequests[indexPath.row].tripID, forKey: "id")
-            DeleteTripService(delegate: self).dispathWithParams(params)
+            if indexPath == 0 {
+                params.setValue(self.myTripRequests[indexPath.row].tripID, forKey: "id")
+                DeleteTripService(delegate: self).dispathWithParams(params)
+            } else {
+                let trip = self.myGroupTrip[indexPath.row]
+                if trip.orgnizer.id == Session.sharedInstance.me?.id {
+                    params.setValue(self.myGroupTrip[indexPath.row].tripID, forKey: "id")
+                    DeleteTripService(delegate: self).dispathWithParams(params)
+                } else {
+                    params.setValue(self.myGroupTrip[indexPath.row].tripID, forKey: "id")
+                    HideFriendsTripRequestService(delegate: self).dispathWithParams(params)
+                }
+            }
+            
         });
-
-        
-        
         
         if indexPath.section == 0 || indexPath.section == 1 {
             return [deleteAction]
@@ -225,6 +248,7 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
                 
                 let params = NSMutableDictionary()
                 params.setValue(self.friendsTripRequests[indexPath.row].tripID, forKey: "id")
+                //params.setValue("delete", forKey: "_method")
                 HideFriendsTripRequestService(delegate: self).dispathWithParams(params)
                 self.friendsTripRequests.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)

@@ -70,6 +70,18 @@ class GetPairedTripService: Service {
                 
                 let trip: Trip = Trip(tripID: tripID, orgnizer: user, departure: departure, destination: destination, departureTime: date)
                 trip.numberOfOffers = numberOfOffers!.integerValue
+                
+                if let driverID = tripDict["driver"]["id"].number {
+                    let driverName: String! = (tripDict["driver"]["name"]).string
+                    let user = User(id: driverID.stringValue, name: userName, email: "", profileIcon: UIImage())
+                    
+                    if let userAvatar = (tripDict["driver"]["avatar"]).string {
+                        let decodedData = NSData(base64EncodedString: userAvatar, options: NSDataBase64DecodingOptions(rawValue: 0))
+                        user.profileIcon =  UIImage(data: decodedData!)!
+                    }
+                    trip.driver = user
+                }
+                
                 self.tripsArray.append(trip)
             }
         }

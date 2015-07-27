@@ -17,4 +17,8 @@ class GroupTrip: Trip {
         super.init(tripID: tripID, orgnizer: orgnizer, departure: departure, destination: destination, departureTime: departureTime)
         self.numberOfParticipants = numberOfParticipants
     }
+    
+    override var description: String {
+        return "GROUP TRIP \(self.tripID) \nOrgnizer: \(self.orgnizer.name) \nFrom: \(self.departure.name) \nTo: \(self.destination.name) \nNumber of Participants: \(self.numberOfParticipants)"
+    }
 }

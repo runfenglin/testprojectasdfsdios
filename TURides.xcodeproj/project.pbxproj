@@ -85,6 +85,7 @@
 		B7CB4C201B5BB09300C86038 /* HideFriendsTripRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C1F1B5BB09300C86038 /* HideFriendsTripRequestService.swift */; };
 		B7CB4C221B5CE29700C86038 /* DeleteTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C211B5CE29700C86038 /* DeleteTripService.swift */; };
 		B7CB4C251B5CF19300C86038 /* JoinGroupTripService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C241B5CF19300C86038 /* JoinGroupTripService.swift */; };
+		B7CB4C271B662CD000C86038 /* TULog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB4C261B662CD000C86038 /* TULog.swift */; };
 		B7DEEDC41AE23D740041A962 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DEEDC31AE23D740041A962 /* Session.swift */; };
 		B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */; };
 		B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */; };
@@ -189,6 +190,7 @@
 		B7CB4C1F1B5BB09300C86038 /* HideFriendsTripRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HideFriendsTripRequestService.swift; path = Services/HideFriendsTripRequestService.swift; sourceTree = "<group>"; };
 		B7CB4C211B5CE29700C86038 /* DeleteTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteTripService.swift; path = Services/DeleteTripService.swift; sourceTree = "<group>"; };
 		B7CB4C241B5CF19300C86038 /* JoinGroupTripService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinGroupTripService.swift; path = Services/JoinGroupTripService.swift; sourceTree = "<group>"; };
+		B7CB4C261B662CD000C86038 /* TULog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TULog.swift; path = Core/TULog.swift; sourceTree = "<group>"; };
 		B7DEEDC31AE23D740041A962 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Core/Session.swift; sourceTree = "<group>"; };
 		B7ED267F1B380E49001F1656 /* GetTripOffersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetTripOffersService.swift; path = Services/GetTripOffersService.swift; sourceTree = "<group>"; };
 		B7ED26811B38199A001F1656 /* UpdateDeviceTokenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateDeviceTokenService.swift; path = Services/UpdateDeviceTokenService.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				B7DEEDC31AE23D740041A962 /* Session.swift */,
 				B71A914E1AE252B3007277E9 /* Constant.swift */,
 				B77561331AE7C290001354D6 /* UIColorExtention.swift */,
+				B7CB4C261B662CD000C86038 /* TULog.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */,
 				B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */,
 				B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */,
+				B7CB4C271B662CD000C86038 /* TULog.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B7AB4CF61B54EE6300245ECF /* GroupTrip.swift in Sources */,
 				B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */,

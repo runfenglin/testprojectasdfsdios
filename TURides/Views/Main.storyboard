@@ -89,7 +89,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lQV-Wk-u78">
-                                    <rect key="frame" x="116" y="8" width="143" height="29"/>
+                                    <rect key="frame" x="87.5" y="8" width="200" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="ELe-tb-IfI"/>
+                                    </constraints>
                                     <segments>
                                         <segment title="Trips"/>
                                         <segment title="My Rides"/>
@@ -322,6 +325,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acceptButton" destination="KfA-sc-JLn" id="j1g-WQ-SHi"/>
+                        <outlet property="changeButton" destination="k3d-rT-Bsu" id="3jN-oJ-A7W"/>
                         <outlet property="mapView" destination="j3E-t9-aFZ" id="pgD-2L-Xnm"/>
                         <outlet property="tripDetailsLabel" destination="4eV-Jt-5zI" id="Cyq-VA-5ae"/>
                         <outlet property="userImageView" destination="Bvk-ZX-E6U" id="QAT-JH-nyj"/>
