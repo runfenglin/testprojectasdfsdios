@@ -167,30 +167,6 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
             self.performSegueWithIdentifier("to-trip-details", sender: nil)
         }
         
-        
-        
-//        if indexPath.section == 0 {
-//            selectedTrip = pairedTrip[indexPath.row]
-//        } else if indexPath.section == 1 {
-//            selectedTrip = myTrip[indexPath.row]
-//            if selectedTrip!.numberOfOffers > 0 {
-//                let params = NSMutableDictionary()
-//                params.setValue(selectedTrip!.tripID, forKey: "id")
-//                MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = "Loading..."
-//                GetTripOffersService(delegate: self).dispathWithParams(params)
-//            } else {
-//                let alertVC = UIAlertController(title: "Notice", message: "No Offers!", preferredStyle: UIAlertControllerStyle.Alert)
-//                var okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) {
-//                    UIAlertAction in
-//                }
-//                alertVC.addAction(okAction)
-//                self.presentViewController(alertVC, animated: true, completion: nil)
-//            }
-//        } else {
-//            selectedTrip = allTrip[indexPath.row]
-//            self.performSegueWithIdentifier("to-trip-details", sender: nil)
-//        }
-        
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -224,8 +200,9 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
         
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: aTitle, handler:{action, indexpath in
             let params = NSMutableDictionary()
-            if indexPath == 0 {
+            if indexPath.section == 0 {
                 params.setValue(self.myTripRequests[indexPath.row].tripID, forKey: "id")
+                self.myTripRequests.removeAtIndex(indexPath.row)
                 DeleteTripService(delegate: self).dispathWithParams(params)
             } else {
                 let trip = self.myGroupTrip[indexPath.row]
@@ -236,7 +213,9 @@ class ActivityTableViewController: UITableViewController, GetMyTripServiceDelega
                     params.setValue(self.myGroupTrip[indexPath.row].tripID, forKey: "id")
                     HideFriendsTripRequestService(delegate: self).dispathWithParams(params)
                 }
+                self.myGroupTrip.removeAtIndex(indexPath.row)
             }
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         });
         

@@ -182,6 +182,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="driverSwitch" destination="mJc-zP-Y37" id="9Je-em-1pf"/>
                         <outlet property="fromAddressLine1" destination="xcZ-wm-G97" id="Vzh-p0-uQn"/>
                         <outlet property="fromAddressLine2" destination="PWT-Y6-b3P" id="lRE-QF-nPC"/>
                         <outlet property="startTimeLabel" destination="RHn-Aa-ELW" id="Pqw-oO-MQw"/>

@@ -64,6 +64,12 @@
 		B796325E1AECE1EA007A2CE0 /* FBFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325D1AECE1EA007A2CE0 /* FBFriend.swift */; };
 		B79632601AEF85B8007A2CE0 /* TUPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */; };
 		B79632621AEF8693007A2CE0 /* TUSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */; };
+		B7A7D7FE1B6E045800FDDE4A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D7FD1B6E045800FDDE4A /* FriendsTableViewController.swift */; };
+		B7A7D8001B6E0A7C00FDDE4A /* SearchFriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D7FF1B6E0A7C00FDDE4A /* SearchFriendsService.swift */; };
+		B7A7D8021B6E0B3500FDDE4A /* SearchFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D8011B6E0B3500FDDE4A /* SearchFriendsTableViewController.swift */; };
+		B7A7D8041B6E10A400FDDE4A /* AddFriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D8031B6E10A400FDDE4A /* AddFriendRequestService.swift */; };
+		B7A7D8061B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D8051B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift */; };
+		B7A7D8091B6E10F300FDDE4A /* DeclineFriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D8081B6E10F300FDDE4A /* DeclineFriendRequestService.swift */; };
 		B7AB4CE61B48E9BA00245ECF /* PickDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */; };
 		B7AB4CE81B49316900245ECF /* PickDriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */; };
 		B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */; };
@@ -169,6 +175,12 @@
 		B796325D1AECE1EA007A2CE0 /* FBFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBFriend.swift; path = Models/FBFriend.swift; sourceTree = "<group>"; };
 		B796325F1AEF85B8007A2CE0 /* TUPrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUPrimaryButton.swift; path = Views/TUPrimaryButton.swift; sourceTree = "<group>"; };
 		B79632611AEF8693007A2CE0 /* TUSecondaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUSecondaryButton.swift; path = Views/TUSecondaryButton.swift; sourceTree = "<group>"; };
+		B7A7D7FD1B6E045800FDDE4A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsTableViewController.swift; path = Views/FriendsTableViewController.swift; sourceTree = "<group>"; };
+		B7A7D7FF1B6E0A7C00FDDE4A /* SearchFriendsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchFriendsService.swift; path = Services/SearchFriendsService.swift; sourceTree = "<group>"; };
+		B7A7D8011B6E0B3500FDDE4A /* SearchFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchFriendsTableViewController.swift; path = Views/SearchFriendsTableViewController.swift; sourceTree = "<group>"; };
+		B7A7D8031B6E10A400FDDE4A /* AddFriendRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendRequestService.swift; path = Services/AddFriendRequestService.swift; sourceTree = "<group>"; };
+		B7A7D8051B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcceptAddFriendRequestService.swift; path = Services/AcceptAddFriendRequestService.swift; sourceTree = "<group>"; };
+		B7A7D8081B6E10F300FDDE4A /* DeclineFriendRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeclineFriendRequestService.swift; path = Services/DeclineFriendRequestService.swift; sourceTree = "<group>"; };
 		B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverViewController.swift; path = Views/PickDriverViewController.swift; sourceTree = "<group>"; };
 		B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverTableViewCell.swift; path = Views/PickDriverTableViewCell.swift; sourceTree = "<group>"; };
 		B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverService.swift; path = Services/PickDriverService.swift; sourceTree = "<group>"; };
@@ -264,6 +276,7 @@
 				B719DCA61ADD0D050035CBBF /* RegistrationService.swift */,
 				B7CB4C231B5CF15500C86038 /* Login */,
 				B720C4171AF0D8EC00DD1603 /* GooglePlaceSearchNearByService.swift */,
+				B7A7D8071B6E10D400FDDE4A /* Friends */,
 				B7817FE01AF22F01007FB7D8 /* CreateCheckInService.swift */,
 				B7817FE21AF372D6007FB7D8 /* GetActivityService.swift */,
 				B7B753201B01E4B800070919 /* GetUserProfileService.swift */,
@@ -377,6 +390,7 @@
 		B74191841ADA9B820051E237 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B7A7D7F91B6E03C600FDDE4A /* Friends */,
 				B741918E1ADBBEBB0051E237 /* SharedControls */,
 				B741918D1ADBBE720051E237 /* Login */,
 				B71A91561AE50031007277E9 /* CheckIn */,
@@ -436,6 +450,26 @@
 				B7AB4CF51B54EE6300245ECF /* GroupTrip.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		B7A7D7F91B6E03C600FDDE4A /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				B7A7D7FD1B6E045800FDDE4A /* FriendsTableViewController.swift */,
+				B7A7D8011B6E0B3500FDDE4A /* SearchFriendsTableViewController.swift */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
+		B7A7D8071B6E10D400FDDE4A /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				B7A7D8051B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift */,
+				B7A7D7FF1B6E0A7C00FDDE4A /* SearchFriendsService.swift */,
+				B7A7D8031B6E10A400FDDE4A /* AddFriendRequestService.swift */,
+				B7A7D8081B6E10F300FDDE4A /* DeclineFriendRequestService.swift */,
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 		B7CB4C231B5CF15500C86038 /* Login */ = {
@@ -593,11 +627,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7CB4C1A1B5A2AFE00C86038 /* GetMyTripService.swift in Sources */,
+				B7A7D8061B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift in Sources */,
 				B77561321AE7B35C001354D6 /* TUButton.swift in Sources */,
+				B7A7D8041B6E10A400FDDE4A /* AddFriendRequestService.swift in Sources */,
+				B7A7D7FE1B6E045800FDDE4A /* FriendsTableViewController.swift in Sources */,
 				B719DCA71ADD0D050035CBBF /* RegistrationService.swift in Sources */,
 				B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */,
 				B7DEEDC41AE23D740041A962 /* Session.swift in Sources */,
 				B7ED26801B380E49001F1656 /* GetTripOffersService.swift in Sources */,
+				B7A7D8021B6E0B3500FDDE4A /* SearchFriendsTableViewController.swift in Sources */,
 				B796325A1AEA39AA007A2CE0 /* User.swift in Sources */,
 				B77561341AE7C290001354D6 /* UIColorExtention.swift in Sources */,
 				B75DC8CB1B17132D008AB5DE /* CreateTripService.swift in Sources */,
@@ -615,6 +653,7 @@
 				B796325C1AEA45C8007A2CE0 /* CheckInActivity.swift in Sources */,
 				B7817FE31AF372D6007FB7D8 /* GetActivityService.swift in Sources */,
 				B7ED26821B38199A001F1656 /* UpdateDeviceTokenService.swift in Sources */,
+				B7A7D8001B6E0A7C00FDDE4A /* SearchFriendsService.swift in Sources */,
 				B702951F1B00A5EF0007F668 /* MenuViewController.swift in Sources */,
 				B7CB4C271B662CD000C86038 /* TULog.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
@@ -647,6 +686,7 @@
 				B70775231B0C82430089673C /* CreateTripTableViewController.swift in Sources */,
 				B75DC8D51B258363008AB5DE /* Trip.swift in Sources */,
 				B775612C1AE663E9001354D6 /* CheckInViewController.swift in Sources */,
+				B7A7D8091B6E10F300FDDE4A /* DeclineFriendRequestService.swift in Sources */,
 				B778C7601AE0EF21001677FC /* FacebookLoginService.swift in Sources */,
 				B75DC8D91B2585D6008AB5DE /* ActivityTableViewController.swift in Sources */,
 				B778C7581ADFB61A001677FC /* HomeViewController.swift in Sources */,
@@ -785,9 +825,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lunan Hui (53L7M4P59D)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TURides/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "78e31b60-d1b5-401e-8844-6514f71e71db";
+				PROVISIONING_PROFILE = "582e88dd-9ce0-46c1-bfa1-39b6006ccbda";
 				SWIFT_OBJC_BRIDGING_HEADER = "TURides/Bridging-Header.h";
 			};
 			name = Debug;
@@ -800,6 +841,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TURides/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9fecf992-8ede-4cbb-a232-e355e8f4ba18";

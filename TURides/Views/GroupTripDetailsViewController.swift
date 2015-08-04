@@ -106,6 +106,10 @@ class GroupTripDetailsViewController: BaseViewController, UITableViewDelegate, U
             let driver = trip!.drivers![indexPath.row]
             cell!.imageView!.image = driver.profileIcon
             cell!.textLabel?.text = driver.name
+        } else {
+            let passenger = trip!.passengers![indexPath.row]
+            cell!.imageView!.image = passenger.profileIcon
+            cell!.textLabel?.text = passenger.name
         }
         return cell!
     }

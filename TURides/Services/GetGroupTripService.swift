@@ -81,7 +81,7 @@ class GetGroupTripService: Service {
                         }
                         if participantDict["role"].string == "Driver" {
                             drivers.append(user1)
-                        } else if participantDict["role"].string == "Passenger"{
+                        } else if participantDict["role"].string == "Requestor"{
                             passengers.append(user1)
                         }
                     }

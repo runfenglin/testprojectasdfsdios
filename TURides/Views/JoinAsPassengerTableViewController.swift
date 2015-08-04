@@ -24,6 +24,7 @@ class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationT
     @IBOutlet var fromAddressLine2: UILabel!
     @IBOutlet var toAddressLine1: UILabel!
     @IBOutlet var toAddresLine2: UILabel!
+    @IBOutlet var driverSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,41 +61,11 @@ class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationT
     }
     
     @IBAction func doneButtonTouched(sender: AnyObject) {
+        
         let params = NSMutableDictionary()
         params.setValue(tripToJoin!.tripID, forKey: "id")
         JoinGroupTripService(delegate: self).dispathWithParams(params)
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        
-        
-        
-//        let params = NSMutableDictionary()
-//        
-//        
-//        
-//        params.setValue(tripToJoin?.tripID, forKey: "parent")
-//        if let departure = modifiedDepature {
-//            params.setValue(departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
-//            params.setValue(departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
-//        } else {
-//            params.setValue(tripToJoin!.departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
-//            params.setValue(tripToJoin!.departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
-//            params.setValue(tripToJoin!.destination.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
-//            params.setValue(tripToJoin!.destination.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
-//        }
-//        
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-//        
-//        var dateTime: String
-//        
-//        if let depatureTime = modifiedDate {
-//            dateTime = dateFormatter.stringFromDate(depatureTime)
-//        } else {
-//            dateTime = dateFormatter.stringFromDate(tripToJoin!.departureTime)
-//        }
-//        params.setValue(dateTime, forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
-//
-//        CreateTripService(delegate: self).dispathWithParams(NSDictionary())
     }
     
     
@@ -141,8 +112,41 @@ class JoinAsPassengerTableViewController: UITableViewController, ChooseLocationT
     }
     
     func handleJoinGroupTripSuccess() {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if driverSwitch.on {
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            let params = NSMutableDictionary()
+
+            params.setValue(tripToJoin?.tripID, forKey: "parent")
+            if let departure = modifiedDepature {
+                params.setValue(departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
+                params.setValue(departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
+            } else {
+                params.setValue(tripToJoin!.departure.address, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE)
+                params.setValue(tripToJoin!.departure.id, forKey: CreateTripService.mConstant.PARAMETER_KEY_DEPARTURE_ID)
+                
+            }
+
+            params.setValue(tripToJoin!.destination.address, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION)
+            params.setValue(tripToJoin!.destination.id, forKey: CreateTripService.mConstant.PAREMETER_KEY_DESTINATION_ID)
+            
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+
+            var dateTime: String
+            params.setValue(1, forKey: CreateTripService.mConstant.PAREMETER_KEY_VISIBILITY)
+
+            if let depatureTime = modifiedDate {
+                dateTime = dateFormatter.stringFromDate(depatureTime)
+            } else {
+                dateTime = dateFormatter.stringFromDate(tripToJoin!.departureTime)
+            }
+            params.setValue(dateTime, forKey: CreateTripService.mConstant.PAREMETER_KEY_TIME)
+
+            CreateTripService(delegate: self).dispathWithParams(params)
+        }
     }
     
     func handleJoinGroupTripFail() {
