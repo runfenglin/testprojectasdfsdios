@@ -1135,6 +1135,68 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newFriendsCell" id="kJA-Ho-30W" customClass="FriendTableViewCell" customModule="TURides" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJA-Ho-30W" id="pms-Rw-PvQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93z-Ug-VUP">
+                                            <rect key="frame" x="297" y="6" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="BSq-hz-nxF"/>
+                                                <constraint firstAttribute="height" constant="30" id="R8l-qB-YbQ"/>
+                                            </constraints>
+                                            <state key="normal" image="Cancel-50">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="declineButtonTouched:" destination="kJA-Ho-30W" eventType="touchUpInside" id="RaD-W0-NnG"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18x-vk-slW">
+                                            <rect key="frame" x="337" y="7" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="4FY-6o-gPO"/>
+                                                <constraint firstAttribute="width" constant="30" id="RRg-gc-Va5"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="Checked-50">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="acceptButtonTouched:" destination="kJA-Ho-30W" eventType="touchUpInside" id="4Xy-iD-CXx"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5QX-bb-PC3">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="kCS-zx-txg"/>
+                                                <constraint firstAttribute="height" constant="40" id="qsq-2i-2JY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgz-zD-l2X">
+                                            <rect key="frame" x="58" y="11.5" width="229" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="5QX-bb-PC3" secondAttribute="centerY" id="2w1-gQ-AOx"/>
+                                        <constraint firstItem="5QX-bb-PC3" firstAttribute="leading" secondItem="pms-Rw-PvQ" secondAttribute="leadingMargin" id="8mS-AZ-m2a"/>
+                                        <constraint firstItem="Bgz-zD-l2X" firstAttribute="leading" secondItem="5QX-bb-PC3" secondAttribute="trailing" constant="10" id="DyJ-XE-hND"/>
+                                        <constraint firstAttribute="centerY" secondItem="93z-Ug-VUP" secondAttribute="centerY" id="bi9-Jp-T4J"/>
+                                        <constraint firstAttribute="centerY" secondItem="Bgz-zD-l2X" secondAttribute="centerY" id="f1N-sG-WHS"/>
+                                        <constraint firstAttribute="centerY" secondItem="18x-vk-slW" secondAttribute="centerY" id="hJ2-wR-xHR"/>
+                                        <constraint firstItem="18x-vk-slW" firstAttribute="leading" secondItem="93z-Ug-VUP" secondAttribute="trailing" constant="10" id="khI-1p-SRW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="18x-vk-slW" secondAttribute="trailing" id="nJL-Z5-Is1"/>
+                                        <constraint firstItem="93z-Ug-VUP" firstAttribute="leading" secondItem="Bgz-zD-l2X" secondAttribute="trailing" constant="10" id="t4h-gS-rh3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendNameLabel" destination="Bgz-zD-l2X" id="2Hy-jQ-evp"/>
+                                    <outlet property="profileIconImageView" destination="5QX-bb-PC3" id="rUD-y7-KKo"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="1uW-WO-G5B" id="xWo-i1-ica"/>
@@ -1215,7 +1277,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cancel-50" width="25" height="25"/>
         <image name="Chat" width="32" height="32"/>
+        <image name="Checked-50" width="25" height="25"/>
         <image name="Friends" width="32" height="32"/>
         <image name="Home" width="32" height="32"/>
         <image name="Trip" width="32" height="32"/>

@@ -15,7 +15,7 @@ protocol AcceptAddFriendRequestServiceDelegate {
 
 class AcceptAddFriendRequestService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/friend/search.json"
+        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/friend/confirm.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     

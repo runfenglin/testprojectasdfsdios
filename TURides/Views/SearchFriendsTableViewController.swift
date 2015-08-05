@@ -74,7 +74,6 @@ class SearchFriendsTableViewController: UITableViewController, UISearchBarDelega
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
     
-    
     func handleSearchFriendsFail() {
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }

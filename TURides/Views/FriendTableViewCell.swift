@@ -8,12 +8,27 @@
 
 import UIKit
 
+protocol FriendTableViewCellDelegate {
+    func didAccept(friend: User)
+    func didDecline(friend: User)
+}
+
 class FriendTableViewCell: UITableViewCell {
 
     
     @IBOutlet var profileIconImageView: UIImageView!
     @IBOutlet var friendNameLabel: UILabel!
     
+    var delegate: FriendTableViewCellDelegate?
+    var user: User?
+    
+    @IBAction func acceptButtonTouched(sender: AnyObject) {
+        delegate!.didAccept(user!)
+    }
+    
+    @IBAction func declineButtonTouched(sender: AnyObject) {
+        delegate!.didDecline(user!)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +43,7 @@ class FriendTableViewCell: UITableViewCell {
     func configureCell(aFriend: User) {
         profileIconImageView.image = aFriend.profileIcon
         friendNameLabel.text = aFriend.name
+        user = aFriend
     }
 
 }
