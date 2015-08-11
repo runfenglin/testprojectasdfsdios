@@ -239,27 +239,20 @@
                                     <constraint firstAttribute="width" constant="40" id="WPd-4J-VeN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eV-Jt-5zI">
-                                <rect key="frame" x="16" y="60" width="343" height="42"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="From: 67 Tamahere Drive Glenfield To: 8 Tangihua Street CBD Pick up time: 2015/06/14 12:00 AM">
-                                        <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From: 67 Tamahere Drive Glenfield To: 8 Tangihua Street CBD Pick up time: 2015/06/14 12:00 AM" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eV-Jt-5zI">
+                                <rect key="frame" x="16" y="60" width="343" height="52.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j3E-t9-aFZ">
-                                <rect key="frame" x="0.0" y="117" width="375" height="437"/>
+                                <rect key="frame" x="0.0" y="127.5" width="375" height="426.5"/>
                                 <connections>
                                     <outlet property="delegate" destination="lOU-gR-vIB" id="E7F-lm-HZT"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfA-sc-JLn" customClass="TUPrimaryButton" customModule="TURides" customModuleProvider="target">
-                                <rect key="frame" x="192.5" y="510" width="166.5" height="34"/>
+                                <rect key="frame" x="192" y="510" width="166.5" height="34"/>
                                 <state key="normal" title="Accept">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

@@ -71,6 +71,7 @@
 		B7A7D8061B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D8051B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift */; };
 		B7A7D8091B6E10F300FDDE4A /* DeclineFriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D8081B6E10F300FDDE4A /* DeclineFriendRequestService.swift */; };
 		B7A7D80B1B70BC0E00FDDE4A /* GetNewFriendRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D80A1B70BC0E00FDDE4A /* GetNewFriendRequestService.swift */; };
+		B7A7D80D1B79E0B700FDDE4A /* TUAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A7D80C1B79E0B700FDDE4A /* TUAnnotation.swift */; };
 		B7AB4CE61B48E9BA00245ECF /* PickDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */; };
 		B7AB4CE81B49316900245ECF /* PickDriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */; };
 		B7AB4CEA1B493B8C00245ECF /* PickDriverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */; };
@@ -183,6 +184,7 @@
 		B7A7D8051B6E10C100FDDE4A /* AcceptAddFriendRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AcceptAddFriendRequestService.swift; path = Services/AcceptAddFriendRequestService.swift; sourceTree = "<group>"; };
 		B7A7D8081B6E10F300FDDE4A /* DeclineFriendRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeclineFriendRequestService.swift; path = Services/DeclineFriendRequestService.swift; sourceTree = "<group>"; };
 		B7A7D80A1B70BC0E00FDDE4A /* GetNewFriendRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetNewFriendRequestService.swift; path = Services/GetNewFriendRequestService.swift; sourceTree = "<group>"; };
+		B7A7D80C1B79E0B700FDDE4A /* TUAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUAnnotation.swift; path = Views/TUAnnotation.swift; sourceTree = "<group>"; };
 		B7AB4CE51B48E9BA00245ECF /* PickDriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverViewController.swift; path = Views/PickDriverViewController.swift; sourceTree = "<group>"; };
 		B7AB4CE71B49316900245ECF /* PickDriverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverTableViewCell.swift; path = Views/PickDriverTableViewCell.swift; sourceTree = "<group>"; };
 		B7AB4CE91B493B8C00245ECF /* PickDriverService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickDriverService.swift; path = Services/PickDriverService.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				B70295211B00AD6F0007F668 /* CircleImageView.swift */,
 				B7F040371B0B385A00D9EEFF /* TUSearchDisplayController.swift */,
 				B7AB4CEB1B4BCA4400245ECF /* FriendTableViewCell.swift */,
+				B7A7D80C1B79E0B700FDDE4A /* TUAnnotation.swift */,
 			);
 			name = SharedControls;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				B7A7D80B1B70BC0E00FDDE4A /* GetNewFriendRequestService.swift in Sources */,
 				B74191901ADBC3FE0051E237 /* KeyChainUtil.swift in Sources */,
 				B7AB4CF61B54EE6300245ECF /* GroupTrip.swift in Sources */,
+				B7A7D80D1B79E0B700FDDE4A /* TUAnnotation.swift in Sources */,
 				B75DC8CF1B23A66B008AB5DE /* GetTripService.swift in Sources */,
 				B778C75A1ADFBD6F001677FC /* UIUtil.swift in Sources */,
 				B7AB4CF41B53AFF300245ECF /* GetGroupTripService.swift in Sources */,

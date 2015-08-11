@@ -128,6 +128,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().translucent = false
         
+        
+        
+        //printly()
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 

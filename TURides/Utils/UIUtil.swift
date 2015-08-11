@@ -23,4 +23,11 @@ class UIUtil: NSObject {
         let dialog = UIAlertView(title: "Error", message: message, delegate: nil, cancelButtonTitle: "OK")
         dialog.show()
     }
+    
+    static func formatDate(date: NSDate) -> NSString {
+        var mDateFormatter: NSDateFormatter = NSDateFormatter()
+        mDateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        mDateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        return mDateFormatter.stringFromDate(date)
+    }
 }
