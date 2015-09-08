@@ -15,7 +15,7 @@ protocol SearchFriendsServiceDelegate {
 
 class SearchFriendsService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/friend/search.json"
+        static let URL = "friend/search.json"
         static let LOADING_MESSAGE = "Loading..."
         static let KEY_KEYWORD = "keyword"
     }
@@ -27,7 +27,7 @@ class SearchFriendsService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {

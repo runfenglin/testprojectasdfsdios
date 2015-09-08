@@ -19,7 +19,7 @@ class GetActivityService: Service {
     var acitvitiesArray: [CheckInActivity]
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/activity.json"
+        static let URL = "user/activity.json"
     }
     
     init(delegate: GetActivityServiceDelegate) {
@@ -28,7 +28,7 @@ class GetActivityService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     private func extractResult(json: JSON) {

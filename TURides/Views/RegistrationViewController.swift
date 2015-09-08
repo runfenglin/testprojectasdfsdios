@@ -49,7 +49,7 @@ class RegistrationViewController: BaseViewController, FacebookLoginServiceDelega
         MBProgressHUD.showHUDAddedTo(self.view, animated: true).labelText = FacebookLoginService.mConstant.LOADING_MESSAGE
         let params = NSMutableDictionary()
         params.setValue(FBSDKAccessToken.currentAccessToken().tokenString, forKey: FacebookLoginService.mConstant.PAREMETER_KEY_TOKEN)
-        params.setValue("json", forKey: "format")
+       // params.setValue("json", forKey: "format")
         FacebookLoginService(delegate: self).dispathWithParams(params)
     }
     

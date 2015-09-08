@@ -117,6 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogoutServiceDelegate, RE
             //KeyChainUtil.delete(Constant.KEYCHAIN_KEY_APIKEY)
             //FBSDKLoginManager().logOut()
             showHomeScreen()
+            //showLoginScreen()
             //GetUserProfileService(delegate: self).dispatchWithParams(NSDictionary())
         } else {
             showLoginScreen()

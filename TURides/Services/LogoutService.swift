@@ -15,7 +15,7 @@ import UIKit
 
 class LogoutService: Service {
     struct mConstant {
-        static let URL = "http://54.206.6.242/app_dev.php/en/api/v1/logout.json"
+        static let URL = "logout.json"
         static let LOADING_MESSAGE = "Logging out..."
     }
     

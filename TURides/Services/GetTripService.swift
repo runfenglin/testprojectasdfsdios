@@ -15,7 +15,7 @@ protocol GetTripServiceDelegate {
 
 class GetTripService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/trip/request.json"
+        static let URL = "trip/request.json"
         static let LOADING_MESSAGE = "Loading..."
         
     }
@@ -29,7 +29,7 @@ class GetTripService: Service {
     
     func dispathWithParams(params: NSDictionary) {
         TULog.Log("Getting Friends' Trip Requests")
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

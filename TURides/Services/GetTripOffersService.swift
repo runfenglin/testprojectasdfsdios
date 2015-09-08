@@ -19,7 +19,7 @@ class GetTripOffersService: Service {
     var offerArray: [TripOffer]
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/request/{id}/offers.json"
+        static let URL = "user/request/{id}/offers.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     
@@ -30,7 +30,7 @@ class GetTripOffersService: Service {
     
     func dispathWithParams(params: NSDictionary) {
         let id = params.objectForKey("id") as! NSNumber
-        let url = mConstant.url.stringByReplacingOccurrencesOfString("{id}", withString: id.stringValue, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let url = mConstant.URL.stringByReplacingOccurrencesOfString("{id}", withString: id.stringValue, options: NSStringCompareOptions.LiteralSearch, range: nil)
         let a = NSMutableDictionary()
         a.setValue("en", forKey: "locale")
         Command(params: a, delegate: self, url: url).get()

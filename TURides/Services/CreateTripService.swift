@@ -15,7 +15,7 @@ protocol CreateTripServiceDelegate {
 
 class CreateTripService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/trip/create.json"
+        static let URL = "trip/create.json"
         static let LOADING_MESSAGE = "Loading..."
         static let PARAMETER_KEY_GROUP = "group"
         static let PARAMETER_KEY_DEPARTURE = "departure"
@@ -35,7 +35,7 @@ class CreateTripService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {

@@ -15,7 +15,7 @@ protocol GetNewFriendRequestServiceDelegate {
 
 class GetNewFriendRequestService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/friend/request.json"
+        static let URL = "user/friend/request.json"
         static let LOADING_MESSAGE = "Loading..."
         
         static let KEY_ID = "id"
@@ -28,7 +28,7 @@ class GetNewFriendRequestService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

@@ -22,7 +22,7 @@ class GooglePlaceDetailsService: Service {
     
     struct mConstant {
         
-        static let url = "https://maps.googleapis.com/maps/api/place/details/json"
+        static let URL = "https://maps.googleapis.com/maps/api/place/details/json"
         static let VALUE_KEY = "AIzaSyAd3AhgQ1Gv-MF6DSt0qfH8Zda2Reia5tk"
         static let VALUE_RADIUS = "1000"
         
@@ -40,7 +40,7 @@ class GooglePlaceDetailsService: Service {
         params.setValue(id, forKey: mConstant.PARAMETER_KEY_ID)
         params.setValue(mConstant.VALUE_KEY, forKey: mConstant.KEY_KEY)
         
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

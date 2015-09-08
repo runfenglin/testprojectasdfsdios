@@ -18,7 +18,7 @@ class CreateCheckInService: Service {
     var delegate: CreateCheckInServiceDelegate
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/checkin/create.json"
+        static let URL = "checkin/create.json"
         static let PARAMETER_KEY_COMMENT = "comment"
         static let PARAMETER_KEY_PLACE_ID = "checkinReference"
         static let PARAMETER_KEY_PLACE_NAME = "checkinName"
@@ -29,7 +29,7 @@ class CreateCheckInService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {

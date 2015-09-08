@@ -21,7 +21,7 @@ class Command: NSObject {
             self.manager.requestSerializer.setValue(KeyChainUtil.get(Constant.KEYCHAIN_KEY_APIKEY), forHTTPHeaderField: "apikey")
         }
         self.delegate = delegate
-        self.url = url
+        self.url = Constant.SERVICE_URL + url
     }
     
     func get() {

@@ -18,7 +18,7 @@ class GooglePlaceSearchNearByService: Service {
     var delegate: GooglePlaceSearchNearByServiceDelegate
     
     struct mConstant {
-        static let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+        static let URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
         static let VALUE_KEY = "AIzaSyAd3AhgQ1Gv-MF6DSt0qfH8Zda2Reia5tk"
         static let VALUE_RADIUS = "1000"
         
@@ -43,7 +43,7 @@ class GooglePlaceSearchNearByService: Service {
         params.setValue("-36.78, 174.71", forKey: mConstant.KEY_LOCATION)
         params.setValue(mConstant.VALUE_RADIUS, forKey: mConstant.KEY_RADIUS)
        
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

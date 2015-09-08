@@ -16,7 +16,7 @@ protocol GetPairedTripServiceDelegate {
 class GetPairedTripService: Service {
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/trip.json"
+        static let URL = "user/trip.json"
         static let LOADING_MESSAGE = "Loading..."
         
     }
@@ -30,7 +30,7 @@ class GetPairedTripService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

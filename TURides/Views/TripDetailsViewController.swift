@@ -13,6 +13,12 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet var driverImageView: UIImageView!
+    @IBOutlet var driverNameLabel: UILabel!
+    
+    @IBOutlet var driverIconImageView: UIImageView!
+    @IBOutlet var passengerIconImageView: UIImageView!
+    
     @IBOutlet weak var tripDetailsLabel: UILabel!
     @IBOutlet var acceptButton: TUPrimaryButton!
     @IBOutlet var changeButton: TUSecondaryButton!
@@ -36,8 +42,18 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
         super.viewDidLoad()
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        userNameLabel.text = trip?.orgnizer.name
+        userNameLabel.text = trip!.orgnizer.name
         userImageView.image = trip?.orgnizer.profileIcon
+        driverImageView.image = trip!.driver?.profileIcon
+        driverNameLabel.text = "Driver: \(trip!.driver!.name)"
+        
+        driverIconImageView.image = driverIconImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        driverIconImageView.tintColor = UIColor(netHex: 0x4EAD1D)
+        
+        passengerIconImageView.image = passengerIconImageView.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        passengerIconImageView.tintColor = UIColor(netHex: 0x4EAD1D)
+        
+        
         var label = "From: \(trip!.departure.name)\nTo: \(trip!.destination.name)\nPick up time: \(UIUtil.formatDate(trip!.departureTime))"
         tripDetailsLabel.text = label
         
@@ -49,11 +65,215 @@ class TripDetailsViewController: BaseViewController, AcceptTripServiceDelegate, 
         }
     }
     
+    func setUpLocalPushNoification(minutesBefore: Int) {
+        
+        let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        //if notificationSettings.types == UIUserNotificationType.None {
+            var notificationTypes: UIUserNotificationType = .Alert | .Sound
+            
+            var startNavigationAction = UIMutableUserNotificationAction()
+            startNavigationAction.identifier = "startNavigation"
+            startNavigationAction.title = "Start Navigation"
+            startNavigationAction.activationMode = .Background
+            startNavigationAction.destructive = false
+            startNavigationAction.authenticationRequired = false
+        
+        var dismissAction = UIMutableUserNotificationAction()
+        dismissAction.identifier = "dismiss"
+        dismissAction.title = "OK"
+        dismissAction.activationMode = .Background
+        dismissAction.destructive = false
+        dismissAction.authenticationRequired = false
+        
+            let actionsArray = NSArray(objects: dismissAction, startNavigationAction)
+            let actionsArrayMinimal = NSArray(objects: dismissAction, startNavigationAction)
+
+            // Specify the category related to the above actions.
+            var shoppingListReminderCategory = UIMutableUserNotificationCategory()
+            shoppingListReminderCategory.identifier = "shoppingListReminderCategory"
+            shoppingListReminderCategory.setActions(actionsArray as [AnyObject], forContext: UIUserNotificationActionContext.Default)
+            shoppingListReminderCategory.setActions(actionsArrayMinimal as [AnyObject], forContext: UIUserNotificationActionContext.Minimal)
+
+
+            let categoriesForSettings = NSSet(objects: shoppingListReminderCategory)
+
+
+            // Register the notification settings.
+            let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as Set<NSObject>)
+            
+            UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+            var localNotification = UILocalNotification()
+
+            let calendar = NSCalendar.currentCalendar()
+            let date = calendar.dateByAddingUnit(.CalendarUnitMinute, value: 1, toDate: NSDate(), options: nil)
+
+
+
+            localNotification.fireDate = date
+        
+        if trip?.orgnizer.id == Session.sharedInstance.me?.id {
+            localNotification.alertBody = "\(trip?.orgnizer.name) is going to pick you up at \(trip?.departure.name) in \(minutesBefore) minutes."
+        } else {
+           localNotification.alertBody = "You need to pickup \(trip!.orgnizer.name) at \(trip!.departure.name) in \(minutesBefore) minutes."
+        }
+        localNotification.alertAction = "Open TURide"
+
+            localNotification.category = "shoppingListReminderCategory"
+
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+
+            
+            
+            
+        //} else {
+        //    var notificationTypes: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+        //}
+        
+        
+        //
+        //            if (notificationSettings.types == UIUserNotificationType.None){
+        //                // Specify the notification types.
+        //                var notificationTypes: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+        //
+        //
+        //                // Specify the notification actions.
+        //                var justInformAction = UIMutableUserNotificationAction()
+        //                justInformAction.identifier = "justInform"
+        //                justInformAction.title = "OK, got it"
+        //                justInformAction.activationMode = UIUserNotificationActivationMode.Background
+        //                justInformAction.destructive = false
+        //                justInformAction.authenticationRequired = false
+        //
+        //                var modifyListAction = UIMutableUserNotificationAction()
+        //                modifyListAction.identifier = "editList"
+        //                modifyListAction.title = "Edit list"
+        //                modifyListAction.activationMode = UIUserNotificationActivationMode.Foreground
+        //                modifyListAction.destructive = false
+        //                modifyListAction.authenticationRequired = true
+        //
+        //                var trashAction = UIMutableUserNotificationAction()
+        //                trashAction.identifier = "trashAction"
+        //                trashAction.title = "Delete list"
+        //                trashAction.activationMode = UIUserNotificationActivationMode.Background
+        //                trashAction.destructive = true
+        //                trashAction.authenticationRequired = true
+        //
+        //                let actionsArray = NSArray(objects: justInformAction, modifyListAction, trashAction)
+        //                let actionsArrayMinimal = NSArray(objects: trashAction, modifyListAction)
+        //
+        //                // Specify the category related to the above actions.
+        //                var shoppingListReminderCategory = UIMutableUserNotificationCategory()
+        //                shoppingListReminderCategory.identifier = "shoppingListReminderCategory"
+        //
+        //
+        //
+        //
+        //                shoppingListReminderCategory.setActions(actionsArray as [AnyObject], forContext: UIUserNotificationActionContext.Default)
+        //                shoppingListReminderCategory.setActions(actionsArrayMinimal as [AnyObject], forContext: UIUserNotificationActionContext.Minimal)
+        //
+        //
+        //                let categoriesForSettings = NSSet(objects: shoppingListReminderCategory)
+        //
+        //
+        //                // Register the notification settings.
+        //                let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as Set<NSObject>)
+        //                UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+        //            } else {
+        //                var notificationTypes: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+        //
+        //
+        //                // Specify the notification actions.
+        //                var justInformAction = UIMutableUserNotificationAction()
+        //                justInformAction.identifier = "justInform"
+        //                justInformAction.title = "OK, got it"
+        //                justInformAction.activationMode = UIUserNotificationActivationMode.Background
+        //                justInformAction.destructive = false
+        //                justInformAction.authenticationRequired = false
+        //
+        //                var modifyListAction = UIMutableUserNotificationAction()
+        //                modifyListAction.identifier = "editList"
+        //                modifyListAction.title = "Edit list"
+        //                modifyListAction.activationMode = UIUserNotificationActivationMode.Foreground
+        //                modifyListAction.destructive = false
+        //                modifyListAction.authenticationRequired = true
+        //
+        //                var trashAction = UIMutableUserNotificationAction()
+        //                trashAction.identifier = "trashAction"
+        //                trashAction.title = "Delete list"
+        //                trashAction.activationMode = UIUserNotificationActivationMode.Background
+        //                trashAction.destructive = true
+        //                trashAction.authenticationRequired = true
+        //
+        //                let actionsArray = NSArray(objects: justInformAction, modifyListAction, trashAction)
+        //                let actionsArrayMinimal = NSArray(objects: trashAction, modifyListAction)
+        //
+        //                // Specify the category related to the above actions.
+        //                var shoppingListReminderCategory = UIMutableUserNotificationCategory()
+        //                shoppingListReminderCategory.identifier = "shoppingListReminderCategory"
+        //
+        //
+        //
+        //
+        //                shoppingListReminderCategory.setActions(actionsArray as [AnyObject], forContext: UIUserNotificationActionContext.Default)
+        //                shoppingListReminderCategory.setActions(actionsArrayMinimal as [AnyObject], forContext: UIUserNotificationActionContext.Minimal)
+        //
+        //
+        //                let categoriesForSettings = NSSet(objects: shoppingListReminderCategory)
+        //
+        //
+        //                // Register the notification settings.
+        //                let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as Set<NSObject>)
+        //                UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+        //                var localNotification = UILocalNotification()
+        //                
+        //                let calendar = NSCalendar.currentCalendar()
+        //                let date = calendar.dateByAddingUnit(.CalendarUnitMinute, value: 1, toDate: NSDate(), options: nil)
+        //
+        //                
+        //                
+        //                localNotification.fireDate = date
+        //                localNotification.alertBody = "Hey, you must go shopping, remember?"
+        //                localNotification.alertAction = "View List"
+        //                
+        //                localNotification.category = "shoppingListReminderCategory"
+        //                
+        //                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        //        }
+
+    }
+    
+    @IBAction func reminderButtonTouched(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Reminder", message: "", preferredStyle: .Alert)
+        let buttonOne = UIAlertAction(title: "5 minutes before", style: .Default, handler: { (action) -> Void in
+            self.setUpLocalPushNoification(5)
+        })
+        let buttonTwo = UIAlertAction(title: "10 minutes before", style: .Default, handler: { (action) -> Void in
+            self.setUpLocalPushNoification(10)
+        })
+        let buttonThree = UIAlertAction(title: "15 minutes before", style: .Default, handler: { (action) -> Void in
+            self.setUpLocalPushNoification(15)
+        })
+        let buttonFour = UIAlertAction(title: "30 minutes before", style: .Default, handler: { (action) -> Void in
+            self.setUpLocalPushNoification(30)
+        })
+        let buttonCancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in}
+        
+        alertController.addAction(buttonOne)
+        alertController.addAction(buttonTwo)
+        alertController.addAction(buttonThree)
+        alertController.addAction(buttonFour)
+        alertController.addAction(buttonCancel)
+        alertController.modalPresentationStyle = UIModalPresentationStyle.Popover
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     
     func drawDirection() {
         manager.requestAlwaysAuthorization()
         mapView.delegate = self
-       // mapView.mapType = MKMapType.Satellite
 
         locMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(from!.coordinate.latitude, from!.coordinate.longitude), addressDictionary: nil)
         destMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(to!.coordinate.latitude, to!.coordinate.longitude), addressDictionary: nil)

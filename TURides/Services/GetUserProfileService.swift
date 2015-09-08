@@ -17,7 +17,7 @@ class GetUserProfileService: Service {
     var delegate: GetUserProfileServiceDelegate
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/profile.json"
+        static let URL = "user/profile.json"
     }
     
     init(delegate: GetUserProfileServiceDelegate) {
@@ -25,7 +25,7 @@ class GetUserProfileService: Service {
     }
     
     func dispatchWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

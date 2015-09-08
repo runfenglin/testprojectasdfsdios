@@ -16,7 +16,7 @@ import UIKit
 class FacebookLoginService: Service {
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/login/facebook.json"
+        static let URL = "login/facebook.json"
         static let LOADING_MESSAGE = "Logging in..."
         static let PARAMETER_KEY_FRIENDS_COUNT = "friend_count"
         static let PARAMETER_KEY_APIKEY = "apikey"
@@ -30,7 +30,7 @@ class FacebookLoginService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {

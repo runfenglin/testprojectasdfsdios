@@ -16,7 +16,7 @@ protocol GetGroupTripServiceDelegate {
 class GetGroupTripService: Service {
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/trip/group.json"
+        static let URL = "trip/group.json"
         static let LOADING_MESSAGE = "Loading..."
         
     }
@@ -31,7 +31,7 @@ class GetGroupTripService: Service {
     
     func dispathWithParams(params: NSDictionary) {
         TULog.Log("Getting Group Trips")
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

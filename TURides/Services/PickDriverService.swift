@@ -17,7 +17,7 @@ class PickDriverService: Service {
     var delegate: PickDriverServiceDelegate
     
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/user/pick/driver.json"
+        static let URL = "user/pick/driver.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     
@@ -26,7 +26,7 @@ class PickDriverService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {

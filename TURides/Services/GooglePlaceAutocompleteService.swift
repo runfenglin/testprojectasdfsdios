@@ -20,7 +20,7 @@ class GooglePlaceAutocompleteService: Service {
     }
     
     struct mConstant {
-        static let url = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
+        static let URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
         static let VALUE_KEY = "AIzaSyAd3AhgQ1Gv-MF6DSt0qfH8Zda2Reia5tk"
         static let VALUE_RADIUS = "1000"
         
@@ -41,7 +41,7 @@ class GooglePlaceAutocompleteService: Service {
         params.setValue(queryString, forKey: mConstant.KEY_INPUT)
         params.setValue("country:nz", forKey: "components")
         
-        Command(params: params, delegate: self, url: mConstant.url).get()
+        Command(params: params, delegate: self, url: mConstant.URL).get()
     }
     
     override func successCallback(responseObject: AnyObject) {

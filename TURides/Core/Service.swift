@@ -14,6 +14,9 @@ protocol ServiceDelegate {
 }
 
 class Service: NSObject, ServiceDelegate {
+    
+    let serviceURL = "http://appserver.thumbupride.com"
+    
     func successCallback(responseObject: AnyObject) {
         assertionFailure("Must be overiden in subclass")
     }

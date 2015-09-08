@@ -15,7 +15,7 @@ protocol DeclineAddFriendRequestServiceDelegate {
 
 class DeclineFriendRequestService: Service {
     struct mConstant {
-        static let url = "http://54.206.6.242/app_dev.php/en/api/v1/friend/decline.json"
+        static let URL = "friend/decline.json"
         static let LOADING_MESSAGE = "Loading..."
     }
     
@@ -26,7 +26,7 @@ class DeclineFriendRequestService: Service {
     }
     
     func dispathWithParams(params: NSDictionary) {
-        Command(params: params, delegate: self, url: mConstant.url).post()
+        Command(params: params, delegate: self, url: mConstant.URL).post()
     }
     
     override func successCallback(responseObject: AnyObject) {
